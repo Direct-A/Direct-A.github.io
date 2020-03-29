@@ -1,0 +1,50 @@
+sudo: false
+language: node_js
+node_js:
+  - lts/*
+
+cache:
+  directories:
+  - node_modules
+
+before_install:
+  - export TZ='Asia/Shanghai'
+
+install:
+  - npm install hexo-cli -g
+  - npm install
+
+script:
+  - hexo generate # generate static files
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "易程"
+  - git config user.email "songyicheng0@gmail.com"
+  - git add .
+  - git commit -m "Travis CI Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: 3e5d08318164ff69a191d3f5af6d36afc8868da4
+#   keep-history: true
+#   on:
+#     branch: gh-pages
+#   local-dir: public
+
+branches:
+  only:
+    - master # build master branch only
+
+# befor_install:
+# install:
+# befor_script:
+# script:
+# after_succerss:
+# after_failure:
+# after_scrip:
+# befor_deploy:
+# deploy:

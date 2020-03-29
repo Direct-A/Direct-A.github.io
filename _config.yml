@@ -1,0 +1,338 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Direct-A
+subtitle: ''
+description: 'a blog as a log'
+keywords: 'Direct-A, Song Yicheng, sYc'
+author: Direct-A
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://Direct-A.github.io
+root: /
+permalink: :category/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: true # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+# if true markdown rreference is still useful
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+# theme: landscape
+theme: next
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: 
+    github: git@github.com:Direct-A/Direct-A.github.io.git
+  branch: gh-pages
+
+# Configration for local search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 20
+
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
+live2d:
+  enable: true
+  # enable: false
+  pluginRootPath: live2dw/ # Root path of plugin to be on the site (Relative)
+  pluginJsPath: lib/ # JavaScript path related to plugin's root (Relative)
+  pluginModelPath: assets/ # Relative model path related to plugin's root (Relative)
+  scriptFrom: local # Default
+  # scriptFrom: jsdelivr # jsdelivr CDN
+  # scriptFrom: unpkg # unpkg CDN
+  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # Your custom url
+  tagMode: false # Whether only to replace live2d tag instead of inject to all pages
+  log: false # Whether to show logs in console
+  model:
+    use: live2d-widget-model-haru-02 # npm-module package name
+    # use: wanko # folder name in (hexo base dir)/live2d_models/
+    # use: ./wives/wanko # folder path relative to hexo base dir
+    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # Your custom url
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
+  display:
+    superSample: 2
+    width: 150
+    height: 300
+    position: left
+    hOffset: 0
+    vOffset: -20
+  mobile:
+    show: true
+    scale: 0.5
+  react:
+    opacityDefault: 0.7
+    opacityOnHover: 0.2
+
+
+# ======================================
+# ========== THEME SETINGS =============
+# ======================================
+theme_config:
+  favicon:
+    small: /images/favicon-16x16.ico
+    medium: /images/favicon-32x32.ico
+
+  footer:
+    icon:
+      name: heart
+      animated: true
+      color: "#ff0000"
+
+  # darkmode 开启后，文章末尾的 tag 背景色不和谐， foot 的背景色不和谐
+  # scheme: Mist
+  # scheme: Muse
+  scheme: Gemini
+
+  darkmode: true
+
+  menu:
+    home: / || home
+    tags: /tags/ || tags
+    archives: /archives/ || archive
+    about: /about/ || user
+
+  # Enable / Disable menu icons / item badges.
+  menu_settings:
+    icons: true
+    badges: true
+
+  sidebar:
+    # Sidebar Position.
+    position: left
+    # Sidebar Display (only for Muse | Mist), available values:
+    #  - post    expand on posts automatically. Default.
+    #  - always  expand for all pages automatically.
+    #  - hide    expand only when click on the sidebar toggle icon.
+    #  - remove  totally remove sidebar including sidebar toggle.
+    display: post
+
+  avatar:
+    # Replace the default image and set the url here.
+    url: /images/avatar.jpg
+    # If true, the avatar will be dispalyed in circle.
+    rounded: true
+
+  social:
+    GitHub: https://github.com/Direct-A || github
+    E-Mail: mailto:songyicheng0@gmail.com || envelope
+
+  # Use icon instead of the symbol # to indicate the tag at the bottom of the post
+  tag_icon: true
+
+  # Show previous post and next post in post footer if exists
+  # Available values: left | right | false
+  post_navigation: left
+
+  tagcloud:
+    # All values below are same as default, change them by yourself.
+    min: 14 # Minimun font size in px
+    max: 30 # Maxium font size in px
+    start: "#0092a2" # Start color (hex, rgba, hsla or color keywords)
+    end: "#66e7f4" # End color (hex, rgba, hsla or color keywords)
+    amount: 200 # Amount of tags, change it if you have more than 200 tags
+
+  codeblock:
+    # Code Highlight theme
+    # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
+    # See: https://github.com/chriskempson/tomorrow-theme
+    highlight_theme: night bright
+    # Add copy button on codeblock
+    copy_button:
+      enable: true
+      # Show text copy result.
+      show_result: true
+      # Available values: default | flat | mac
+      style: flat
+
+  back2top:
+    enable: true
+    # Back to top in sidebar.
+    sidebar: true
+    # Scroll percent label in b2t button.
+    scrollpercent: true
+
+  # Reading progress bar
+  reading_progress:
+    enable: true
+    # Available values: top | bottom
+    position: top
+    color: "#1dd0db"
+    height: 3px
+
+  # Bookmark Support
+  bookmark:
+    enable: true
+    # Customize the color of the bookmark.
+    color: "#CCC"
+    # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
+    # If manual, only save it by clicking the bookmark-icon.
+    save: auto
+  
+  # TODO: need more beautiful fonts
+  # ---------------------------------------------------------------
+  # Font Settings
+  # See: https://theme-next.org/docs/theme-settings/#Fonts-Customization
+  # ---------------------------------------------------------------
+  # Find fonts on Google Fonts (https://www.google.com/fonts)
+  # All fonts set here will have the following styles:
+  #   light | light italic | normal | normal italic | bold | bold italic
+  # Be aware that setting too much fonts will cause site running slowly
+  # ---------------------------------------------------------------
+  # To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `title`):
+  # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
+  # ---------------------------------------------------------------
+
+  font:
+    enable: false
+
+    # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
+    host:
+
+    # Font options:
+    # `external: true` will load this font family from `host` above.
+    # `family: Times New Roman`. Without any quotes.
+    # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+    # Global font settings used for all elements inside <body>.
+    global:
+      external: true
+      family: Lato
+      size:
+
+    # Font settings for site title (.site-title).
+    title:
+      external: true
+      family:
+      size:
+
+    # Font settings for headlines (<h1> to <h6>).
+    headings:
+      external: true
+      family:
+      size:
+
+    # Font settings for posts (.post-body).
+    posts:
+      external: true
+      family:
+
+    # Font settings for <code> and code blocks.
+    codes:
+      external: true
+      family:
+
+  # Local Search
+  # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+  local_search:
+    enable: true
+    # If auto, trigger search by changing input.
+    # If manual, trigger search by pressing enter key or search button.
+    trigger: manual
+    # Show top n results per article, show all results by setting to -1
+    top_n_per_article: -1
+    # Unescape html strings to the readable one.
+    unescape: false
+    # Preload the search data when the page loads.
+    preload: false
+
+  # Progress bar in the top during page loading.
+  # Dependencies: https://github.com/theme-next/theme-next-pace
+  # For more information: https://github.com/HubSpot/pace
+  pace:
+    enable: true
+    # Themes list:
+    # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
+    # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
+    theme: minimal
+
+  # Post wordcount display settings
+  # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+  symbols_count_time:
+    separated_meta: true
+    item_text_post: true
+    item_text_total: false
