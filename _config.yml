@@ -104,6 +104,8 @@ deploy:
   repo: 
     github: git@github.com:Direct-A/Direct-A.github.io.git
   branch: master
+  message: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by syc-surface-pro5'
+
 
 # Configration for local search
 search:
@@ -148,11 +150,52 @@ live2d:
     opacityDefault: 0.7
     opacityOnHover: 0.2
 
+## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-abbr
+    - markdown-it-emoji
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
+
+post_end_tag:
+  enabled: true  # 是否开启文末的本文结束标记
 
 # ======================================
 # ========== THEME SETINGS =============
 # ======================================
 theme_config:
+  sinece: 2019
+
+  # Define custom file paths.
+  # Create your custom files in site directory `source/_data` and uncomment needed files below.
+  custom_file_path:
+    #head: source/_data/head.swig
+    #header: source/_data/header.swig
+    #sidebar: source/_data/sidebar.swig
+    #postMeta: source/_data/post-meta.swig
+    # post: source/_data/post.swig
+    # postBodyEnd: source/_data/post-body-end.swig
+    #footer: source/_data/footer.swig
+    #bodyEnd: source/_data/body-end.swig
+    #variable: source/_data/variables.styl
+    #mixin: source/_data/mixins.styl
+    #style: source/_data/styles.styl
+
   favicon:
     small: /images/favicon-16x16.ico
     medium: /images/favicon-32x32.ico
@@ -253,7 +296,6 @@ theme_config:
     # If manual, only save it by clicking the bookmark-icon.
     save: auto
   
-  # TODO: need more beautiful fonts
   # ---------------------------------------------------------------
   # Font Settings
   # See: https://theme-next.org/docs/theme-settings/#Fonts-Customization
@@ -268,43 +310,41 @@ theme_config:
   # ---------------------------------------------------------------
 
   font:
-    enable: false
+    enable: true
 
-    # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
+    # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
     host:
 
-    # Font options:
-    # `external: true` will load this font family from `host` above.
-    # `family: Times New Roman`. Without any quotes.
-    # `size: x.x`. Use `em` as unit. Default: 1 (16px)
-
-    # Global font settings used for all elements inside <body>.
+    # Global font settings used on <body> element.
     global:
+      # external: true will load this font family from host.
       external: true
-      family: Lato
-      size:
+      family: Courier New OS
 
-    # Font settings for site title (.site-title).
-    title:
-      external: true
-      family:
-      size:
-
-    # Font settings for headlines (<h1> to <h6>).
+    # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
+    # Fallback to `global` font settings.
     headings:
       external: true
       family:
-      size:
 
-    # Font settings for posts (.post-body).
+    # Font settings for posts
+    # Fallback to `global` font settings.
     posts:
       external: true
+      family: Noto Serif SC
+
+    # Font settings for Logo
+    # Fallback to `global` font settings.
+    # The `size` option use `px` as unit
+    logo:
+      external: true
       family:
+      size:
 
     # Font settings for <code> and code blocks.
     codes:
       external: true
-      family:
+      family: Ubuntu Mono
 
   # Local Search
   # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
@@ -312,11 +352,11 @@ theme_config:
     enable: true
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.
-    trigger: manual
+    trigger: auto
     # Show top n results per article, show all results by setting to -1
-    top_n_per_article: -1
+    top_n_per_article: 5
     # Unescape html strings to the readable one.
-    unescape: false
+    unescape: true
     # Preload the search data when the page loads.
     preload: false
 
