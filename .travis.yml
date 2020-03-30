@@ -18,23 +18,23 @@ install:
 script:
   - hexo generate # generate static files
 
-after_script:
-  - cd ./public
-  - git init
-  - git config --global user.name "Travis CI"
-  - git config --global user.email "songyicheng0@gmail.com"
-  - git add .
-  - git commit -m "Travis CI Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-  - git push -f "https://${GH_TOKEN}@${GH_REPO}" master:gh-pages
+# after_script:
+#   - cd ./public
+#   - git init
+#   - git config --global user.name "Travis CI"
+#   - git config --global user.email "songyicheng0@gmail.com"
+#   - git add .
+#   - git commit -m "Travis CI Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+#   - git push -f "https://${GH_TOKEN}@${GH_REPO}" master:master
 
-# deploy:
-#   provider: pages
-#   skip-cleanup: true
-#   github-token: ${GH_TOKEN}
-#   keep-history: true
-#   on:
-#     branch: gh-pages
-#   local-dir: public
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: ${GH_TOKEN}
+  keep-history: true
+  on:
+    branch: master
+  local-dir: public
 
 branches:
   only:
