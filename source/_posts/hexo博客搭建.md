@@ -16,10 +16,11 @@ password:
 description:
 ---
 
-# install hexo
+之前的博客是基于 jekyll 搭建的，但是 jekyll 再本地的软件安装实在有些恼人，~~我换电脑了，懒得再安了~~，了解到 hexo 只需要安装 node.js ，并且之后的都是在 node.js 里添加 module ，我决定改使用 hexo。
 
-在开始着手自己搭建 hexo 博客前，首先还是先看看官方的教程。
-这是搭建的第一步，同时也可以增加对 hexo 的了解。
+# Install hexo
+
+在开始着手自己搭建 hexo 博客前，首先还是先看看官方的教程。这是搭建的第一步，同时也可以增加对 hexo 的了解。
 
 [官方教程](https://hexo.io/docs/)
 
@@ -79,13 +80,14 @@ menu:
 
 # hexo 网站的部署
 
-## 使用 hexo deploy 进行部署
+## 使用 `hexo deploy` 进行部署
 
 部署的整个流程，以及其他平台上部署和其他部署方法，均参考[hexo官方文档](https://hexo.io/zh-cn/docs/one-command-deployment)
 
-由于我是用公开 repo 创建的 gitpage ，使用 hexo deploy 如果用的是同一个项目，那就会出现覆盖 master 分支下的文件这种问题，有些头疼，所以最后我决定使用 Travis CI 。
+对于部署后覆盖 master 分支的问题我通过创建 resource 分支来存储博客源码，在 master 分支发布网站部署内容来解决。
+<!-- 由于我是用公开 repo 创建的 gitpage ，使用 hexo deploy 如果用的是同一个项目，那就会出现覆盖 master 分支下的文件这种问题，有些头疼，所以最后我决定使用 Travis CI 。 -->
 
-## 使用 Travis CI 进行 hexo 自动化部署
+<!-- ## 使用 Travis CI 进行 hexo 自动化部署
 
 使用 Travis CI 进行部署前的检测，以及进行自动部署
 
@@ -106,4 +108,4 @@ menu:
 ### Travis CI 的配置
 
 1. 首先主目录下建立文件 `.travis.yml`
-2. 按照[]()
+2. 按照[]() -->
