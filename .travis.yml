@@ -25,7 +25,15 @@ script:
 #   - git config --global user.email "songyicheng0@gmail.com"
 #   - git add .
 #   - git commit -m "Travis CI Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-#   - git push -f "https://${GH_TOKEN}@${GH_REPO}" master:master
+#   - git push -f "https://${GH_TOKEN}@${GH_REPO}" master:gh-pages
+
+# branches:
+#   only:
+#     - master # 触发持续集成的分支
+
+# env:
+#   global:
+#     - GH_REF: github.com/xininn/xinkezhan.git # 就是你github上存放静态博客最终文件的仓库地址末尾加上.git
 
 deploy:
   provider: pages
@@ -36,9 +44,10 @@ deploy:
     branch: master
   local-dir: public
 
-branches:
-  only:
-    - master # build master branch only
+# notifications:
+#   email: true
+#   on_success: always
+#   on_failure: always
 
 # befor_install:
 # install:
