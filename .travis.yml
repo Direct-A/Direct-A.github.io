@@ -1,4 +1,5 @@
-sudo: false
+os: linux
+dist: xenial
 language: node_js
 node_js:
   - lts/*
@@ -20,11 +21,11 @@ script:
 after_script:
   - cd ./public
   - git init
-  - git config user.name "易程"
-  - git config user.email "songyicheng0@gmail.com"
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "songyicheng0@gmail.com"
   - git add .
   - git commit -m "Travis CI Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+  - git push --force "https://${GH_TOKEN}@${GH_REF}" master:master
 
 # deploy:
 #   provider: pages
