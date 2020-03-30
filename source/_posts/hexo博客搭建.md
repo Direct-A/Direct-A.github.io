@@ -83,6 +83,8 @@ menu:
 
 部署的整个流程，以及其他平台上部署和其他部署方法，均参考[hexo官方文档](https://hexo.io/zh-cn/docs/one-command-deployment)
 
+由于我是用公开 repo 创建的 gitpage ，使用 hexo deploy 如果用的是同一个项目，那就会出现覆盖 master 分支下的文件这种问题，有些头疼，所以最后我决定使用 Travis CI 。
+
 ## 使用 Travis CI 进行 hexo 自动化部署
 
 使用 Travis CI 进行部署前的检测，以及进行自动部署

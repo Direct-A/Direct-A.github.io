@@ -25,12 +25,12 @@ after_script:
   - git config --global user.email "songyicheng0@gmail.com"
   - git add .
   - git commit -m "Travis CI Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-  - git push --force "https://${GH_TOKEN}@${GH_REPO}" master:master
+  - git push -f "https://${GH_TOKEN}@${GH_REPO}" master:gh-pages
 
 # deploy:
 #   provider: pages
 #   skip-cleanup: true
-#   github-token: 3e5d08318164ff69a191d3f5af6d36afc8868da4
+#   github-token: ${GH_TOKEN}
 #   keep-history: true
 #   on:
 #     branch: gh-pages
