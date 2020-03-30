@@ -103,7 +103,7 @@ deploy:
   type: git
   repo: 
     github: git@github.com:Direct-A/Direct-A.github.io.git
-  branch: gh-pages
+  branch: master
 
 # Configration for local search
 search:
