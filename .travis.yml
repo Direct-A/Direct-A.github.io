@@ -4,6 +4,10 @@ language: node_js
 node_js:
   - lts/*
 
+branches:
+  only:
+    - resource # 触发持续集成的分支
+
 cache:
   directories:
   - node_modules
@@ -26,10 +30,6 @@ script:
 #   - git add .
 #   - git commit -m "Travis CI Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
 #   - git push -f "https://${GH_TOKEN}@${GH_REPO}" master:gh-pages
-
-# branches:
-#   only:
-#     - master # 触发持续集成的分支
 
 # env:
 #   global:
