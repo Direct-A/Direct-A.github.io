@@ -41,7 +41,7 @@ deploy:
   github-token: ${GH_TOKEN}
   keep-history: true
   on:
-    branch: master
+    branch: resource
   local-dir: public
 
 # notifications:
