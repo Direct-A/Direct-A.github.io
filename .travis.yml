@@ -35,13 +35,15 @@ script:
 #   global:
 #     - GH_REF: github.com/xininn/xinkezhan.git # 就是你github上存放静态博客最终文件的仓库地址末尾加上.git
 
+# TODO: find why: 
+#       Skipping a deployment with the pages provider because this branch is not permitted: resource
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: ${GH_TOKEN}
   keep-history: true
   on:
-    branch: resource
+    branch: master
   local-dir: public
 
 # notifications:
