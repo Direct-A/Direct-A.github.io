@@ -20,6 +20,6 @@ jobs:
         node-version: 12.16.1
     - run: npm -v
 
-    - name: Hexo Action
-      uses: sma11black/hexo-action@v1.0.1
-        with: 
+    # - name: Hexo Action
+    #   uses: sma11black/hexo-action@v1.0.1
+    #     with: 
