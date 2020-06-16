@@ -11,15 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Get codes
+      uses: actions/checkout@v2
 
     - name: Use Node.js v12.16.1
       uses: actions/setup-node@v1
       with:
         node-version: 12.16.1
-    - run: node -v
-    - run: npm -v
+      run: node -v
+      run: npm -v
+
+    - name: Install dependencies
+      run: |
+        npm install hexo-cli hexo-server hexo-renderer-markdown-it hexo-renderer-stylus hexo-symbols-count-time hexo-wordcount -g
+        npm install
 
     # - name: Hexo Action
     #   uses: sma11black/hexo-action@v1.0.1
     #     with: 
+    #       deploy_key: ${{ secrets.DEPLOY_KEY }}
+    #       user_name: Direct-A
+    #       user_email: songyicheng0@gmail.com
+    #       commit_msg: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by Git Action'
+
+    # - name: Get the output
+    #   run: |
+    #     echo "${{ steps.deploy.outputs.notify }}"
