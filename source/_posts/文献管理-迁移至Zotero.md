@@ -103,6 +103,6 @@ choco install zotero
 {% asset_img Snipaste_2020-06-16_11-33-19.png icon changes %}
 {% asset_img Snipaste_2020-06-16_11-34-26.png files in onedrive %}
 
-## Endnote 库导入 Zotero
+### Endnote 库导入 Zotero
 
 关于这个有[官方文档](https://www.zotero.org/support/zh/kb/importing_records_from_endnote)我就不写了😁

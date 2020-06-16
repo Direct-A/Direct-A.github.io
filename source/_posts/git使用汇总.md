@@ -3,7 +3,7 @@ layout: post
 title: 【未完待续】git使用汇总
 subtitle: how to git
 author: Direct-A
-date: YYYY-MM-DD
+date: 2020-06-16
 toc: true
 top: false
 cover: false

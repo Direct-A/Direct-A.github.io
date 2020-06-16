@@ -26,7 +26,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install hexo-cli hexo-server hexo-renderer-markdown-it hexo-renderer-stylus hexo-symbols-count-time hexo-wordcount -g
+        npm install hexo-cli hexo-server hexo-renderer-markdown-it hexo-renderer-stylus hexo-symbols-count-time hexo-wordcount markdown-it-container markdown-it-emoji markdown-it-task-lists -g
         npm install
         npm audit fix
 
