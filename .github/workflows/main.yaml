@@ -32,11 +32,11 @@ jobs:
 
     - name: Hexo Action
       uses: sma11black/hexo-action@v1.0.1
-        with: 
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
-          user_name: Direct-A
-          user_email: songyicheng0@gmail.com
-          commit_msg: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by Git Action'
+      with: 
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        user_name: Direct-A
+        user_email: songyicheng0@gmail.com
+        commit_msg: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by Git Action'
 
     - name: Get the output
       run: |
