@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: get codes
     - uses: actions/checkout@v2
 
     - name: Use Node.js v12.16.1
       uses: actions/setup-node@v1
       with:
         node-version: 12.16.1
+    - run: node -v
     - run: npm -v
 
     # - name: Hexo Action
