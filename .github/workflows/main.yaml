@@ -21,22 +21,23 @@ jobs:
     
     - name: Check varsion
       run: |
-        node -v
-        npm -v
+        echo node version: $(node -v)
+        echo npm version: $(npm -v)
 
     - name: Install dependencies
       run: |
         npm install hexo-cli hexo-server hexo-renderer-markdown-it hexo-renderer-stylus hexo-symbols-count-time hexo-wordcount -g
         npm install
+        npm audit fix
 
-    # - name: Hexo Action
-    #   uses: sma11black/hexo-action@v1.0.1
-    #     with: 
-    #       deploy_key: ${{ secrets.DEPLOY_KEY }}
-    #       user_name: Direct-A
-    #       user_email: songyicheng0@gmail.com
-    #       commit_msg: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by Git Action'
+    - name: Hexo Action
+      uses: sma11black/hexo-action@v1.0.1
+        with: 
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          user_name: Direct-A
+          user_email: songyicheng0@gmail.com
+          commit_msg: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by Git Action'
 
-    # - name: Get the output
-    #   run: |
-    #     echo "${{ steps.deploy.outputs.notify }}"
+    - name: Get the output
+      run: |
+        echo "${{ steps.deploy.outputs.notify }}"
