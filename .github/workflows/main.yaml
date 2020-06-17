@@ -29,6 +29,10 @@ jobs:
         npm install hexo --save
         npm audit fix
 
+    - name: Update submodule
+      run: |
+        git submodule update
+
     - name: Hexo Action
       uses: sma11black/hexo-action@v1.0.1
       with: 
@@ -40,3 +44,6 @@ jobs:
     - name: Get the output
       run: |
         echo "${{ steps.deploy.outputs.notify }}"
+
+# TODO: 就是不部署，为啥？？？
+      # origin/HEAD origin/master ???
