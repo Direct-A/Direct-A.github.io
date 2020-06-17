@@ -3,7 +3,7 @@ layout: post
 title: "Insulin-like growth factor i (igf-1) in older adults: a review"
 subtitle: article
 author: Direct-A
-date: YYYY-MM-DD
+date: 2020-04-26
 toc: true
 top: false
 cover: false
