@@ -104,7 +104,7 @@ deploy:
   repo: 
     github: git@github.com:Direct-A/Direct-A.github.io.git
   branch: master
-  message: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by syc-surface-pro5'
+  message: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}}'
 
 
 # Configration for local search

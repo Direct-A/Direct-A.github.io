@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ resource ]
 
+env:
+  TZ: Asia/Shanghai
+
 jobs:
   check-build-deploy:
     runs-on: ubuntu-latest
@@ -18,12 +21,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.18.2
-    
-    - name: Set timezone
-      run: |
-        sudo timedatectl set-timezone Asia/Shanghai
-        systemctl restart systemd-timedated
-        timedatectl
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Check varsion
       run: |
@@ -33,22 +36,25 @@ jobs:
     - name: Install dependencies
       run: |
         npm install hexo-cli -g
-        npm install hexo -save
         npm install
-        npm audit fix
 
     - name: Update submodule
       run: |
+        git submodule init
         git submodule update
 
-    - name: Hexo Action
-      uses: sma11black/hexo-action@v1.0.1
-      with: 
-        deploy_key: ${{ secrets.DEPLOY_KEY }}
-        user_name: Direct-A
-        user_email: songyicheng0@gmail.com
-        commit_msg: 'Updated: {{now("YYYY-MM-DD HH:mm:ss")}} by Git Action'
-
-    - name: Get the output
+    - name: Deploy
+      env:
+        SSH_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
-        echo "${{ steps.deploy.outputs.notify }}"
+        mkdir -p ~/.ssh/
+        echo "$SSH_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+        git config --global user.name 'GitAction'
+        git config --global user.email 'action@github.com'
+
+        hexo clean
+        hexo generate
+        hexo deploy
