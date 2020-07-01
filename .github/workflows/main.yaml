@@ -14,10 +14,10 @@ jobs:
     - name: Get codes
       uses: actions/checkout@v2
 
-    - name: Use Node.js v12.16.1
+    - name: Use Node.js v14.5.0
       uses: actions/setup-node@v1
       with:
-        node-version: 12.16.1
+        node-version: 14.5.0
     
     - name: Check varsion
       run: |
@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm install hexo-cli -g
-        npm install
+        npm install hexo -save
         npm audit fix
 
     - name: Update submodule
