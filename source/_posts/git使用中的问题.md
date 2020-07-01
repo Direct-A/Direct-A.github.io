@@ -59,15 +59,21 @@ Host github.com
 # Problem
 
 ``` shell
-ssh
+ssh: connect to host github.com port 22: Connection timed out
+fatal: Could not read from remote repository.
 ```
+`https`开头的链接克隆不报错，一旦换成`ssh`就出问题
 
 # Solution
 
 给`ssh`加代理
 
 ``` config
-
+# windows
+ProxyCommand connect -S 127.0.0.1:1080 -a none %h %p
+# linux
+Host *
+  ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 ```
 
 # Problem

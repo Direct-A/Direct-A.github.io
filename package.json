@@ -12,6 +12,8 @@
     "version": "4.2.1"
   },
   "dependencies": {
+    "column": "0.0.2",
+    "filename": "^0.5.0",
     "hexo": "^4.2.1",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
@@ -26,6 +28,7 @@
     "hexo-server": "^1.0.0",
     "hexo-symbols-count-time": "^0.7.1",
     "hexo-wordcount": "^6.0.1",
+    "lineno": "^0.1.0",
     "markdown-it-container": "^2.0.0",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-task-lists": "^2.1.1"

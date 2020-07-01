@@ -14,11 +14,17 @@ jobs:
     - name: Get codes
       uses: actions/checkout@v2
 
-    - name: Use Node.js v14.5.0
+    - name: Use Node.js v12.18.2
       uses: actions/setup-node@v1
       with:
-        node-version: 14.5.0
+        node-version: 12.18.2
     
+    - name: Set timezone
+      run: |
+        sudo timedatectl set-timezone Asia/Shanghai
+        systemctl restart systemd-timedated
+        timedatectl
+
     - name: Check varsion
       run: |
         echo node version: $(node -v)
@@ -28,6 +34,7 @@ jobs:
       run: |
         npm install hexo-cli -g
         npm install hexo -save
+        npm install
         npm audit fix
 
     - name: Update submodule
