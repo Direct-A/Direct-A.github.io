@@ -26,7 +26,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install hexo --save
+        npm install hexo-cli -g
+        npm install
         npm audit fix
 
     - name: Update submodule
@@ -44,6 +45,3 @@ jobs:
     - name: Get the output
       run: |
         echo "${{ steps.deploy.outputs.notify }}"
-
-# TODO: 就是不部署，为啥？？？
-      # origin/HEAD origin/master ???

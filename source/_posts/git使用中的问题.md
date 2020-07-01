@@ -55,3 +55,37 @@ Host github.com
 ```
 
 问题解决。
+
+# Problem
+
+``` shell
+ssh
+```
+
+# Solution
+
+给`ssh`加代理
+
+``` config
+
+```
+
+# Problem
+
+``` shell
+git submodule add https://github.com/repo.git
+# fatal: unable to access 'https://github.com/repo.git/': gnutls_handshake() failed: Error in the pull function.
+```
+
+正常克隆仓库都可以使用，但是就在这没法用。
+
+# Solution
+
+自己粗心大意，把`.gitconfig`的代理设置出错了，`http/https`都走`socks5`了。
+
+``` config
+git config --global http.proxy http://127.0.0.1:1080
+git config --global https.proxy http://127.0.0.1:1080
+```
+
+problem solved
