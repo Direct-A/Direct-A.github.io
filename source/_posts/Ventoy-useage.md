@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 全能多系统启动 U 盘制作工具——Ventoy
-subtitle: subtitle
+subtitle: useage of Ventoy
 author: Direct-A
-date: YYYY-MM-DD
+date: 2020-07-14
 toc: true
 top: false
 cover: false
