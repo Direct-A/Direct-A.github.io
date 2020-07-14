@@ -25,7 +25,7 @@ description:
 
 <!-- more -->
 
-* [markdown for zotero](http://www.github.com/fei081/markdownhere4zotero)
+* [markdown for zotero](http://www.github.com/fei0810/markdownhere4zotero)
 * [better bibtex](http://www.github.com/retorquere/zotero-better-bibtex)
 * [scihub](http://www.github.com/ethanwillis/zotero-scihub)
 * [shortdoi](http://www.github.com/bwiernik/zotero-shortdoi)
