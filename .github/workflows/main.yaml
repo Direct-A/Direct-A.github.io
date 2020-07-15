@@ -38,10 +38,14 @@ jobs:
         npm install hexo-cli -g
         npm install
 
+    # FIXME: git submodule update error:
+    # remote error: upload-pack: not our ref 
+    # The remote end hung up unexpectedly
     - name: Update submodule
       run: |
         git submodule init
-        git submodule update
+        cd themes/next
+        git fetch
 
     - name: Deploy
       env:
