@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Courier New OS:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"direct-a.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#CCC","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="a blog as a log">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Direct-A">
+<meta property="og:url" content="http://direct-a.github.io/">
+<meta property="og:site_name" content="Direct-A">
+<meta property="og:description" content="a blog as a log">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Direct-A">
+<meta property="article:tag" content="Direct-A">
+<meta property="article:tag" content=" Song Yicheng">
+<meta property="article:tag" content=" sYc">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://direct-a.github.io/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Direct-A</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Direct-A</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Direct-A"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Direct-A</p>
+  <div class="site-description" itemprop="description">a blog as a log</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Direct-A" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Direct-A" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:songyicheng0@gmail.com" title="E-Mail → mailto:songyicheng0@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content index posts-expand">
+          
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/programming/Ventoy-useage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/programming/Ventoy-useage/" class="post-title-link" itemprop="url">全能多系统启动 U 盘制作工具——Ventoy</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-14 00:00:00 / 修改时间：22:52:25" itemprop="dateCreated datePublished" datetime="2020-07-14T00:00:00+08:00">2020-07-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>564</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最近重装系统，需要安装双系统，因此需要制作两个启动盘。不巧的是我在装双系统过程中，卡住了，只能成功引导进一个系统，所以我只能重复制作系统盘😖，真是苦了我可怜的 32G U 盘了，来回格式化，做了系统盘还有大半的容量没有用上。</p>
+<p>正巧看到<a href="https://www.bilibili.com/video/BV1wz411i7Cg?from=search&amp;seid=4968162955944320486" target="_blank" rel="noopener">kiteAB</a>的视频，讲了这个工具。就找来用用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/programming/Ventoy-useage/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/lab/Zotero-plugins/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/lab/Zotero-plugins/" class="post-title-link" itemprop="url">【持续更新】Zotero 插件合集</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-10T00:00:00+08:00">2020-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/lab/" itemprop="url" rel="index"><span itemprop="name">lab</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>312</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>从过年到现在返校，时隔半年，终于重新打开我尘封放在学校自习室的电脑😂。开机之前我就已经做好了心理准备，由于半年未更新，估计有一大票的软件落后n个版本。为了一次性解决这些问题，我做出“重大决定”————重装系统，并且直接装成 Ubuntu+Windows 双系统。</p>
+<p>正是由于这次此重装，我一口气就在月初干掉了我40G的流量。同时我也发现由于没有整理，每次下好的安装包都随风而逝，重新寻找重新下载过于痛苦，并且我 Zotero 的插件俺的也不少，重新找劳神费力，所以我决定将他们收集在这里，方便以后查找。（当然并不希望是下一次系统重装）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/lab/Zotero-plugins/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/lab/Zotero%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/lab/Zotero%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">进一步配置Zotero</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-16T00:00:00+08:00">2020-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/lab/" itemprop="url" rel="index"><span itemprop="name">lab</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>Zotero + Sci-Hub</h1>
+<p>说到将 Zotero 和 Sci-Hub 结合就首先得从Zotero PDF retrieval谈起。从Zotero 5.0.56版本开始，Zotero迎来了PDF retrieval功能。<br>
+该功能会在你用Zotero Connector保存文献时，自动检查Unpaywall上是否有可供下载的免费文献。</p>
+<blockquote>
+<p>Unpaywall能免费下载文献，但你不要以为它和Sci-Hub一样是非法的。其实Unpaywall是个非盈利性合法组织，它整合了数千个Open Access期刊或数据库，将免费文献集中之后开放API，从而供其他平台使用。</p>
+</blockquote>
+<p>假如你在网页端保存的文献是Open Access的，Zotero Connector就会将PDF同文献条目一起抓取。对于已经在Zotero中却还没有PDF附件的文献条目，点击右键菜单中的Find Available PDF，即可下载文献。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/lab/Zotero%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/programming/git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/programming/git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">【持续更新】Git 使用中的问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-16T00:00:00+08:00">2020-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>945</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>Problem</h1>
+<img src="/programming/git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/image-20200525105854145.png" class="" title="problem1">
+<h1>Solution</h1>
+<p>我以为是我用的代理软件<code>clash</code>规则文件有问题（以前出过这事），但是连接<code>github</code>正常。</p>
+<p>几番查找，最终还是使用最为暴力的方法解决了。干脆就把验证关了，</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/programming/git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">【未完待续】Git使用汇总</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-16T00:00:00+08:00">2020-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>什么是 Git</h1>
+<p>git 是一个用于版本控制的软件，或者说</p>
+<blockquote>
+<p>是一个开源的分布式版本控制系统。</p>
+</blockquote>
+<p>它是 Linus Torvalds 为了管理 Linux 的内核代码开发而开发的软件。</p>
+<h1>Git 的原理</h1>
+<p>我认为，只有知道原理，才能更好的使用一个工具。所以我又了解了一下 git 的原理。</p>
+<p>在使用 git 进行版本控制时，可以将需要进行版本控制的文件分类为三个阶段，如下图。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/" class="post-title-link" itemprop="url">全能又开源的文献管理软件——Zotero</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-16T00:00:00+08:00">2020-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/lab/" itemprop="url" rel="index"><span itemprop="name">lab</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>为什么迁移到 Zotero</h1>
+<p>其实最开始我是使用 Endnote 的，在刚开始使用 Endnote 的时候我就因为它古怪的逻辑，而使用困难。它的使用逻辑与以往使用软件不同，用起来就很别扭。<br>
+不过好在有重庆大学万震老师的<a href="https://github.com/wanzhenchn/EndNote_Tutorial_Hand_by_Hand" target="_blank" rel="noopener">《手把手教你使用EndNote X9》</a>，以及网络上中多的相关教程，学起来并不难。但是就算是学会了 Endnote 的使用，它在使用的过程中，很多操作仍然让人感觉受限制，用的并不自由。<br>
+最大的缺陷就是，Endnote 真的就只是收纳文献，并把文献分类归档，方便查看和引用。多个库的管理思维，使得查阅文献有时还需要少量的翻找。窗口套窗口的软件界面，在多个库同时打开时一不小心就给整的一两个窗口挪不动了，虽然可以用重新自动排列窗口来解决。不直接显示笔记区域，在真正对文献进行阅读和归纳时显得异常的麻烦，并不能快捷的把对文献的想法自由的记录下来，当然你可以用其他的软件配合使用，但是两个软件之间如何做到交互就成了问题。作为一个文献管理软件，在文献管理时不能够很好的在多平台多终端之间款快速便捷的切换，也是一大痛点。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/research/%E6%88%90%E5%B9%B4%E4%BA%BA%E8%A1%80%E6%B8%85IGF-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/research/%E6%88%90%E5%B9%B4%E4%BA%BA%E8%A1%80%E6%B8%85IGF-1/" class="post-title-link" itemprop="url">Insulin-Like Growth Factor I (Igf-1) in Older Adults: A Review</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-26T00:00:00+08:00">2020-04-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/research/" itemprop="url" rel="index"><span itemprop="name">research</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>640</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>DOI:</strong> 10.15406/mojgg.2017.01.00034</p>
+<h1>原文翻译摘录</h1>
+<p>衰老是一个动态并进展的过程，其间包括形态学、功能、生化以及心理学的改变。<br>
+这些改变意味着对环境逐渐失去适应性，导致脆性增加，并有更高的患病风险。<br>
+在衰老过程中的内在变化，主要发生在身体组成的平衡、活动性、肌肉力量、柔韧性方面出现缺陷，也包括肌肉质量和骨量减少和内分泌异常，例如：<strong>IGF-1 血清水平降低</strong>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/research/%E6%88%90%E5%B9%B4%E4%BA%BA%E8%A1%80%E6%B8%85IGF-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/tips/%E7%BD%91%E9%A1%B5%E4%B9%A6%E7%AD%BE%E6%B8%85%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tips/%E7%BD%91%E9%A1%B5%E4%B9%A6%E7%AD%BE%E6%B8%85%E7%90%86/" class="post-title-link" itemprop="url">网页书签整理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-04 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-04T00:00:00+08:00">2020-04-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tips/" itemprop="url" rel="index"><span itemprop="name">tips</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>688</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>由于之前收藏页面的分类比较粗糙，并且还有收藏了就是看了的习惯。导致浏览器里堆积了众多的书签，收藏有大量的书签，虽然是个宝藏，但是缺乏整理，用起来也如同一坨 💩。大部分的书签在长久的收藏中，渐渐成为压箱底的 404 页面，而且也会在之后的使用中带来“惊喜”。</p>
+<p>今天我就要动手整理这将要成为垃圾的宝库。这里介绍我在这此整理中用到的一些工具。</p>
+<h1>Quick Bookmark Cleaner</h1>
+<p>chrome 浏览器插件。可以用来清理失效链接，空文件夹，此外还有很最重要的功能，<strong>重定向连接更新</strong>。</p>
+<p>对于很久没有打理的书签，有概率会出现链接原地址更改，重定向链接，这时候及时更新链接可以避免失去一个重要的书签。</p>
+<p>因此为了方便之后的操作，整理书签的第一步，可以进行链接重定向。<strong>不过在进行操作之前，首先备份当前的书签</strong>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tips/%E7%BD%91%E9%A1%B5%E4%B9%A6%E7%AD%BE%E6%B8%85%E7%90%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/programming/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/programming/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">Hexo博客搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-26T00:00:00+08:00">2020-03-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>之前的博客是基于 jekyll 搭建的，但是 jekyll 再本地的软件安装实在有些恼人，<s>我换电脑了，懒得再安了</s>，了解到 hexo 只需要安装 node.js ，并且之后的都是在 node.js 里添加 module ，我决定改使用 hexo。</p>
+<h1>Install hexo</h1>
+<p>在开始着手自己搭建 hexo 博客前，首先还是先看看官方的教程。这是搭建的第一步，同时也可以增加对 hexo 的了解。</p>
+<p><a href="https://hexo.io/docs/" target="_blank" rel="noopener">官方教程</a></p>
+<h1><code>_config.yml</code> 配置文件</h1>
+<p>对于 hexo 来说，配置文件主要存在于两个地方，</p>
+<ol>
+<li>主目录下的 <code>_config.yml</code>，后称<strong>站点配置文件</strong></li>
+<li>主目录/theme/主题名目录下的 <code>_config.yml</code>，后称<strong>主题配置文件</strong></li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/programming/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/lab/2019-08-18-%E7%94%B2%E5%9F%BA%E5%8C%96%E7%89%B9%E5%BC%82%E6%80%A7PCR%EF%BC%9A%E5%BC%95%E7%89%A9%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9B%9B%E6%AD%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/lab/2019-08-18-%E7%94%B2%E5%9F%BA%E5%8C%96%E7%89%B9%E5%BC%82%E6%80%A7PCR%EF%BC%9A%E5%BC%95%E7%89%A9%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9B%9B%E6%AD%A5/" class="post-title-link" itemprop="url">甲基化特异性PCR：引物设计的四步</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-18 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-18T00:00:00+08:00">2019-08-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/lab/" itemprop="url" rel="index"><span itemprop="name">lab</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>19k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>17 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>概述</h1>
+<p>甲基化特异性PCR方法仍是单一基因甲基化研究的选择之一。恰当的引物设计是获得可靠的PCR结果的先决条件。虽然有众多的文章阐述MSP引物设计的规则，但没有一个提供全面的解答。本文的目的在于阐述一个简洁明了，易于操作的引物设计流程。为了达到这一目标，我会提供丰富的启动序列检索工具、MSP引物设计软件，以及后续的计算机分析也会进行解析和呈现。一些优劣引物对比的例子也会展示出来作为指导。最后要说的是，本文引物设计是根据建议的流程来展现的。本文旨在为对单基因甲基化研究感兴趣的研究者在成功设计引物上给出建议。</p>
+<p><strong>关键词</strong>：甲基化特异性PCR、引物设计、数据库、MSP引物设计软件、转录起始位点</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/lab/2019-08-18-%E7%94%B2%E5%9F%BA%E5%8C%96%E7%89%B9%E5%BC%82%E6%80%A7PCR%EF%BC%9A%E5%BC%95%E7%89%A9%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9B%9B%E6%AD%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Direct-A</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">38k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">35 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="pjax">
+  
+
+  
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"live2d-widget-model-haru-02"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}});</script></body>
+</html>

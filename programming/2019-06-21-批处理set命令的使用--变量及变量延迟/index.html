@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Courier New OS:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Ubuntu Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"direct-a.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#CCC","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="在批处理文件中，set命令用于设置变量，为变量赋值， 123set [variable&#x3D;[&quot;string&quot;]]set &#x2F;p [variable&#x3D;[&quot;string&quot;]]set &#x2F;a expression set &#x2F;p [variable&#x3D;[&quot;string&quot;]] 使用&#x2F;p开关在命令行中创建交互，使输入的字符段对变量赋值 1set &#x2F;p a&#x3D;&quot;请输入变量a&quot; set &#x2F;a expre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批处理Set命令的使用--变量及变量延迟">
+<meta property="og:url" content="http://direct-a.github.io/programming/2019-06-21-%E6%89%B9%E5%A4%84%E7%90%86set%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8--%E5%8F%98%E9%87%8F%E5%8F%8A%E5%8F%98%E9%87%8F%E5%BB%B6%E8%BF%9F/">
+<meta property="og:site_name" content="Direct-A">
+<meta property="og:description" content="在批处理文件中，set命令用于设置变量，为变量赋值， 123set [variable&#x3D;[&quot;string&quot;]]set &#x2F;p [variable&#x3D;[&quot;string&quot;]]set &#x2F;a expression set &#x2F;p [variable&#x3D;[&quot;string&quot;]] 使用&#x2F;p开关在命令行中创建交互，使输入的字符段对变量赋值 1set &#x2F;p a&#x3D;&quot;请输入变量a&quot; set &#x2F;a expre">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://direct-a.github.io/images/delayed-expansion.png">
+<meta property="article:published_time" content="2019-06-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-14T14:52:25.610Z">
+<meta property="article:author" content="Direct-A">
+<meta property="article:tag" content="批处理文件">
+<meta property="article:tag" content="batch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://direct-a.github.io/images/delayed-expansion.png">
+
+<link rel="canonical" href="http://direct-a.github.io/programming/2019-06-21-%E6%89%B9%E5%A4%84%E7%90%86set%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8--%E5%8F%98%E9%87%8F%E5%8F%8A%E5%8F%98%E9%87%8F%E5%BB%B6%E8%BF%9F/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>批处理Set命令的使用--变量及变量延迟 | Direct-A</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Direct-A</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">set &#x2F;p [variable&#x3D;[&quot;string&quot;]]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">set &#x2F;a expression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">set字符串处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串替换"><span class="nav-number">3.1.</span> <span class="nav-text">字符串替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串截取"><span class="nav-number">3.2.</span> <span class="nav-text">字符串截取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">扩展变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与-i相关的变量"><span class="nav-number">4.1.</span> <span class="nav-text">与%i相关的变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行参数"><span class="nav-number">4.2.</span> <span class="nav-text">命令行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统变量"><span class="nav-number">4.3.</span> <span class="nav-text">系统变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">变量延迟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">5.0.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Direct-A"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Direct-A</p>
+  <div class="site-description" itemprop="description">a blog as a log</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Direct-A" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Direct-A" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:songyicheng0@gmail.com" title="E-Mail → mailto:songyicheng0@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://direct-a.github.io/programming/2019-06-21-%E6%89%B9%E5%A4%84%E7%90%86set%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8--%E5%8F%98%E9%87%8F%E5%8F%8A%E5%8F%98%E9%87%8F%E5%BB%B6%E8%BF%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Direct-A">
+      <meta itemprop="description" content="a blog as a log">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Direct-A">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          批处理Set命令的使用--变量及变量延迟
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-06-21 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-21T00:00:00+08:00">2019-06-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-14 22:52:25" itemprop="dateModified" datetime="2020-07-14T22:52:25+08:00">2020-07-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在批处理文件中，<code>set</code>命令用于设置变量，为变量赋值，</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> [variable=["string"]]</span><br><span class="line"><span class="built_in">set</span> /p [variable=["string"]]</span><br><span class="line"><span class="built_in">set</span> /a expression</span><br></pre></td></tr></table></figure>
+<h1><code>set /p [variable=[&quot;string&quot;]]</code></h1>
+<p>使用<code>/p</code>开关在命令行中创建交互，使输入的字符段对变量赋值</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> /p a="请输入变量a"</span><br></pre></td></tr></table></figure>
+<h1><code>set /a expression</code></h1>
+<p>使用<code>/a</code>开关允许<code>set</code>在赋值的同时进行简单的运算</p>
+<p>在其中可使用的运算符包括</p>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">优先级依次降低</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>( ) </code></td>
+<td style="text-align:center">分组</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>! ~ -</code></td>
+<td style="text-align:center">一元运算符</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>* / %</code></td>
+<td style="text-align:center">算数运算符</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:center">算术运算符</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;&lt; &gt;&gt;</code></td>
+<td style="text-align:center">二进制逻辑移位</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&amp;</code></td>
+<td style="text-align:center">与</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:center">非</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>|</code></td>
+<td style="text-align:center">或</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>= *= /= %= += -=</code></td>
+<td style="text-align:center">算数赋值</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&amp;= ^= |= &lt;&lt;= &gt;&gt;=</code></td>
+<td style="text-align:center">二进制运算赋值</td>
+<td style="text-align:center">9</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>,</code></td>
+<td style="text-align:center">分隔符</td>
+<td style="text-align:center">10</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> a=<span class="number">1</span></span><br><span class="line"><span class="built_in">set</span> b=<span class="number">2</span></span><br><span class="line"><span class="built_in">set</span> /a c=<span class="variable">%a%</span>+<span class="variable">%b%</span></span><br></pre></td></tr></table></figure>
+<h1>set字符串处理</h1>
+<h2 id="字符串替换"><a class="header-anchor" href="#字符串替换">¶</a>字符串替换</h2>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">%srting:str1=str2%</span></span><br><span class="line"><span class="comment">rem 字符替换</span></span><br><span class="line"><span class="variable">%srting:str1=%</span></span><br><span class="line"><span class="comment">rem 字符删除</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串截取"><a class="header-anchor" href="#字符串截取">¶</a>字符串截取</h2>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">%string:~[m,[n]]%</span></span><br><span class="line">%string:~[-<span class="number">9</span>, <span class="number">4</span>]%</span><br><span class="line"><span class="comment">rem 从倒数第九位开始截取四位</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>m</code></td>
+<td>偏移量</td>
+<td>默认为0</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>截取长度</td>
+<td>默认为全部</td>
+</tr>
+</tbody>
+</table>
+<h1>扩展变量</h1>
+<h2 id="与-i相关的变量"><a class="header-anchor" href="#与-i相关的变量">¶</a>与<code>%i</code>相关的变量</h2>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th><code>c:\programfile\test.bat</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%0</code></td>
+<td><code>&quot;c:\programfile\test.bat&quot;</code></td>
+</tr>
+<tr>
+<td><code>%cd%</code></td>
+<td><code>c:\programfile</code></td>
+</tr>
+<tr>
+<td><code>%~0</code></td>
+<td><code>test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~f0</code></td>
+<td><code>c:\programfile\test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~d0</code></td>
+<td><code>c:\</code></td>
+</tr>
+<tr>
+<td><code>%~p0</code></td>
+<td><code>.\programfile\test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~dp0</code></td>
+<td><code>c:\programfile\</code></td>
+</tr>
+<tr>
+<td><code>%~n0</code></td>
+<td><code>test</code></td>
+</tr>
+<tr>
+<td><code>%~x0</code></td>
+<td><code>.bat</code></td>
+</tr>
+<tr>
+<td><code>%~nx0</code></td>
+<td><code>test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~s0</code></td>
+<td>路径缩写</td>
+</tr>
+<tr>
+<td><code>%~a0</code></td>
+<td>文件属性</td>
+</tr>
+<tr>
+<td><code>%~t0</code></td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td><code>%~z0</code></td>
+<td>文件大小</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令行参数"><a class="header-anchor" href="#命令行参数">¶</a>命令行参数</h2>
+<p><code>%0</code>表示执行文件<code>.bat</code>本身</p>
+<p><code>%1 %2 %3 ...</code>表示传入参数1，2，3，…</p>
+<h2 id="系统变量"><a class="header-anchor" href="#系统变量">¶</a>系统变量</h2>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th></th>
+<th>解释</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%CD%</td>
+<td>本地</td>
+<td>返回当前目录字符串</td>
+<td><code>C:Documents and SettingsAdministrator桌面</code></td>
+</tr>
+<tr>
+<td>%OS%</td>
+<td>系统</td>
+<td>返回操作系统名称</td>
+<td>Windows 2000 显示其操作系统为 Windows_NT</td>
+</tr>
+<tr>
+<td>%DATE%</td>
+<td>系统</td>
+<td>返回当前日期</td>
+<td><code>YYYY/MM/DD WWW</code></td>
+</tr>
+<tr>
+<td>%TIME%</td>
+<td>系统</td>
+<td>返回当前时间</td>
+<td><code>HH:MM:SS.SS</code></td>
+</tr>
+<tr>
+<td>%PATH%</td>
+<td>系统</td>
+<td>指定可执行文件的搜索路径</td>
+<td></td>
+</tr>
+<tr>
+<td>%PATHEXT%</td>
+<td>系统</td>
+<td>返回操作系统</td>
+<td>认为可执行的文件扩展名的列表</td>
+</tr>
+<tr>
+<td>%HOMEPATH%</td>
+<td>系统</td>
+<td>返回用户主目录的完整路径基于主目录值而设置用户主目录是在“本地用户和组”中指定的</td>
+<td><code>Documents and SettingsAdministrator</code></td>
+</tr>
+<tr>
+<td>%USERPROFILE%</td>
+<td>本地</td>
+<td>返回当前用户的配置文件的位置</td>
+<td><code>C:Documents and SettingsAdministrator</code></td>
+</tr>
+<tr>
+<td>%WINDIR%</td>
+<td>系统</td>
+<td>返回操作系统目录的位置</td>
+<td><code>C:WINDOWS</code></td>
+</tr>
+<tr>
+<td>%RANDOM%</td>
+<td>系统</td>
+<td>返回 0 到 32767 之间的任意十进制数字</td>
+<td><code>30580</code></td>
+</tr>
+<tr>
+<td>%ERRORLEVEL%</td>
+<td>系统</td>
+<td>返回上一条命令的错误代码通常用非零值表示错误</td>
+<td></td>
+</tr>
+<tr>
+<td>%COMPUTERNAME%</td>
+<td>系统</td>
+<td>返回计算机的名称</td>
+<td><code>xxxx</code></td>
+</tr>
+<tr>
+<td>%USERNAME%</td>
+<td>本地</td>
+<td>返回当前登录的用户的名称</td>
+<td><code>Administrator</code></td>
+</tr>
+<tr>
+<td>%SYSTEMDRIVE%</td>
+<td>系统</td>
+<td>返回包含 Windows server operating system 根目录(即系统根目录<code>$P$G</code>的驱动器</td>
+<td><code>C:</code></td>
+</tr>
+<tr>
+<td>%SYSTEMROOT%</td>
+<td>系统</td>
+<td>返回 Windows server operating system 根目录的位置</td>
+<td><code>C:WINDOWS</code></td>
+</tr>
+<tr>
+<td>%HOMEDRIVE%</td>
+<td>系统</td>
+<td>返回连接到用户主目录的本地工作站驱动器号基于主目录值而设置用户主目录是在“本地用户和组”中指定的</td>
+<td><code>C:</code></td>
+</tr>
+<tr>
+<td>%HOMESHARE%</td>
+<td>系统</td>
+<td>返回用户的共享主目录的网络路径基于主目录值而设置用户主目录是在“本地用户和组”中指定的</td>
+<td></td>
+</tr>
+<tr>
+<td>%NUMBER_OF_PROCESSORS%</td>
+<td>系统</td>
+<td>指定安装在计算机上的处理器的数目</td>
+<td></td>
+</tr>
+<tr>
+<td>%PROCESSOR_LEVEL%</td>
+<td>系统</td>
+<td>返回计算机上安装的处理器的型号</td>
+<td><code>15</code></td>
+</tr>
+<tr>
+<td>%APPDATA%</td>
+<td>本地</td>
+<td>返回默认情况下应用程序存储数据的位置</td>
+<td><code>C:Documents and SettingsAdministratorApplication Data</code></td>
+</tr>
+<tr>
+<td>%ALLUSERSPROFILE%</td>
+<td>本地</td>
+<td>返回“所有用户”配置文件的位置</td>
+<td><code>C:Documents and SettingsAll Users</code></td>
+</tr>
+<tr>
+<td>%CMDCMDLINE%</td>
+<td>本地</td>
+<td>返回用来启动当前的 Cmd.exe 的准确命令行</td>
+<td><code>cmd /c &quot;&quot;C:Documents and SettingsAdministrator桌面a.bat&quot; &quot;</code></td>
+</tr>
+<tr>
+<td>%CMDEXTVERSION%</td>
+<td>系统</td>
+<td>返回当前的“命令处理程序扩展”的版本号</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>%COMSPEC%</td>
+<td>系统</td>
+<td>返回命令行解释器可执行程序的准确路径</td>
+<td><code>C:WINDOWSsystem32cmd.exe</code></td>
+</tr>
+<tr>
+<td>%LOGONSERVER%</td>
+<td>本地</td>
+<td>返回验证当前登录会话的域控制器的名称</td>
+<td><code>\ xxxx</code></td>
+</tr>
+<tr>
+<td>%PROCESSOR_ARCHITECTURE%</td>
+<td>系统</td>
+<td>返回处理器的芯片体系结构</td>
+<td>值： x86 或 IA64 基于Itanium x86</td>
+</tr>
+<tr>
+<td>%PROCESSOR_IDENTFIER%</td>
+<td>系统</td>
+<td>返回处理器说明</td>
+<td></td>
+</tr>
+<tr>
+<td>%PROCESSOR_REVISION%</td>
+<td>系统</td>
+<td>返回处理器的版本号</td>
+<td><code>4f02</code></td>
+</tr>
+<tr>
+<td>%PROMPT%</td>
+<td>本地</td>
+<td>返回当前解释程序的命令提示符设置</td>
+<td><code>$P$G</code></td>
+</tr>
+<tr>
+<td>%TEMP% %TMP%</td>
+<td></td>
+<td>(temp)<code>C:DOCUME~1ADMINI~1LOCALS~1Temp</code>和(tmp)<code>C:DOCUME~1ADMINI~1LOCALS~1Temp</code>系统和用户返回对当前登录用户可用的应用程序所使用的默认临时目录</td>
+<td>有些应用程序需要 TEMP，而其他应用程序则需要 TMP</td>
+</tr>
+<tr>
+<td>%USERDOMAIN%</td>
+<td>本地</td>
+<td>返回包含用户帐户的域的名称</td>
+<td><code>xxxx</code></td>
+</tr>
+</tbody>
+</table>
+<h1>变量延迟</h1>
+<p>在平时使用<code>for</code>的时候，会有需要产生能够自加的变量，然后根据变量的值进行相应的操作。在这种时候就需要用到变量延迟。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> /f "delims= tokens=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,*" <span class="variable">%%i</span> <span class="keyword">in</span> ('<span class="built_in">dir</span> /a-d /o-d /tc') <span class="keyword">do</span> (</span><br><span class="line">  <span class="built_in">set</span> /a n+=<span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> <span class="variable">%n%</span>==<span class="number">2</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>上述的代码就如我们所臆想的写了出来，<strong>但是</strong>不能实现我们所想的效果</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setlocal</span> enabledelayedexpansion</span><br><span class="line"><span class="keyword">for</span> /f "delims= tokens=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,*" <span class="variable">%%i</span> <span class="keyword">in</span> ('<span class="built_in">dir</span> /a-d /o-d /tc') <span class="keyword">do</span> (</span><br><span class="line">  <span class="built_in">set</span> /a n+=<span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> <span class="variable">!n!</span>==<span class="number">2</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line">)</span><br><span class="line"><span class="built_in">endlocal</span></span><br></pre></td></tr></table></figure>
+<p>当开启变量延迟后，预期效果得以实现。</p>
+<p>在这里<code>!!</code>内部的变量，在执行下一步命令前才会执行赋值命令，进而可以动态的感知变量的变化。而<code>%%</code>内部的变量，直接在赋值语句执行时就进行赋值，<strong>但是</strong>只有在下一条命令执行时才得以显现（可以理解为利用 之前的数据 作为 目前行 执行的前提，目前行 执行的结果在储存进之前的数据中去）。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> var1=<span class="number">2</span></span><br><span class="line"><span class="built_in">set</span> var1=<span class="number">5</span> &amp; <span class="built_in">echo</span> <span class="variable">%var1%</span></span><br><span class="line"><span class="comment">rem 2</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码可以理解成这样</p>
+<p><img src="/images/delayed-expansion.png" alt="未开启变量延迟"></p>
+<p>运用这个规律可以在不使用临时变量的情况下，进行变量间的数值交换</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> var1=a</span><br><span class="line"><span class="built_in">set</span> var2=b</span><br><span class="line"><span class="built_in">set</span> var1=<span class="variable">%var2%</span> &amp; <span class="built_in">set</span> var2=<span class="variable">%var1%</span></span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a class="header-anchor" href="#注意">¶</a>注意</h3>
+<ol>
+<li>批处理文件是一行一行的一次执行的</li>
+<li><code>()</code>内的命令将被视作在同一行内</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6/" rel="tag"><i class="fa fa-tag"></i> 批处理文件</a>
+              <a href="/tags/batch/" rel="tag"><i class="fa fa-tag"></i> batch</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/programming/2019-06-16-%E6%89%B9%E5%A4%84%E7%90%86for%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8--%E5%88%9B%E5%BB%BApost/" rel="prev" title="批处理For命令的使用--创建Post">
+      <i class="fa fa-chevron-left"></i> 批处理For命令的使用--创建Post
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/programming/2019-07-06-Ruby-jekyll%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="next" title="Ruby + Jekyll 本地环境搭建">
+      Ruby + Jekyll 本地环境搭建 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Direct-A</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">38k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">35 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="pjax">
+  
+
+  
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"live2d-widget-model-haru-02"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}});</script></body>
+</html>

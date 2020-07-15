@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>个人博客创建！</title>
+    <url>/todolist/2019-06-12-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%EF%BC%81/</url>
+    <content><![CDATA[<h1>2019-06-12</h1>
+<ul>
+<li>[x] 个人博客创建</li>
+<li>[x] 学习python</li>
+<li>[ ] 学习R</li>
+<li>[ ] 学习生物信息学</li>
+</ul>
+]]></content>
+      <categories>
+        <category>todolist</category>
+      </categories>
+      <tags>
+        <tag>TODOLIST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>批处理For命令的使用--创建Post</title>
+    <url>/programming/2019-06-16-%E6%89%B9%E5%A4%84%E7%90%86for%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8--%E5%88%9B%E5%BB%BApost/</url>
+    <content><![CDATA[<p>对于刚创建的博客，使用起来还不是很熟，<code>_post</code>里的<code>MarkDown</code>文件开头需要有 <code>tag、title、categroies、layout</code> 总是记不住格式和内容。今天就构思了个脚本，来解决这个苦恼。</p>
+<p>最近刚上手批处理文件，还是有很多不熟悉，最难懂也是最厉害的命令就是<code>for</code>命令，这次就记一下笔记。</p>
+<h1><code>for</code>命令</h1>
+<p><code>for</code>命令适用于遍历文件、文本内容，可以截取文件、文本，使用范围很广。</p>
+<h2 id="for命令的基本格式"><a class="header-anchor" href="#for命令的基本格式">¶</a><code>for</code>命令的基本格式</h2>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> [/d /f /l /r] ["options"] <span class="variable">%%i</span> <span class="keyword">in</span> (file) <span class="keyword">do</span> (comminds)</span><br><span class="line"><span class="keyword">for</span> [/d /f /l /r] ["options"] <span class="variable">%%i</span> <span class="keyword">in</span> ("string") <span class="keyword">do</span> (comminds)</span><br><span class="line"><span class="keyword">for</span> [/d /f /l /r] ["options"] <span class="variable">%%i</span> <span class="keyword">in</span> ('comminds') <span class="keyword">do</span> (comminds)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><code>for</code> 命令的作用是，将<code>file</code>、<code>string</code>或<code>comminds</code>中的内容按照<code>[&quot;options&quot;]</code>中的条件匹配并赋值给<code>%%i</code>然后执行<code>comminds</code></p>
+<h3 id="注意"><a class="header-anchor" href="#注意">¶</a>注意</h3>
+<ol>
+<li><code>for</code> <code>in</code>和<code>do</code>是基本元素，一个都不能少</li>
+<li><code>in</code>之后和<code>do</code>之前的括号不能缺少</li>
+<li><code>%%i</code>是形式参数，在后面的<code>do</code>中作为参数的起点</li>
+<li><code>in</code>之后的部分用<code>&quot;&quot;</code>引用的部分作为字符串遍历其内容</li>
+<li><code>in</code>之后的部分用<code>''</code>引用的部分作为命令遍历其执行结果</li>
+<li><code>in</code>之后的部分不引用的作为文件遍历其内容</li>
+</ol>
+<h2 id="FOR-D-variable-IN-set-DO-command-command-parameters"><a class="header-anchor" href="#FOR-D-variable-IN-set-DO-command-command-parameters">¶</a><code>FOR /D %%variable IN (set) DO command [command-parameters]</code></h2>
+<p>检索目录，不包括子目录，不包括文件</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /d <span class="variable">%%i</span> <span class="keyword">in</span> (c:\w*) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br></pre></td></tr></table></figure>
+<p>检索以<code>w</code>开头的目录</p>
+<h2 id="FOR-R-drive-path-variable-IN-set-DO-command-command-parameters"><a class="header-anchor" href="#FOR-R-drive-path-variable-IN-set-DO-command-command-parameters">¶</a><code>FOR /R [[drive:]path] %%variable IN (set) DO command [command-parameters]</code></h2>
+<p>递归检索目录，检索目录下所有的子目录</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /r c:\ <span class="variable">%%i</span> <span class="keyword">in</span> (*.exe) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br></pre></td></tr></table></figure>
+<p>检索目录下所有<code>.exe</code>文件</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /r c:\ <span class="variable">%%i</span> <span class="keyword">in</span> (boot.ini) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br></pre></td></tr></table></figure>
+<p>将枚举目录下所有子目录，因此改写为</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /r c:\ <span class="variable">%%i</span> <span class="keyword">in</span> (boot.ini) <span class="keyword">do</span> <span class="keyword">if</span> <span class="keyword">exit</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br></pre></td></tr></table></figure>
+<h3 id="注意-v2"><a class="header-anchor" href="#注意-v2">¶</a>注意</h3>
+<p>1.<code>/r</code><strong>不遍历</strong>隐藏文件</p>
+<h2 id="FOR-L-variable-IN-start-step-end-DO-command-command-parameters"><a class="header-anchor" href="#FOR-L-variable-IN-start-step-end-DO-command-command-parameters">¶</a><code>FOR /L %%variable IN (start,step,end) DO command [command-parameters]</code></h2>
+<p>创建数列，每个数字占一行</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /l <span class="variable">%%i</span> <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">1</span>,<span class="number">5</span>) <span class="keyword">do</span> <span class="built_in">start</span> <span class="built_in">cmd</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>打开五个命令提示符窗口</p>
+<h2 id="FOR-F-variable-IN-set-DO-command-command-parameters"><a class="header-anchor" href="#FOR-F-variable-IN-set-DO-command-command-parameters">¶</a><code>FOR /F %%variable IN (set) DO command [command-parameters]</code></h2>
+<p>用以提取和截取文本内容，可以处理和切割文本内容</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FOR</span> /F <span class="variable">%%v</span>ariable ["options"] <span class="keyword">IN</span> (files) <span class="keyword">DO</span> command [command-parameters]</span><br><span class="line"><span class="keyword">FOR</span> /F <span class="variable">%%v</span>ariable ["options"] <span class="keyword">IN</span> ("string") <span class="keyword">DO</span> command [command-parameters]</span><br><span class="line"><span class="keyword">FOR</span> /F <span class="variable">%%v</span>ariable ["options"] <span class="keyword">IN</span> ('commind') <span class="keyword">DO</span> command [command-parameters]</span><br></pre></td></tr></table></figure>
+<h3 id="options"><a class="header-anchor" href="#options">¶</a>options</h3>
+<ul>
+<li>delims</li>
+<li>tokens</li>
+<li>eol</li>
+<li>skip</li>
+<li>usebackq</li>
+</ul>
+<h4 id="delimas"><a class="header-anchor" href="#delimas">¶</a>delimas</h4>
+<p>指定分隔符，<strong>默认为空格和tab</strong>，指定后替代</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> c:\test\test.txt</span><br><span class="line"><span class="number">123</span>#<span class="number">456</span>#<span class="number">789</span>#<span class="number">101112</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=#" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>&quot;delims=&quot;</code>可将分隔符指定为空</li>
+</ol>
+<h4 id="tokens"><a class="header-anchor" href="#tokens">¶</a>tokens</h4>
+<p>指定提取字段位置</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> c:\test\test.txt</span><br><span class="line"><span class="number">123</span>#<span class="number">456</span>#<span class="number">789</span>#<span class="number">101112</span></span><br><span class="line"><span class="number">123</span>#<span class="number">456</span>#<span class="number">789</span>#<span class="number">101112</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=# tokens=<span class="number">3</span>" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line"><span class="number">789</span></span><br><span class="line"><span class="number">789</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=# tokens=<span class="number">1</span>,<span class="number">3</span>" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span> <span class="variable">%%j</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=# tokens=<span class="number">1</span>,<span class="number">3</span>,*" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span> <span class="variable">%%j</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=# tokens=<span class="number">1</span>,<span class="number">3</span>,*" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span> <span class="variable">%%j</span> <span class="variable">%%k</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span> <span class="number">101112</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span> <span class="number">101112</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=# tokens=<span class="number">1</span>,<span class="number">3</span>*" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span> <span class="variable">%%j</span> <span class="variable">%%k</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span> <span class="number">101112</span></span><br><span class="line"><span class="number">123</span> <span class="number">789</span> <span class="number">101112</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=# tokens=<span class="number">1</span>-<span class="number">4</span>" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span> <span class="variable">%%j</span> <span class="variable">%%k</span> <span class="variable">%%l</span></span><br><span class="line"><span class="number">123</span> <span class="number">456</span> <span class="number">789</span> <span class="number">101112</span></span><br><span class="line"><span class="number">123</span> <span class="number">456</span> <span class="number">789</span> <span class="number">101112</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>每行分隔的内容重新以空格分隔并输出</li>
+<li><code>tokens=1,3*</code>和<code>tokens=1,3,*</code>是等效的</li>
+</ol>
+<h4 id="eol"><a class="header-anchor" href="#eol">¶</a>eol</h4>
+<p>忽略指定标志起始的行</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> c:\test\test.txt</span><br><span class="line">#<span class="number">123</span>#<span class="number">456</span>#<span class="number">789</span>#<span class="number">101112</span></span><br><span class="line"><span class="number">0123</span>#<span class="number">456</span>#<span class="number">789</span>#<span class="number">101112</span></span><br><span class="line"><span class="keyword">for</span> /f "eol=# delims=# tokens=<span class="number">3</span>" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line"><span class="number">789</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>只能指定一个符号，多个就报错</li>
+<li>要指定多个需要命令嵌套</li>
+<li><code>&quot;eol=&quot;</code>可将字符集指定为空</li>
+</ol>
+<h4 id="skip"><a class="header-anchor" href="#skip">¶</a>skip</h4>
+<p>指定跳过行数</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> c:\test\test.txt</span><br><span class="line">#<span class="number">123</span>#<span class="number">456</span>#<span class="number">789</span>#<span class="number">101112</span></span><br><span class="line"><span class="number">0123</span>#<span class="number">456</span>#<span class="number">789</span>#<span class="number">101112</span></span><br><span class="line"><span class="keyword">for</span> /f "delims=# tokens=<span class="number">1</span> skip=<span class="number">1</span>" <span class="variable">%%i</span> <span class="keyword">in</span> (c:\test\test.txt) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line"><span class="number">0123</span></span><br></pre></td></tr></table></figure>
+<h4 id="usebackq"><a class="header-anchor" href="#usebackq">¶</a>usebackq</h4>
+<p>改变<code>``’’&quot;&quot;</code>的作用<br>
+<code><code>comminds</code></code>、<code>'string'</code>、<code>&quot;files&quot;</code></p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f "usebackq" <span class="variable">%%i</span> <span class="keyword">in</span> ("test <span class="number">1</span>.txt") <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line"><span class="keyword">for</span> /f "usebackq" <span class="variable">%%i</span> <span class="keyword">in</span> (`<span class="built_in">type</span> test.txt`) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line"><span class="keyword">for</span> /f "usebackq" <span class="variable">%%i</span> <span class="keyword">in</span> ('hello world!') <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br></pre></td></tr></table></figure>
+<p>就是 单引号-&gt;反引号，双引号-&gt;单引号，没引号-&gt;双引号</p>
+<ol>
+<li>用以应对文件名内有 空格 或 &amp; 的</li>
+<li>应对命令中有 &amp; 的</li>
+</ol>
+<hr>
+<p>一个例子：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">For</span> /f "delims=" <span class="variable">%%i</span> <span class="keyword">in</span> (<span class="number">1</span>.txt) <span class="keyword">do</span> (</span><br><span class="line">  <span class="built_in">Set</span> /a n+=<span class="number">1</span></span><br><span class="line">  <span class="keyword">If</span> <span class="variable">!n!</span>==<span class="number">2</span> <span class="built_in">Echo</span> <span class="variable">%%i</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>用以输出文件<code>1.txt</code>中的第二行</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>批处理文件</tag>
+        <tag>batch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>批处理Set命令的使用--变量及变量延迟</title>
+    <url>/programming/2019-06-21-%E6%89%B9%E5%A4%84%E7%90%86set%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8--%E5%8F%98%E9%87%8F%E5%8F%8A%E5%8F%98%E9%87%8F%E5%BB%B6%E8%BF%9F/</url>
+    <content><![CDATA[<p>在批处理文件中，<code>set</code>命令用于设置变量，为变量赋值，</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> [variable=["string"]]</span><br><span class="line"><span class="built_in">set</span> /p [variable=["string"]]</span><br><span class="line"><span class="built_in">set</span> /a expression</span><br></pre></td></tr></table></figure>
+<h1><code>set /p [variable=[&quot;string&quot;]]</code></h1>
+<p>使用<code>/p</code>开关在命令行中创建交互，使输入的字符段对变量赋值</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> /p a="请输入变量a"</span><br></pre></td></tr></table></figure>
+<h1><code>set /a expression</code></h1>
+<p>使用<code>/a</code>开关允许<code>set</code>在赋值的同时进行简单的运算</p>
+<p>在其中可使用的运算符包括</p>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">优先级依次降低</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>( ) </code></td>
+<td style="text-align:center">分组</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>! ~ -</code></td>
+<td style="text-align:center">一元运算符</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>* / %</code></td>
+<td style="text-align:center">算数运算符</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:center">算术运算符</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&lt;&lt; &gt;&gt;</code></td>
+<td style="text-align:center">二进制逻辑移位</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&amp;</code></td>
+<td style="text-align:center">与</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:center">非</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>|</code></td>
+<td style="text-align:center">或</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>= *= /= %= += -=</code></td>
+<td style="text-align:center">算数赋值</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>&amp;= ^= |= &lt;&lt;= &gt;&gt;=</code></td>
+<td style="text-align:center">二进制运算赋值</td>
+<td style="text-align:center">9</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>,</code></td>
+<td style="text-align:center">分隔符</td>
+<td style="text-align:center">10</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> a=<span class="number">1</span></span><br><span class="line"><span class="built_in">set</span> b=<span class="number">2</span></span><br><span class="line"><span class="built_in">set</span> /a c=<span class="variable">%a%</span>+<span class="variable">%b%</span></span><br></pre></td></tr></table></figure>
+<h1>set字符串处理</h1>
+<h2 id="字符串替换"><a class="header-anchor" href="#字符串替换">¶</a>字符串替换</h2>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="variable">%srting:str1=str2%</span></span><br><span class="line"><span class="comment">rem 字符替换</span></span><br><span class="line"><span class="variable">%srting:str1=%</span></span><br><span class="line"><span class="comment">rem 字符删除</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串截取"><a class="header-anchor" href="#字符串截取">¶</a>字符串截取</h2>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="variable">%string:~[m,[n]]%</span></span><br><span class="line">%string:~[-<span class="number">9</span>, <span class="number">4</span>]%</span><br><span class="line"><span class="comment">rem 从倒数第九位开始截取四位</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>m</code></td>
+<td>偏移量</td>
+<td>默认为0</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>截取长度</td>
+<td>默认为全部</td>
+</tr>
+</tbody>
+</table>
+<h1>扩展变量</h1>
+<h2 id="与-i相关的变量"><a class="header-anchor" href="#与-i相关的变量">¶</a>与<code>%i</code>相关的变量</h2>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th><code>c:\programfile\test.bat</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%0</code></td>
+<td><code>&quot;c:\programfile\test.bat&quot;</code></td>
+</tr>
+<tr>
+<td><code>%cd%</code></td>
+<td><code>c:\programfile</code></td>
+</tr>
+<tr>
+<td><code>%~0</code></td>
+<td><code>test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~f0</code></td>
+<td><code>c:\programfile\test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~d0</code></td>
+<td><code>c:\</code></td>
+</tr>
+<tr>
+<td><code>%~p0</code></td>
+<td><code>.\programfile\test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~dp0</code></td>
+<td><code>c:\programfile\</code></td>
+</tr>
+<tr>
+<td><code>%~n0</code></td>
+<td><code>test</code></td>
+</tr>
+<tr>
+<td><code>%~x0</code></td>
+<td><code>.bat</code></td>
+</tr>
+<tr>
+<td><code>%~nx0</code></td>
+<td><code>test.bat</code></td>
+</tr>
+<tr>
+<td><code>%~s0</code></td>
+<td>路径缩写</td>
+</tr>
+<tr>
+<td><code>%~a0</code></td>
+<td>文件属性</td>
+</tr>
+<tr>
+<td><code>%~t0</code></td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td><code>%~z0</code></td>
+<td>文件大小</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令行参数"><a class="header-anchor" href="#命令行参数">¶</a>命令行参数</h2>
+<p><code>%0</code>表示执行文件<code>.bat</code>本身</p>
+<p><code>%1 %2 %3 ...</code>表示传入参数1，2，3，…</p>
+<h2 id="系统变量"><a class="header-anchor" href="#系统变量">¶</a>系统变量</h2>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th></th>
+<th>解释</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%CD%</td>
+<td>本地</td>
+<td>返回当前目录字符串</td>
+<td><code>C:Documents and SettingsAdministrator桌面</code></td>
+</tr>
+<tr>
+<td>%OS%</td>
+<td>系统</td>
+<td>返回操作系统名称</td>
+<td>Windows 2000 显示其操作系统为 Windows_NT</td>
+</tr>
+<tr>
+<td>%DATE%</td>
+<td>系统</td>
+<td>返回当前日期</td>
+<td><code>YYYY/MM/DD WWW</code></td>
+</tr>
+<tr>
+<td>%TIME%</td>
+<td>系统</td>
+<td>返回当前时间</td>
+<td><code>HH:MM:SS.SS</code></td>
+</tr>
+<tr>
+<td>%PATH%</td>
+<td>系统</td>
+<td>指定可执行文件的搜索路径</td>
+<td></td>
+</tr>
+<tr>
+<td>%PATHEXT%</td>
+<td>系统</td>
+<td>返回操作系统</td>
+<td>认为可执行的文件扩展名的列表</td>
+</tr>
+<tr>
+<td>%HOMEPATH%</td>
+<td>系统</td>
+<td>返回用户主目录的完整路径基于主目录值而设置用户主目录是在“本地用户和组”中指定的</td>
+<td><code>Documents and SettingsAdministrator</code></td>
+</tr>
+<tr>
+<td>%USERPROFILE%</td>
+<td>本地</td>
+<td>返回当前用户的配置文件的位置</td>
+<td><code>C:Documents and SettingsAdministrator</code></td>
+</tr>
+<tr>
+<td>%WINDIR%</td>
+<td>系统</td>
+<td>返回操作系统目录的位置</td>
+<td><code>C:WINDOWS</code></td>
+</tr>
+<tr>
+<td>%RANDOM%</td>
+<td>系统</td>
+<td>返回 0 到 32767 之间的任意十进制数字</td>
+<td><code>30580</code></td>
+</tr>
+<tr>
+<td>%ERRORLEVEL%</td>
+<td>系统</td>
+<td>返回上一条命令的错误代码通常用非零值表示错误</td>
+<td></td>
+</tr>
+<tr>
+<td>%COMPUTERNAME%</td>
+<td>系统</td>
+<td>返回计算机的名称</td>
+<td><code>xxxx</code></td>
+</tr>
+<tr>
+<td>%USERNAME%</td>
+<td>本地</td>
+<td>返回当前登录的用户的名称</td>
+<td><code>Administrator</code></td>
+</tr>
+<tr>
+<td>%SYSTEMDRIVE%</td>
+<td>系统</td>
+<td>返回包含 Windows server operating system 根目录(即系统根目录<code>$P$G</code>的驱动器</td>
+<td><code>C:</code></td>
+</tr>
+<tr>
+<td>%SYSTEMROOT%</td>
+<td>系统</td>
+<td>返回 Windows server operating system 根目录的位置</td>
+<td><code>C:WINDOWS</code></td>
+</tr>
+<tr>
+<td>%HOMEDRIVE%</td>
+<td>系统</td>
+<td>返回连接到用户主目录的本地工作站驱动器号基于主目录值而设置用户主目录是在“本地用户和组”中指定的</td>
+<td><code>C:</code></td>
+</tr>
+<tr>
+<td>%HOMESHARE%</td>
+<td>系统</td>
+<td>返回用户的共享主目录的网络路径基于主目录值而设置用户主目录是在“本地用户和组”中指定的</td>
+<td></td>
+</tr>
+<tr>
+<td>%NUMBER_OF_PROCESSORS%</td>
+<td>系统</td>
+<td>指定安装在计算机上的处理器的数目</td>
+<td></td>
+</tr>
+<tr>
+<td>%PROCESSOR_LEVEL%</td>
+<td>系统</td>
+<td>返回计算机上安装的处理器的型号</td>
+<td><code>15</code></td>
+</tr>
+<tr>
+<td>%APPDATA%</td>
+<td>本地</td>
+<td>返回默认情况下应用程序存储数据的位置</td>
+<td><code>C:Documents and SettingsAdministratorApplication Data</code></td>
+</tr>
+<tr>
+<td>%ALLUSERSPROFILE%</td>
+<td>本地</td>
+<td>返回“所有用户”配置文件的位置</td>
+<td><code>C:Documents and SettingsAll Users</code></td>
+</tr>
+<tr>
+<td>%CMDCMDLINE%</td>
+<td>本地</td>
+<td>返回用来启动当前的 Cmd.exe 的准确命令行</td>
+<td><code>cmd /c &quot;&quot;C:Documents and SettingsAdministrator桌面a.bat&quot; &quot;</code></td>
+</tr>
+<tr>
+<td>%CMDEXTVERSION%</td>
+<td>系统</td>
+<td>返回当前的“命令处理程序扩展”的版本号</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>%COMSPEC%</td>
+<td>系统</td>
+<td>返回命令行解释器可执行程序的准确路径</td>
+<td><code>C:WINDOWSsystem32cmd.exe</code></td>
+</tr>
+<tr>
+<td>%LOGONSERVER%</td>
+<td>本地</td>
+<td>返回验证当前登录会话的域控制器的名称</td>
+<td><code>\ xxxx</code></td>
+</tr>
+<tr>
+<td>%PROCESSOR_ARCHITECTURE%</td>
+<td>系统</td>
+<td>返回处理器的芯片体系结构</td>
+<td>值： x86 或 IA64 基于Itanium x86</td>
+</tr>
+<tr>
+<td>%PROCESSOR_IDENTFIER%</td>
+<td>系统</td>
+<td>返回处理器说明</td>
+<td></td>
+</tr>
+<tr>
+<td>%PROCESSOR_REVISION%</td>
+<td>系统</td>
+<td>返回处理器的版本号</td>
+<td><code>4f02</code></td>
+</tr>
+<tr>
+<td>%PROMPT%</td>
+<td>本地</td>
+<td>返回当前解释程序的命令提示符设置</td>
+<td><code>$P$G</code></td>
+</tr>
+<tr>
+<td>%TEMP% %TMP%</td>
+<td></td>
+<td>(temp)<code>C:DOCUME~1ADMINI~1LOCALS~1Temp</code>和(tmp)<code>C:DOCUME~1ADMINI~1LOCALS~1Temp</code>系统和用户返回对当前登录用户可用的应用程序所使用的默认临时目录</td>
+<td>有些应用程序需要 TEMP，而其他应用程序则需要 TMP</td>
+</tr>
+<tr>
+<td>%USERDOMAIN%</td>
+<td>本地</td>
+<td>返回包含用户帐户的域的名称</td>
+<td><code>xxxx</code></td>
+</tr>
+</tbody>
+</table>
+<h1>变量延迟</h1>
+<p>在平时使用<code>for</code>的时候，会有需要产生能够自加的变量，然后根据变量的值进行相应的操作。在这种时候就需要用到变量延迟。</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> /f "delims= tokens=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,*" <span class="variable">%%i</span> <span class="keyword">in</span> ('<span class="built_in">dir</span> /a-d /o-d /tc') <span class="keyword">do</span> (</span><br><span class="line">  <span class="built_in">set</span> /a n+=<span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> <span class="variable">%n%</span>==<span class="number">2</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>上述的代码就如我们所臆想的写了出来，<strong>但是</strong>不能实现我们所想的效果</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setlocal</span> enabledelayedexpansion</span><br><span class="line"><span class="keyword">for</span> /f "delims= tokens=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,*" <span class="variable">%%i</span> <span class="keyword">in</span> ('<span class="built_in">dir</span> /a-d /o-d /tc') <span class="keyword">do</span> (</span><br><span class="line">  <span class="built_in">set</span> /a n+=<span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> <span class="variable">!n!</span>==<span class="number">2</span> <span class="built_in">echo</span> <span class="variable">%%i</span></span><br><span class="line">)</span><br><span class="line"><span class="built_in">endlocal</span></span><br></pre></td></tr></table></figure>
+<p>当开启变量延迟后，预期效果得以实现。</p>
+<p>在这里<code>!!</code>内部的变量，在执行下一步命令前才会执行赋值命令，进而可以动态的感知变量的变化。而<code>%%</code>内部的变量，直接在赋值语句执行时就进行赋值，<strong>但是</strong>只有在下一条命令执行时才得以显现（可以理解为利用 之前的数据 作为 目前行 执行的前提，目前行 执行的结果在储存进之前的数据中去）。</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> var1=<span class="number">2</span></span><br><span class="line"><span class="built_in">set</span> var1=<span class="number">5</span> &amp; <span class="built_in">echo</span> <span class="variable">%var1%</span></span><br><span class="line"><span class="comment">rem 2</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码可以理解成这样</p>
+<p><img src="/images/delayed-expansion.png" alt="未开启变量延迟"></p>
+<p>运用这个规律可以在不使用临时变量的情况下，进行变量间的数值交换</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> var1=a</span><br><span class="line"><span class="built_in">set</span> var2=b</span><br><span class="line"><span class="built_in">set</span> var1=<span class="variable">%var2%</span> &amp; <span class="built_in">set</span> var2=<span class="variable">%var1%</span></span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a class="header-anchor" href="#注意">¶</a>注意</h3>
+<ol>
+<li>批处理文件是一行一行的一次执行的</li>
+<li><code>()</code>内的命令将被视作在同一行内</li>
+</ol>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>批处理文件</tag>
+        <tag>batch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ruby + Jekyll 本地环境搭建</title>
+    <url>/programming/2019-07-06-Ruby-jekyll%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>😅 由于自己不熟悉 gitpage ，就直接配置的 github 上的库来创建的博客，所以在开始的时候调试都是靠提交后上 gitpage 上看，简直不要多麻烦。最近查找了一下可以搭建本地的调试环境，而且这还是创建新博客的开始 😅 。下面正文。</p>
+<h2 id="配置本地环境"><a class="header-anchor" href="#配置本地环境">¶</a>配置本地环境</h2>
+<h3 id="配置本地环境，首先需要安装-Ruby-以及-Devkit"><a class="header-anchor" href="#配置本地环境，首先需要安装-Ruby-以及-Devkit">¶</a>配置本地环境，首先需要安装 <code>Ruby</code> 以及 <code>Devkit</code></h3>
+<p><a href="https://rubyinstaller.org/downloads/" target="_blank" rel="noopener">ruby下载链接</a></p>
+<p>我是安装的是 rubyinstaller-2.6.3-1-x64.exe 和 DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe</p>
+<p><strong>注意</strong>：这里 rubyinstaller-2.6.3-1-x64.exe 安装完之后不要执行<code>ridk install</code></p>
+<a id="more"></a>
+<h3 id="安装好-Devkit-和-Ruby-后，命令行cd切换至本地Ruby的安装目录"><a class="header-anchor" href="#安装好-Devkit-和-Ruby-后，命令行cd切换至本地Ruby的安装目录">¶</a>安装好 Devkit 和 Ruby 后，命令行<code>cd</code>切换至本地<code>Ruby</code>的安装目录</h3>
+<p>执行<code>ruby dk.rb init</code>，提示<code>&quot;Initialization complete!&quot;</code>表示安装成功。</p>
+<p>继续执行<code>ruby dk.rb review</code>和<code>ruby dk.rb install</code></p>
+<h3 id="更换-gem-源"><a class="header-anchor" href="#更换-gem-源">¶</a>更换 gem 源</h3>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看源</span></span><br><span class="line">gem sources <span class="literal">-l</span></span><br><span class="line"><span class="comment"># 删除原来的源，添加清华源</span></span><br><span class="line">gem sources -<span class="literal">-add</span> https://mirrors.tuna.tsinghua.edu.cn/rubygems/ -<span class="literal">-remove</span> https://rubygems.org/</span><br><span class="line"><span class="comment"># 更新源</span></span><br><span class="line">gem sources <span class="literal">-u</span></span><br></pre></td></tr></table></figure>
+<h3 id="运行-rubyinstaller"><a class="header-anchor" href="#运行-rubyinstaller">¶</a>运行 rubyinstaller</h3>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ridk install</span><br></pre></td></tr></table></figure>
+<p>这时会让我们做出选择，选3，过程中会下载很多安装包，耐心等待，一定要耐心，要完整装完才行，装好会让你再做一次123选择，这个时候不需要选了，直接enter退出就行了。</p>
+<h3 id="安装jekyll和bundle"><a class="header-anchor" href="#安装jekyll和bundle">¶</a>安装<code>jekyll</code>和<code>bundle</code></h3>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">gem install jekyll bundle</span><br></pre></td></tr></table></figure>
+<h2 id="运行本地已建立的博客文件"><a class="header-anchor" href="#运行本地已建立的博客文件">¶</a>运行本地已建立的博客文件</h2>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">bundle install</span><br></pre></td></tr></table></figure>
+<p>安装缓慢，可能需要翻墙</p>
+<p>安装完成之后就可以运行</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">bundle exec jekyll serve</span><br></pre></td></tr></table></figure>
+<p>将本地的博客跑起来</p>
+<h2 id="报错处理"><a class="header-anchor" href="#报错处理">¶</a>报错处理</h2>
+<h3 id="直接执行jekyll-serve，报错"><a class="header-anchor" href="#直接执行jekyll-serve，报错">¶</a>直接执行<code>jekyll serve</code>，报错</h3>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">You have already activated public_suffix <span class="number">3.1</span>.<span class="number">1</span>, but your Gemfile requires public_suffix <span class="number">3.1</span>.<span class="number">0</span>. Prepending `bundle exec` to your command may solve this. (Gem::LoadError)</span><br></pre></td></tr></table></figure>
+<p>原因很明显，应当执行<code>bundle exec jekyll serve</code></p>
+<h3 id="执行bundle-exec-jekyll-serve后仍报错"><a class="header-anchor" href="#执行bundle-exec-jekyll-serve后仍报错">¶</a>执行<code>bundle exec jekyll serve</code>后仍报错</h3>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Dependency Error: Yikes! It looks like you don<span class="string">'t have jekyll-paginate or one of its dependencies installed. In order to use Jekyll as currently configured, you'</span>ll need to install this gem. The full error message from Ruby is: <span class="string">'cannot load such file -- jekyll-paginate'</span> <span class="keyword">If</span> you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!jekyll <span class="number">3.8</span>.<span class="number">5</span> | Error:  jekyll<span class="literal">-paginate</span></span><br></pre></td></tr></table></figure>
+<p>此时需要在<code>gemfile</code>中添加<code>gem &quot;jekyll-paginate&quot;</code></p>
+<h2 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h2>
+<p><a href="http://szhshp.org/tech/2015/11/14/localjekyllenv.html#2016-10-07-error-undefined-method-size-for-nilnilclass-nomethoderror" target="_blank" rel="noopener">Ruby x Jekyll 本地调试环境搭建</a></p>
+<p><a href="https://www.jekyll.com.cn/docs/usage/" target="_blank" rel="noopener">命令行用法</a></p>
+<p><a href="https://yq.aliyun.com/articles/640926?spm=a2c4e.11155472.0.0.7ec27bb5iMKDlj" target="_blank" rel="noopener">全网最清晰的Jekyll+Github搭建个人博客</a></p>
+<p><a href="https://blog.csdn.net/jearmy/article/details/42752919" target="_blank" rel="noopener">本地jekyll突然不能正常工作，遇到的问题全可以在这个文章中找到答案。</a></p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>jekyll</tag>
+        <tag>ruby</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进一步配置Zotero</title>
+    <url>/lab/Zotero%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h1>Zotero + Sci-Hub</h1>
+<p>说到将 Zotero 和 Sci-Hub 结合就首先得从Zotero PDF retrieval谈起。从Zotero 5.0.56版本开始，Zotero迎来了PDF retrieval功能。<br>
+该功能会在你用Zotero Connector保存文献时，自动检查Unpaywall上是否有可供下载的免费文献。</p>
+<blockquote>
+<p>Unpaywall能免费下载文献，但你不要以为它和Sci-Hub一样是非法的。其实Unpaywall是个非盈利性合法组织，它整合了数千个Open Access期刊或数据库，将免费文献集中之后开放API，从而供其他平台使用。</p>
+</blockquote>
+<p>假如你在网页端保存的文献是Open Access的，Zotero Connector就会将PDF同文献条目一起抓取。对于已经在Zotero中却还没有PDF附件的文献条目，点击右键菜单中的Find Available PDF，即可下载文献。</p>
+<a id="more"></a>
+<p>但是，毕竟Unpaywall只支持OA文献，而OA文献又只是少数。也就是说，通过Unpaywall无法解决付费文献的下载问题。作为一款开源软件，Zotero的开发者为很多功能带来了可定制的能力，方便用户根据自己的喜好自定义。<br>
+PDF retrieval功能也不例外，Zotero允许用户自定义PDF解析器（custom PDF resolvers），也就是说你可以将其他网站作为PDF解析器，来替代Unpaywall。</p>
+<p>Zotero 官网对于<a href="https://www.zotero.org/support/kb/custom_pdf_resolvers" target="_blank" rel="noopener">自定义 PDF 解析器</a>也有相关的文档</p>
+<h2 id="设置Sci-Hub作为PDF解析器"><a class="header-anchor" href="#设置Sci-Hub作为PDF解析器">¶</a>设置Sci-Hub作为PDF解析器</h2>
+<p>打开 <strong>编辑 -&gt; 首选项 -&gt; 高级 -&gt; 设置编辑器</strong>。<br>
+刚打开会有风险提示</p>
+<img src="/lab/Zotero%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE/Snipaste_2020-06-16_18-45-58.png" class="" title="risk alarm">
+<p>点击 accept 后，在搜索框，搜索 <code>extensions.zotero.findPDFs.resolvers</code> 。</p>
+<img src="/lab/Zotero%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE/Snipaste_2020-06-16_18-48-30.png" class="" title="after search">
+<p>双击 <code>extensions.zotero.findPDFs.resolvers</code>，默认情况下是只有一对<code>[]</code>。<br>
+删除<code>[]</code>，并将以下代码粘贴进去。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>:<span class="string">"Sci-Hub"</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"GET"</span>,</span><br><span class="line">    <span class="attr">"url"</span>:<span class="string">"https://sci-hub.tw/&#123;doi&#125;"</span>,</span><br><span class="line">    <span class="attr">"mode"</span>:<span class="string">"html"</span>,</span><br><span class="line">    <span class="attr">"selector"</span>:<span class="string">"#pdf"</span>,</span><br><span class="line">    <span class="attr">"attribute"</span>:<span class="string">"src"</span>,</span><br><span class="line">    <span class="attr">"automatic"</span>:<span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后点击OK。<br>
+到此就成功将Sci-Hub配置为PDF解析器了，也就是说替代了默认的Unpaywall。</p>
+<p>现在，无需重启Zotero，即可调用Sci-Hub免费下载文献了。</p>
+<img src="/lab/Zotero%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%BE%E7%BD%AE/Snipaste_2020-06-16_18-55-53.png" class="" title="find pdf">
+<h2 id="注意："><a class="header-anchor" href="#注意：">¶</a>注意：</h2>
+<ol>
+<li>在<code>&quot;url&quot;:&quot;https://sci-hub.ren/{doi}&quot;</code>中，目前可用的域名有<code>.tw、.ren、.si、.shop</code>，挑选其中一个就可以，哪个用起来体验更好就用哪个。</li>
+<li>从<code>&quot;url&quot;:&quot;https://sci-hub.ren/{doi}&quot;</code>还能看到一点。由于Sci-Hub是通过doi下载文献的，因此该PDF解析器也需要doi。也就说你的文献必须要有doi，如果doi是空缺的，便无法通过PDF解析器免费下载文献。幸运的是，对于缺失doi的文献，我们可以通过插件<a href="https://github.com/bwiernik/zotero-shortdoi" target="_blank" rel="noopener">zotero-shortdoi</a>插件一键抓取doi。</li>
+<li><code>&quot;automatic&quot;:true</code>，如果设置为true，Zotero会自动下载保存到Zotero中的文献的PDF。比如你用Zotero Connector保存了一些文献到Zotero，它便会自动帮你从Sci-Hub下载文献，并附在相应文献条目下。如果你不需要自动下载，可以设置为<code>&quot;automatic&quot;:false</code>。</li>
+</ol>
+<h1>Zotero + 百度学术、中国知网的文章检索引擎</h1>
+<p><strong>相较于之前在软件界面里进行操作，要实现这个功能，会显得有些难度，所以如果并非真的很迫切需要使用，没有能力的还是不要修改了。</strong></p>
+<p>关于添加文章检索引擎的方法，<a href="https://www.zotero.org/support/locate#managing_lookup_engines" target="_blank" rel="noopener">官方文档</a>还是有讲的😁。里面提到有一个官方随时更新的<code>engines.json</code>文件，下载下来，保存到相应的文件夹就可以了。<br>
+另外官方文档里还提供了一张<a href="http://egh.github.io/zotero-lookup-engines/" target="_blank" rel="noopener">检索引擎列表</a>，可以结合之后的操作进行修改添加。</p>
+<p>现将百度学术的搜索引擎添加方法记录于下：<br>
+依次点选 <strong>首选项 -&gt; 高级 -&gt; 文件和文件夹 -&gt; 打开数据文件夹</strong>，然后在<code>locate文件夹</code>中找到文件<code>engines.json</code>，用文本编辑器打开。插入代码：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"百度学术搜索"</span>,</span><br><span class="line">  <span class="attr">"alias"</span>: <span class="string">"BaiDu"</span>,</span><br><span class="line">  <span class="attr">"icon"</span>: <span class="string">"http://xueshu.baidu.com/favicon.ico"</span>,</span><br><span class="line">  <span class="attr">"_urlTemplate"</span>: <span class="string">"https://xueshu.baidu.com/s?wd=&#123;z:title&#125;&amp;rsv_bp=0&amp;tn=SE_baiduxueshu_c1gjeupa&amp;rsv_spt=3&amp;ie=utf-8&amp;f=8&amp;rsv_sug2=0&amp;sc_f_para=sc_tasktype%3D%7BfirstSimpleSearch%7D"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"百度学术搜索"</span>,</span><br><span class="line">  <span class="attr">"hidden"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"_urlParams"</span>: [],</span><br><span class="line">  <span class="attr">"_urlNamespaces"</span>: &#123;</span><br><span class="line">      <span class="attr">"z"</span>: <span class="string">"http://www.zotero.org/namespaces/openSearch#"</span>,</span><br><span class="line">      <span class="attr">""</span>: <span class="string">"http://a9.com/-/spec/opensearch/1.1/"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"_iconSourceURI"</span>: <span class="string">"http://xueshu.baidu.com/favicon.ico"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意：-v2"><a class="header-anchor" href="#注意：-v2">¶</a>注意：</h2>
+<ul>
+<li>搜索引擎代码之间用“,”隔开，可参考原文件的格式。</li>
+<li><code>_urlTemplate</code>的获取办法，先在百度搜索中搜索TEST，然后复制网址，将其中TEST替换为<code>{z:title}</code>。</li>
+<li>icon的获取方法，一般在网站url后面加上 <code>/favicon.ico</code> 就可以了，但有些不是。如果不是的话，或者用Chrome 按 <code>F12</code> 查找，这种方法很麻烦。有一种较简易的方法，填写<code>https://www.google.com/s2/favicons?domain=http://xueshu.baidu.com</code> ，也能获取。格式就是<code>https://www.google.com/s2/favicons?domain=</code> 后面加上网址 <code>http://xueshu.baidu.com</code> ，以此类推。</li>
+</ul>
+<p>cnki的定位网址有点特别<br>
+参考<a href="https://www.zhihu.com/question/46484469/answer/651913741" target="_blank" rel="noopener">Zotero 如何添加文章检索引擎？</a>，得到的网址如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"CNKI搜索"</span>,</span><br><span class="line">    <span class="attr">"alias"</span>: <span class="string">"CNKI"</span>,</span><br><span class="line">    <span class="attr">"icon"</span>: <span class="string">"http://cnki.net/favicon.ico"</span>,</span><br><span class="line">    <span class="attr">"_urlTemplate"</span>: <span class="string">"http://kns.cnki.net/kns/brief/default_result.aspx?txt_1_sel=SU%24%=%7C&amp;txt_1_value1=&#123;z:title&#125;&amp;txt_1_special1=%&amp;txt_extension=&amp;currentid=txt_1_value1&amp;dbJson=coreJson&amp;dbPrefix=SCDB&amp;db_opt=CJFQ,CDFD,CMFD,CPFD,IPFD,CCND,CCJD&amp;singleDB=SCDB&amp;db_codes=CJFQ,CDFD,CMFD,CPFD,IPFD,CCND,CCJD&amp;singleDBName=againConfigJson=false&amp;action=scdbsearch&amp;ua=1.11"</span>,</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"CNKI搜索"</span>,</span><br><span class="line">    <span class="attr">"hidden"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"_urlParams"</span>: [],</span><br><span class="line">    <span class="attr">"_urlNamespaces"</span>: &#123;</span><br><span class="line">        <span class="attr">"z"</span>: <span class="string">"http://www.zotero.org/namespaces/openSearch#"</span>,</span><br><span class="line">        <span class="attr">""</span>: <span class="string">"http://a9.com/-/spec/opensearch/1.1/"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"_iconSourceURI"</span>: <span class="string">"http://cnki.net/favicon.ico"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>lab</category>
+      </categories>
+      <tags>
+        <tag>zotero</tag>
+        <tag>RIS manager</tag>
+        <tag>how to</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全能多系统启动 U 盘制作工具——Ventoy</title>
+    <url>/programming/Ventoy-useage/</url>
+    <content><![CDATA[<p>最近重装系统，需要安装双系统，因此需要制作两个启动盘。不巧的是我在装双系统过程中，卡住了，只能成功引导进一个系统，所以我只能重复制作系统盘😖，真是苦了我可怜的 32G U 盘了，来回格式化，做了系统盘还有大半的容量没有用上。</p>
+<p>正巧看到<a href="https://www.bilibili.com/video/BV1wz411i7Cg?from=search&amp;seid=4968162955944320486" target="_blank" rel="noopener">kiteAB</a>的视频，讲了这个工具。就找来用用。</p>
+<a id="more"></a>
+<h1>安装</h1>
+<p>在 Windows 下可以通过 <code>chocolately</code> 和 <code>scoop</code> 进行安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">scoop bucket add extras</span><br><span class="line">scoop install ventoy</span><br><span class="line">choco install ventoy</span><br></pre></td></tr></table></figure>
+<p>Linux 下可以去<a href="https://github.com/ventoy/Ventoy/releases" target="_blank" rel="noopener">github页面</a>下载。</p>
+<h1>使用</h1>
+<p>使用起来也是方便，第一次使用的 U 盘，会进行格式化，重新分区，需要注意数据迁移。<br>
+建议制作时更改一下分区类型，为了方便使用。（不知道为什么，windows下打开<code>Ventoy</code>居然不能正常使用截屏软件🤔）</p>
+<img src="/programming/Ventoy-useage/Snipaste_2020-07-14_18-34-19.png" class="" title="分区类型">
+<p>制作完成之后，把系统镜像直接复制进分区，就可以使用了。就是如此方便。<br>
+目前<a href="https://www.ventoy.net/cn/index.html" target="_blank" rel="noopener">官方网站</a>称已经测试了**300+**的镜像文件，均可以成功启动。</p>
+<h1>升级</h1>
+<p>在软件升级之后，可以对 U 盘内的<code>ventoy</code>进行升级，此时并<strong>不会</strong>重新格式化并分区，这很就很方便了。</p>
+<h1>总结</h1>
+<p><code>Ventoy</code>相对于现在各种pe系统盘来说最大的优势就在于：</p>
+<ol>
+<li>单盘多启动，并且仅需要复制相应的系统镜像即可。</li>
+<li>启动盘升级方便，不需要重新格式化分区，延长 flash 寿命。</li>
+<li>开源！！！用的放心。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>how to</tag>
+        <tag>Ventoy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>甲基化特异性PCR：引物设计的四步</title>
+    <url>/lab/2019-08-18-%E7%94%B2%E5%9F%BA%E5%8C%96%E7%89%B9%E5%BC%82%E6%80%A7PCR%EF%BC%9A%E5%BC%95%E7%89%A9%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9B%9B%E6%AD%A5/</url>
+    <content><![CDATA[<h1>概述</h1>
+<p>甲基化特异性PCR方法仍是单一基因甲基化研究的选择之一。恰当的引物设计是获得可靠的PCR结果的先决条件。虽然有众多的文章阐述MSP引物设计的规则，但没有一个提供全面的解答。本文的目的在于阐述一个简洁明了，易于操作的引物设计流程。为了达到这一目标，我会提供丰富的启动序列检索工具、MSP引物设计软件，以及后续的计算机分析也会进行解析和呈现。一些优劣引物对比的例子也会展示出来作为指导。最后要说的是，本文引物设计是根据建议的流程来展现的。本文旨在为对单基因甲基化研究感兴趣的研究者在成功设计引物上给出建议。</p>
+<p><strong>关键词</strong>：甲基化特异性PCR、引物设计、数据库、MSP引物设计软件、转录起始位点</p>
+<a id="more"></a>
+<h1>简介</h1>
+<p>基因表达的后天调控对于一个器官的发生发展有重要影响作用，调控可以在不同水平呈现[1,2]，关于这一现象，CpG二磷酸核苷是研究最多的一部分。预估在人类基因组内大约有20%的CpG位于一个称作CpG岛的区域内[3]。CpG岛是有着丰富CpG的一串DNA[4,5]，跨度超过200bp，至少有50%的G+C，并且检测到的CpG至少占统计预期CpG的60%[6]。大约60%的人类基因启动子包含CpG岛[5]，但在大多数组织中CpG岛是未甲基化的。这两个因素影响着CpG岛的调控功能。在CpG岛内甲基化的胞嘧啶对转录起到抑制效应[4,5,7]，就是说DNA甲基化的调控对器官内分泌有重要的意义。不出意外的话，通过更多的研究可以明确DNA甲基化模式的结构以及在病理和生理状态下的改变过程。<br>
+异常甲基化造成了像癌症和遗传疾病的众多疾病和病理过程的发生发展[8]。例如：抑癌基因启动子的过甲基化就是癌症的早期特征事件[9,10]；但是印记的缺失–在父母等位基因的一方甲基化的缺失，是某些综合症的病因[8]。前面这两个例子足以证明DNA甲基化研究的重要性。为了评估基因甲基化状态，有许多可行的方法。这些方法都依赖以下两个策略：</p>
+<ol>
+<li>用甲基化特异性酶裂解DNA</li>
+<li>利用亚硫酸化修饰基因组DNA[11,12]</li>
+</ol>
+<p>我们的关注后者。</p>
+<p>甲基化特异性PCR是研究特定基因甲基化状态最方便的方法[13]。虽然有些学者考虑弃用它，但是它高效，敏感性高并且使用频繁，让它成为单基因甲基化研究的最佳方法。MSP基于预先亚硫酸盐处理的DNA样本。在处理后未甲基化的胞嘧啶转化为尿嘧啶而5’mC未转化；因而最后DNA序列不再互补（图1）。之后亚硫酸盐修饰的DNA通过PCR利用两对引物进行扩增，其中一对引物识别甲基化DNA，另外一对识别未甲基化的DNA。最终通过最合适的PCR反应在数千条未甲基化的DNA中给出检测到的甲基化DNA。MSP为基础的方法具有的高灵敏度，在检验上有潜在应用[14,15]。但是，最适的MSP反应也是有挑战性的，因为引物设计可是绝对的关键步骤，并且在这一过程中需要考虑众多限制因素。本文的目的在于描述一个简洁明了，易于操作的引物设计流程。</p>
+<p><img src="/images/MSP_primer_design%20(1).jpg" alt="图1"></p>
+<p><strong>图1</strong>  MSP是基于原始DNA亚硫酸盐修饰的。首先经过亚硫酸盐处理，DNA变性。变性之后，单链DNA进入修饰过程。未甲基化胞嘧啶转化为尿嘧啶，甲基化胞嘧啶不转化。经过PCR尿嘧啶被胸腺嘧啶取代。亚硫酸处理的结果就是DNA双链不再互补。CpG位点以粗体显示。</p>
+<h1>工作流程和数据库</h1>
+<p>MSP引物设计的整个过程可以分为四个步骤：</p>
+<ol>
+<li>启动子检索</li>
+<li>识别引物应当处在启动子的部位</li>
+<li>选择恰当的软件设计引物</li>
+<li>通过电脑分析选择分数最合适的一对引物（图2）</li>
+</ol>
+<p><img src="/images/MSP_primer_design%20(2).jpg" alt="图2"></p>
+<p>**图2：**引物设计的四步通过流程图展示。启动子检索在整个过程中是关键步骤。确定TSS所在位置后，就该选取引物所在的启动子区域。通过恰当的软件辅助，以所想的序列作为模板进行引物设计。最后，得到一些可供选择的引物对。通过电脑分析的辅助选择最好的一对。但是最好的引物在试管里并不一定表现的很好。如果出现这种情况，就该设计新的引物了。</p>
+<p>有相当数量的网络资源和出版物在描述MSP引物设计上的大致规则和使用软件。但很少注意到第一步<strong>检索启动子</strong>。虽然像 <a href="http://www.ensembl.org/index.html" target="_blank" rel="noopener">ENSEMBL</a> 和 <a href="http://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">NCBI</a> 的数据库包含基因和mRNA序列，但检索启动子仍然不是一件简单或容易的事。另一方面，并不推荐用启动子预测软件，因为知道真正启动子的位置很有必要。幸运的是，众多科技在过去十年的发展提升了启动子在基因水平的辨识。因而覆盖广泛且包含启动子的可靠数据库已经可用。这里，我们会探讨两个数据库：</p>
+<ol>
+<li>DBTSS(Database of Transcriptional Start Sites)</li>
+<li>EPD(Eukaryotic Promoter Database)</li>
+</ol>
+<p>我们之所以讨论这俩特定的数据库，是我认为他俩用户友好且覆盖面广。值得注意的是DBTSS和EPD的初衷并不是提供给研究者启动子，而是促进相关的功能研究。</p>
+<p>DBTSS的转录启动序列的数据，包含包含28种人的组织或细胞以及4种老鼠的组织或细胞[16]。另外，相同转录起始位点 不同状态的信息也有提供（如有氧/缺氧）。明显搭建者的目的是创建一个提供转录调控 动态总览的数据库。为建立这样的数据库，创建者用了一种叫做TSS-seq的技术[17]。该技术是依托于illumina众多平行序列的oligo-capping方案[18]。</p>
+<p>检索TSS的定位很简单明了。在选择物种之后，选择目的基因。Entrez和Ensemble数据库中准确的染色体位置和退火温度以及对相关CpG岛位置的图片介绍和SNPs、TSS的定位也会呈现出来。你可以选择检索FASTA格式的启动子序列以及高亮的TSS定位。基于TSS的上下游可以自行选择。数据库可以通过 <a href="http://dbtss.hgc.jp/" target="_blank" rel="noopener">链接</a> 来访问。</p>
+<p>EPD是建立超过25年的数据库[19]。在漫长的历史中，数据库发生可许多重大变化。但最重要的就是加入了启动子信息。分子生物学方法的发展对EPD产生了极大的影响。在基因组水平识别TSS序列的方法取代了从相应出版物获取启动子，这一漫长费时又枯燥过程。直到笔者当前的时间，该数据库已经包含25988个人类启动子，9773个小鼠启动子，11389个黑腹果蝇的启动子以及11719个斑马鱼启动子。为了获取TSS相关信息，你需要选择基因所对应物种的数据库。你还可以从引用内容的细节了解关于数据库的结构和机构，以及查看使用者手册和链接到其他数据库。需要强调的一点是<strong>EPD只考虑DNA聚合酶Ⅱ的结合位点</strong>。还有<strong>创建者把启动子定义为TSS</strong>。以此为基础，启动子被分成了三类：</p>
+<ol>
+<li>单TSS位点</li>
+<li>多TSS位点</li>
+<li>启动区</li>
+</ol>
+<p>数据库可以通过 <a href="http://epd.vital-it.ch/" target="_blank" rel="noopener">链接</a> 访问。</p>
+<p>关于展示出的数据库还有两点需要强调：</p>
+<ol>
+<li>对数据库潜力和性能的详细分析超出了本文的范围</li>
+<li>同一基因的TSS位置在不同数据库可能相差甚远。但是差异并不显著，不影响后续步骤中的过程。</li>
+</ol>
+<h2 id="引物该呆在哪"><a class="header-anchor" href="#引物该呆在哪">¶</a>引物该呆在哪</h2>
+<p>在检索到启动子后，逻辑上下一步就是确定引物在启动子的位置。虽然，这一步看起来微不足道，但会影响到实验的结局。习惯上，引物应该在TSS的附近。这背后的道理是在TSS附近的甲基化在基因转录有着深远影响。这种方法也常在实验室中使用。然而，启动子转录激活的必要区域可能离TSS区域很远。因此，为了找到具有生物学意义的甲基化序列，比较可取的是搜索有关启动子功能研究的文献数据。总的来说，了解CpG岛内是否有序列和转录因子相结合还是有用的。在CpG岛内甲基化的C可以防止转录因子与目的基因启动子结合，从而导致表达降低[20]。在这方面，Zhu 等人发表了一些有趣的结论[21]。这些作者在ERβ基因启动子ON中定义了三个称作甲基化“热点”的部位。“热点”在共同序列包含的转录因子结合位点上。这些发现[23]被Bozovic 等人[22]使用并成功为ERβ设计甲基化研究引物（图3A）。</p>
+<p>在引物设计的过程中，研究者有时会忽视基因所在序列的上下文，这会导致对启动子甲基化状态相关信息的误读。图4所描述的例子就展现出PTEN基因启动子和PTENP1假基因之间的高度的序列同一性。Zysman和Bapat[23]证明先前发表的关于多种癌症PTEN基因甲基化状态是假阳性的结果。事实上，这些研究所使用的引物都位于和PTEN假基因(PTENP1)有很高同源性的区域。Hesson和coworkers[24]也证实了他俩的结论。他们还指出由于PTEN的CpG岛和KLLN基因 共享，评估PTEN的甲基化远要复杂的多。这两篇文献的结果就告诉我们谨慎的选择引物序列对甲基化研究的成功是必要的。此外，这个例子也表明，由于启动子结构组织和基因组本身的限制，一些基因甲基化分析用的引物 设计要求 非常苛刻。</p>
+<p>基于先前的讨论，可以在引物设计之前得出一个结论–我们得知道一些关键点。TSS就是显著影响引物位点的关键点。如先前所说，DBTSS和EPD能提供TSS相关的信息。因此，非常建议在TSS位点附近寻找引物。自TSS上游1000bp到下游500bp就是很好的起点。但是，CpG岛的搜索可能包含在一个相当宽的范围 (自 -5 kb 至 +5 kb) [25]。有趣的是，某些情况下，远端启动子的甲基化，而没有核心启动子的甲基化，可能在目的基因表达上扮演着很重要的角色[26-28]。转录因子结合位点也可以是进一步确定引物设置区域的关键点。例如，四个Sp1转录结合位点处在靠近PADI2基因TSS区域[29]，因此引物应当尽可能靠近这一区域（图3B）。</p>
+<p><img src="/images/MSP_primer_design%20(3).jpg" alt="图3"></p>
+<p><strong>图3</strong>  A. ERβ基因启动子序列的574 bp (-222 / +352)片段。甲基化的“核心”部位用灰色高亮。为MSP设计的引物通过下划线标明。可以发现它位于第二和第三甲基化区域。B. PADI2基因的启动子序列。Sp1结合区域通过灰色高亮。假设引物对的设计使得正向引物跨越两个Sp1结合位点; 转录起始位点被指定为+1; 起始密码子用斜体表示; CpG网站是粗体。图中展示的序列是没有经亚硫酸盐修饰的。</p>
+<p>关键点很重要，他们指明引物应当处在哪里，在最终决定之前还因当给予考虑其他的因素。这些因素决定了“限制位点”，即引物不应该位于的序列。例如，建议避开包含常见的SNPs[30]。和其他基因具有高度同一性的区段也应当避免。</p>
+<p><img src="/images/MSP_primer_design%20(4).jpg" alt="图4"></p>
+<p><strong>图4</strong>  使用 <a href="http://blast.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">BLAST</a> 工具对PTEN和PTENP1假基因进行校对。上方的是PTEN基因，下方是伪基因PTENP1。PTEN的转录起始位点通过虚线框出来。转录起始位点位于起始密码子上游1034个碱基处，这里没有显示出来。序列有90%的相似性。</p>
+<h2 id="引物设计的规则和软件使用"><a class="header-anchor" href="#引物设计的规则和软件使用">¶</a>引物设计的规则和软件使用</h2>
+<p>在网上MSP引物设计有很多可用的免费软件（表1）。</p>
+<p>**表1：**MSP引物设计工具以及他们的功能。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Tool</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:left">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MSPprimer</td>
+<td style="text-align:center">基于Web的MSP工具，嵌套MSP和BSP入门设计。 包含SDSS（特异性决定子序列）算法，该算法负责更高的引物特异性[50]。 该程序需要天然DNA序列作为输入。 用户可以调整CpGs数量，Tm值，引物和产品长度。 还可以选择在输入序列中设置TSS的位置。 该程序可以自由使用，但需要注册。</td>
+<td style="text-align:left"><a href="http://www.mspprimer.org/cgi-bin/design.cgi" target="_blank" rel="noopener">http://www.mspprimer.org/cgi-bin/design.cgi</a></td>
+</tr>
+<tr>
+<td style="text-align:left">MethMarker</td>
+<td style="text-align:center">Methmarker是甲基化研究设计的全方位计划。 它支持以下方法的引物设计：COBRA，双硫酸盐SnuPE，MSP，MethyLight，亚硫酸氢盐焦磷酸测序，MeDIP qPCR。 该工具的另一个目的是支持表观遗传标记优化。 MethMarker可以免费下载和使用。</td>
+<td style="text-align:left"><a href="http://methmarker.mpi-inf.mpg.de/" target="_blank" rel="noopener">http://methmarker.mpi-inf.mpg.de/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Beacon designer</td>
+<td style="text-align:center">可用于设计定量MSP（MethyLight）研究的引物和探针的软件解决方案。 提供有关引物设计和引物特性分析的大量选项。 可以选择哪个链（正义/反义）作为模板。 此外，还可以选择设定引物的热力学性质。 主要缺点是该软件是共享软件。 免费试用期到期后，只能运行演示模式。</td>
+<td style="text-align:left"><a href="http://www.premierbiosoft.com/molecular_beacons/" target="_blank" rel="noopener">http://www.premierbiosoft.com/molecular_beacons/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Primo MSP</td>
+<td style="text-align:center">基于Web的MSP和BSP引物设计工具。 不包含一些重要功能，例如可调数量的非CpG C和CpG岛检索。 似乎应用程序没有足够的优化。 一些结果没有意义（例如，获得的产品长度为1bp）。</td>
+<td style="text-align:left"><a href="http://www.changbioscience.com/primo/primom.html" target="_blank" rel="noopener">http://www.changbioscience.com/primo/primom.html</a></td>
+</tr>
+</tbody>
+</table>
+<p>在介绍MSP引物设计软件之前，我会先列出和解释 MSP引物的设计规则。PCR引物设计的一般规则[31,32]在这也是适用的，但因为亚硫酸盐处理，也增加了额外的规则。一开始，考虑到为亚硫酸盐修饰的DNA设计引物，就需要记住以下的条件：</p>
+<ol>
+<li>引物必须区分开亚硫酸盐修饰的DNA链和未修饰的链</li>
+<li>引物必须区分开甲基化和未甲基化的双链</li>
+</ol>
+<p>为了达到这些要求引物必须包括：</p>
+<ol>
+<li>在引物靠近3’端至少包含一个CpG，以区分甲基化和未甲基化序列</li>
+<li>为了利于亚硫酸盐修饰的序列扩增必须有足够多的非CpG的C，越多越好</li>
+</ol>
+<p>为了评估基因甲基化状态，甲基化和未甲基化序列的引物包含相同的CpG也同等重要。但这并不意味着引物需要覆盖同一DNA片段。相反，推荐未甲基化引物比相应的甲基化引物长。亚硫酸盐修饰的DNA包含一长串“T”。因此，未甲基化引物是富有AT且低Tm值。可以通过长序列来弥补。原则上，由于胞嘧啶转化，MSP需要比一般PCR更长的引物。合适MSP的引物在20bp到30bp范围内。亚硫酸盐处理的另一个结果就是支离破碎DNA样本。所以，PCR产物不因当超过300bp[33]。</p>
+<p>推荐设计的引物对Tm值差异不超过5℃，因为不这样的话反应效率会下降。需要着重提醒一下，同一引物对的Tm估计值在不同的软件大相近庭（表2）。</p>
+<p>**表2：**通过三种不同的免费可在线访问的工具计算两种MSP引物[22]的Tm值：Oligoanalyzer，Perlprimer和BiSearch。 引物的Tm计算参数如下：一价阳离子（Na<sup>+</sup>），Mg<sup>2+</sup>和引物的浓度分别为50mM，1.5mM和200nM。</p>
+<table>
+<thead>
+<tr>
+<th>软件</th>
+<th>Olygoanalyzer</th>
+<th>Perlprimer</th>
+<th>BiSearch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forward_primer_Tm</td>
+<td>60.1ºC</td>
+<td>59.3ºC</td>
+<td>61.7ºC</td>
+</tr>
+<tr>
+<td>Reverse_primer_Tm</td>
+<td>55.7ºC</td>
+<td>54.4ºC</td>
+<td>60.4ºC</td>
+</tr>
+</tbody>
+</table>
+<p>Tm值计算主要基于邻近法（NN），这不仅考虑胞嘧啶和鸟嘌呤的相对含量还要考虑引物序列[34,35]。通过邻近法来计算的Tm值需要输入数个热力学界限。在计算Tm值时产生的差异主要是由于使用不同的热力学表格造成[36]。目前，对于使用哪个热力学表格计算Tm值最准确，没有一个定论。其他计算Tm值得方法的叙述可以看[37,38]。</p>
+<p>在我看来，只了解规则而不提供充足例子是不够的。 Brandes和coworkers [39]表示，可能高估了ATM甲基化的角色在乳房和NSCLC样本中的作用。他们发现之前的文献是基于缺乏特异性的引物。事实上，因为缺乏非CpG的胞嘧啶，原始DNA和亚硫酸盐处理后的引物没有区别。</p>
+<p>在这个情况下，我们不讨论这些软件的数学背景或通过数据做出特别合适软件的定论。我们提出的要求并不复杂，但也同样成功且合理。他们都是科学出版物中频繁出现，界面简洁，并且免费访问的。根据这些标准，我们将评价三个软件：Methprimer, Methylprimer express和 BiSearch。</p>
+<p><a href="http://www.urogene.org/cgi-bin/methprimer/methprimer.cgi" target="_blank" rel="noopener">Methprimer</a> 是一款免费访问的网页端软件。处理MSP还可以为亚硫酸盐序列PCR（BSP）进行引物设计。特别的好处就是，它可以输入任何格式的序列。用户需要提供gDNA序列，因为软件通过把序列转换为亚硫酸盐修饰再来运行。软件提供许多选项，都是关于引物功能以及在输入基因内所处的位置（表3）。</p>
+<p>**表3：**Methprimer，BiSearch和Methylprimer express的可修改选项列表。给的值是默认值。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>Methprimer</th>
+<th>BiSearch</th>
+<th>Methylprimer express</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产物长度 (bp)</td>
+<td>100-300</td>
+<td>Up to 400</td>
+<td>100-175</td>
+</tr>
+<tr>
+<td>引物 Tm (°C)</td>
+<td>50-60</td>
+<td>45-70</td>
+<td>56-64</td>
+</tr>
+<tr>
+<td>引物 size (bp)</td>
+<td>20-30</td>
+<td>20-35</td>
+<td>18-22</td>
+</tr>
+<tr>
+<td>引物对间Tm值差异 (°C)</td>
+<td>≤5</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>正向和反向引物间Tm值差异</td>
+<td>N/A</td>
+<td>&lt;8</td>
+<td>&lt;8</td>
+</tr>
+<tr>
+<td>每引物最小CpG值</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>每引物最小非CpG胞嘧啶值</td>
+<td>4</td>
+<td>N/A</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3’ CpG 限制</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>可调CpG 岛检索</td>
+<td>yes</td>
+<td>N/A</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>引物打分</td>
+<td>N/A</td>
+<td>yes</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>设计结果以图表介绍和序列对比的形式给出。但Methprimer并不是没有缺点。比如，高估Tm以及引物报告富含AT[39]。还有一个反对意见就是，Methprimer背后的算法仅仅是Primer3软件的修改[40]。这个软件更多的相关信息在[33]。</p>
+<p><strong>Methylprimer express</strong>是Applied Biosystems开发的MSP引物设计软件解决方案。软件已经可以通过向当地的Applied Biosystems官方申请获取。Methylprimer express可以用于MSP、BSP的引物寻找中。在输入序列中定义TSS基和转录起点是逻辑选项。如果用户愿意使用这些选项，引物会尽可能的定位于标记的位置。用户还可以调整引物特征，比如搜索CpG岛。结果输出是图像形式和基础序列。在引物序列的Tm值结果下面是CpG的数量和非CpG的胞嘧啶数量。另外，还指出了引物可能修饰的地方。但需要指出仍有不足：高估Tm值，有时未甲基化序列过短Tm值太低。</p>
+<p><strong>BiSearch</strong>是一款网页端软件，通过 <a href="http://bisearch.enzim.hu/" target="_blank" rel="noopener">链接</a> 访问。和前两个软件不同的是，BiSearch能够在选定的天然或亚硫酸氢盐修饰的基因组上 用设计的引物进行 相似性搜索[40]。**这个选项用于检测引物特异性。**BiSearch的另一个优势就是服务器速度快[41]。软件只提供有显著差异的引物对，这能为相同的样品建立备选PCR程序[40]。另外一个有趣的选项是选择哪条链–正向或反向，作为MSP引物设计的模版。用户需要提供全文本形式的原始DNA（并非亚硫酸盐修饰的）序列。</p>
+<p>实际中要考虑的是怎样设置界定范围才能获得可信赖的甲基化研究引物。<strong>恰当的选择和消除方法中主要的缺陷</strong>：得到假阳性的结果[30]。假阳性结果可能是甲基化不完全，或者甲基化引物区分甲基化或未甲基化双链的能力低。为了防止扩增未转化DNA，<strong>至少有一条引物在靠近3’端应当包含数个非CpG的胞嘧啶</strong>[42]。5’端不匹配并不能满足引物特异性。另外，退火温度低 也可以在30个PCR反应中 稳定结合 不匹配的引物[43]。为了研究清楚，我们通过电脑测试展现。通过DBTSS获取五个启动子序列（下列基因TSS的上游序列1000bp和下游序列200bp区域间：p14, p16, DAPK, MGMT, RASSF1A），用作引物设计的模版。开始我们使用之前所说的软件的默认值。结果显示：</p>
+<ol>
+<li>Methprimer设计的一些引物区分甲基化和未甲基化引物的能力低（图5A）行内显示的是Brandes 等人[39]完成的研究</li>
+<li>BiSearch设计的引物只能在p14和MGMT中使用</li>
+<li>Methylprimer express提供的引物太短（18-22nt），这也难怪未甲基化的引物Tm值低。就比如说，MGMT的未甲基化正向序列预测Tm值才49.89℃（数据未展示）。</li>
+</ol>
+<p>基于之前的讨论，使用默认值（表3）并不是设计引物最好的选择，无论软件。</p>
+<p>但是，Methprimer和Methylprimer express (图5B) 在适当定制后生成引物，还是给出了满意的答案。事实证明，BiSearch在某些情况下难以设计特定的引物（图5C）。而且BiSearch很有意思，它并没有给选择非CpG胞嘧啶数量的选项。此外还没有给关于检索CpG岛的选项。</p>
+<p>设计特异性引物，建议遵循的以下原则。每个引物设置2-4个CpG，并且引物在靠近3’端CpG使用的越多越好。还有非CpG的胞嘧啶应当设置4个或更多，但是这些胞嘧啶最好尽可能位于引物3’端。Tm值应当设置在60℃和70℃之间，但这也不是严格标准。根据我们实验室的结果，使用产物&lt;150 bp的引物对可以获得最佳结果。这可能是因为我们研究中使用福尔马林固定石蜡包埋的样本。但是，设计产物不大于150bp的引物对可能有潜在的优势。如果设计合适的探针，这种引物可以用于甲基化状态的定量评估。研究者可以试着组合多种限制条件，以及根据上述标准对比引物。</p>
+<p><img src="/images/MSP_primer_design%20(5).jpg" alt="图5"></p>
+<p>**图5：**A. 为使用Methprimer默认值，设计评估DAPK启动子甲基化状态的MSP引物对。正向引物含有单个CpG和四个非CpG的胞嘧啶。甚至在很靠近3’末端的单个胞嘧啶也不能保证引物特异性，即正向引物具有低的区分甲基化和未甲基化等位基因的能力。四个非CpG在序列中定位不佳。它们都没有位于3’端。反向引物具有两个CpG，非CpG胞嘧啶定位很好。然而，3个CpG（正向+反向）不足以可靠地评估启动子甲基化状态。B. 利用Methylprimer express使用自定义设置设计的MSP引物对。RASSF1A基因的启动子序列作为引物设计的模板。C. 由BiSearch使用p16启动子序列作为模板设计的甲基化引物对。反向引物不含任何非CpG胞嘧啶，而正向引物仅含有两个。该引物对易于产生假阳性结果。 在引物序列中用小写字母表示的胸腺嘧啶表示原始DNA中非CpG胞嘧啶的位置。</p>
+<h2 id="电脑分析引物的适用性"><a class="header-anchor" href="#电脑分析引物的适用性">¶</a>电脑分析引物的适用性</h2>
+<p>多数情况下，设计引物的软件并不提供关于引物的发卡结构、引物二聚体和3’端稳定性的信息。但这些限制条件又显著影响PCR的效率和收获[31,44]。引物二极体和发卡结构并不显著影响引物浓度，但是减低扩增效率。换句话说，引物3’端稳定性影响他的引物特异性。<strong>稳定的3’端引发在一定程度上是可取的；过度稳定的3’端导致非特异性扩增</strong>。</p>
+<p>发卡结构由于引物自身互补而形成。原则上来说，3’端的发卡结构在PCR扩增上有更加实质的影响[45]。Taq酶可以利用5’端作为模板扩增3’端。结果就是，有利于生成结构稳定，非特异性的产物。在研究发夹结构对PCR影响的研究中，根据Singh等人的报导，长度大于4个核苷酸的以上发卡结构显著影响扩增效率[44]。</p>
+<p>引物二聚体是由于两个相同的引物分子间的反应（自身二聚体），或者正义链和反义链之间有互补序列（交插二聚体）。由于3’末端互补形成的引物二具体相较于引物内的二聚体有更大的影响。在PCR过程中，Taq酶执行互补序列3’末端的扩增，进而形成引物二聚体。因此，在引物二聚体和模板之间就构成了竞争。最终扩增匮乏。</p>
+<p>为了减少引物二级结构的形成，下面几条应当避免：引物之间相似序列，回问序列，以及3’末端3个及以上的重复C或G[46]。</p>
+<p>结构的稳定程度通过dG来描述。dG代表吉布斯自由能，通过在恒定压力下操作过程中，生成功的量来定义。简单讲，就是自发反应的度量单位。如果dG&lt;0，利于反应发生，反之亦然。关于发卡结构，引物二聚体和3’末端稳定性可以接受的dG值的信息可以在 <a href="http://www.premierbiosoft.com/tech_notes/" target="_blank" rel="noopener">链接</a> 查找。需要提醒的是软件计算的dG默认是在25℃到37℃之间的。在这些温度下，他算出来PCR中产生的二级结构稳定性信不过。因此推荐输入退火温度。</p>
+<p>电脑分析引物稳定性，需要利用适当的软件来预测引物在试管中的行为。通过这种方法，更有可能根据存在特异性不够或者稳定的发卡结构 识别和抛弃引物对。过程可以分为两步：</p>
+<ol>
+<li>通过计算和预测引物的热力学特征</li>
+<li>通过利用适当的基因组运行同一性检测，检查引物的的特异性。</li>
+</ol>
+<p>适合用来引物分析的有很多网页端工具。一些软件和程序可以帮助估计潜在结构、发卡结构稳定性和引物二聚体，他们在表4中呈现。</p>
+<p>**表4：**可用于检查引物热力学性质的软件和Web应用程序列表。</p>
+<table>
+<thead>
+<tr>
+<th>Tools</th>
+<th>Description</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primerlist</td>
+<td>Java应用程序; 界面简洁; 计算Tm，Ta和潜在的引物二级结构。</td>
+<td><a href="http://primerdigital.com/tools/" target="_blank" rel="noopener">http://primerdigital.com/tools/</a></td>
+</tr>
+<tr>
+<td>PerlPrimer</td>
+<td>用Perl编写的程序。 可以免费下载和使用。 实现标准PCR，qPCR，BSP和测序的引物设计。 为用户提供有关设计引物（Tm，二级结构）的相关信息。 可以分析预先设计的引物。 该软件计算引物二聚体和发夹结构的引物Tm，GC含量和dG值。</td>
+<td><a href="http://perlprimer.sourceforge.net/" target="_blank" rel="noopener">http://perlprimer.sourceforge.net/</a></td>
+</tr>
+<tr>
+<td>Primer Premier</td>
+<td>有一个下载和安装的过程。 Primer premier是一款商业软件。 演示版免费使用，可进行预先设计的引物分析。 该软件为用户提供有关引物功能的详细信息。 用户可以更改用于计算Tm和dG的参数。</td>
+<td><a href="http://www.premierbiosoft.com/primerdesign/index.html" target="_blank" rel="noopener">http://www.premierbiosoft.com/primerdesign/index.html</a></td>
+</tr>
+<tr>
+<td>Autodimer</td>
+<td>设计用于快速筛选预选的PCR引物对，用于分析潜在的交叉反应。用于检查设计用于多重PCR的引物对的便利工具。 用户可以调整温度以进行dG计算，总链浓度和最低分数要求。 用户应提供FASTA格式的引物序列。</td>
+<td><a href="http://www.cstl.nist.gov/strbase/AutoDimerHomepage/AutoDimerProgramHomepage.html" target="_blank" rel="noopener">http://www.cstl.nist.gov/strbase/AutoDimerHomepage/AutoDimerProgramHomepage.html</a></td>
+</tr>
+<tr>
+<td>Oligoanalyzer</td>
+<td>基于网络的工具，用于预先选择的引物检查。 提供有关Tm，引物二聚体和发夹的信息。 用户可以调整引物，dNTPs，Na<sup>+</sup> 和Mg<sup>2+</sup> 的浓度。</td>
+<td><a href="http://eu.idtdna.com/analyzer/applications/oligoanalyzer/" target="_blank" rel="noopener">http://eu.idtdna.com/analyzer/applications/oligoanalyzer/</a></td>
+</tr>
+</tbody>
+</table>
+<p>利用工具进行电脑分析引物适宜程度的一般功能，我会通过使用 <a href="http://www.premierbiosoft.com/" target="_blank" rel="noopener">Netprimer</a> 为例进行叙述。他是一个网页端应用，在我们的实验室日常用来检查引物。程序让用户设定核酸浓度值，离子浓度(Na<sup>+</sup>, Mg<sup>2+</sup>)和温度用以计算。Netprimer显示以下信息：二级结构稳定性，Tm值，5’和3’端稳定性，以及引物分子重量等等。为估计引物效率，Netprimer计算分值。这个分值根据二聚体和发卡结构稳定性以下面的方式计算：</p>
+<blockquote>
+<p>分值=100+(dG(二聚体)*0.8+dG(发卡结构)*1.4)</p>
+</blockquote>
+<p>因此，如果dG(二聚体)=dG(发卡结构)=0，引物评分100分。通过分值计算软件得出最稳定的结构。</p>
+<p>比较好的做法是“校准”NetPrimer和其他类似的应用程序。换句话说，就是建议研究者知道软件会为二级结构和3’末端稳定性提供正确的结果（经过实验验证）。软件并不总提供所有影响PCR结果的变量，这就是这么做背后的原因。例如，没有一个选项可以设定用在PCR Mix中其他试剂的浓度。另外，还有各种不同的与软件选项预测二级结构形成相关。由Netprimer计算出来的dG值可能比建议的大，但是这并不意味着检验过的引物对会在试管内表现差。</p>
+<p>Netprimer一类的工具并不提供任何关于引物特异性的信息。为了检验引物是否只和感兴趣的序列区段结合，建议使用BiSearch做个亚硫酸盐修饰基因组同一性检索（图6）。</p>
+<p><img src="/images/MSP_primer_design%20(6).jpg" alt="图6"></p>
+<p>**图6：**在亚硫酸氢盐处理的甲基化基因组上对选自[23]的引物对进行相似性搜索。结果显示引物对与靶序列（染色体10）结合，而且也与染色体9上的序列结合。</p>
+<p>这里给出三个建议：</p>
+<ol>
+<li>用原始基因进行同一性检验</li>
+<li>在未甲基化的亚硫酸盐修饰基因组上进行同一性检验</li>
+<li>在甲基化的亚硫酸盐修饰基因组上进行同一性检验</li>
+</ol>
+<p>用户可以选择以下基因组：人类，小家鼠，挪威大鼠和黑猩猩。应注意，默认设置仅在不匹配位于5’末端时才显示非特异性引物结合。考虑到3’末端对于引物PCR特异性的重要性，这还是有道理的。但还是建议调整软件，在3’端出现错配时把序列认定为“相似”。即便在非常临近3’端的位置出现单个错配也不能满足反应的特异性[47-49]。</p>
+<p>引物设计的整过过程通过图7的例子进行总结和展示。</p>
+<p><img src="/images/MSP_primer_design%20(7).jpg" alt="图7"></p>
+<p>**图7：**设计用于人RASSF1A基因的甲基化猜想的研究的引物。首先，RefSeq ID（NM_007182）是从<a href="http://www.ncbi.nlm.nih.gov/nuccore/NM_007182.4" target="_blank" rel="noopener">NCBI</a>检索的。为了检索RASSF1A启动子序列，而使用DBTSS。在适当的字段中输入RASSF1A ID，进一步访问有关RASSF1A启动子的信息（参见正文）。使用默认设置，DBTSS显示TSS上游1000bp和下游200bp的启动子序列。选中此选项。将获得的序列复制并粘贴在Methprimer的相应区域中。Methprimer选项配置为程序屏幕截图所示。通过NetPrimer分析所得的引物对。甲基化等位基因特异的最佳引物对就显示在图中。</p>
+<h1>总结</h1>
+<p>理论上说，PCR已经足够灵敏以在试管中扩增单个分子，也足够稳固来为下游分析生产质量足够满意的原料。为了接近这一理论反应，正确的设计引物是关键步骤。草草的引物设计会造成对各种病理状况下甲基化状态的误解。考虑到MSP的诊断应用，假阳性结果不是选项之一。本文的目的在于阐述一个简单的MSP引物设计流程。之外是为了指出关键步骤和过程中可能的错误。</p>
+<h1>致谢</h1>
+<p>本工作受自塞尔维亚共和国，教育部，科学与技术发展的173049授权的支持。</p>
+<h1>参考文献</h1>
+<p>[1] Kiefer J. C., Epigenetics in development, Dev Dyn, 2007, 236, 1144-1156</p>
+<p>[2] Delcuve G. P., Rastegar M., Davie J. R., Epigenetic control, J Cell Physiol, 2009, 219, 243-250</p>
+<p>[3] Wan J., Oliver V. F., Zhu H., Zack D. J., Qian J., Merbs S. L., Integrative analysis of tissue-specific methylation and alternative splicing identifies conserved transcription factor binding motifs, Nucleic acids research, 2013,10.1093/nar/gkt652,</p>
+<p>[4] Deaton A. M., Bird A., CpG islands and the regulation of transcription, Genes Dev, 2011, 25, 1010-1022</p>
+<p>[5] Santos K. F., Mazzola, T. F., Carvalho, H. F., The prima donna of epigenetics: the regulation of gene expression by DNA methylation, Brazilian Journal of Medical and Biological Research, 2005, 38, 1531-1541</p>
+<p>[6] Portela A., Esteller M., Epigenetic modifications and human disease, Nature biotechnology, 2010, 28, 1057-1068</p>
+<p>[7] Esteller M., CpG island hypermethylation and tumor suppressor genes: a booming present, a brighter future, Oncogene, 2002, 21, 5427-5440</p>
+<p>[8] Egger G. L., G.; Aparicio, A.; Jones, P.A., Epigenetics in human disease and prospects for epigenetic therapy, Nature, 2004, 429, 457-463</p>
+<p>[9] Das P. M., Singal R., DNA methylation and cancer, Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 2004, 22, 4632-4642</p>
+<p>[10] Kanai Y., Hirohashi S., Alterations of DNA methylation associated with abnormalities of DNA methyltransferases in human cancers during transition from a precancerous to a malignant state, Carcinogenesis, 2007, 28, 2434-2442</p>
+<p>[11] Kondo Y., Issa J. P., DNA methylation profiling in cancer, Expert Rev Mol Med, 2010, 12, 23</p>
+<p>[12] Mansego M. L., Milagro F. I., Campion J., Martinez J. A., Techniques of DNA methylation analysis with nutritional applications, Journal of nutrigenetics and nutrigenomics, 2013, 6, 83-96</p>
+<p>[13] Herman J. G., Graff J. R., Myohanen S., Nelkin B. D., Baylin S. B., Methylation-specific PCR: a novel PCR assay for methylation status of CpG islands, Proceedings of the National Academy of Sciences of the United States of America, 1996, 93, 9821-9826</p>
+<p>[14] Zhang Z., Sun D., Hutajulu S. H., Nawaz I., Nguyen Van D., Huang G., et al., Development of a non-invasive method, multiplex methylation specific PCR (MMSP), for early diagnosis of nasopharyngeal carcinoma, PloS one, 2012, 7, 45908</p>
+<p>15] Delpu Y., Cordelier P., Cho W. C., Torrisani J., DNA methylation and cancer diagnosis, Int J Mol Sci, 2013, 14, 15029-15058</p>
+<p>[16] Yamashita R., Sugano S., Suzuki Y., Nakai K., DBTSS: DataBase of Transcriptional Start Sites progress report in 2012, Nucleic acids research, 2012, 40, 150-154</p>
+<p>[17] Tsuchihara K., Suzuki Y., Wakaguri H., Irie T., Tanimoto K., Hashimoto S., et al., Massive transcriptional start site analysis of human genes in hypoxia cells, Nucleic acids research, 2009, 37, 2249-2263</p>
+<p>[18] Maruyama K., Sugano S., Oligo-capping: a simple method to replace the cap structure of eukaryotic mRNAs with oligoribonucleotides, Gene, 1994, 138, 171-174</p>
+<p>[19] Dreos R., Ambrosini G., Cavin Perier R., Bucher P., EPD and EPDnew, high-quality promoter resources in the next-generation sequencing era, Nucleic acids research, 2012, 41, 157-164</p>
+<p>[20] Brait M., Sidransky D., Cancer epigenetics: above and beyond, Toxicology mechanisms and methods, 2011, 21, 275-288</p>
+<p>[21] Zhu X., Leav I., Leung Y. K., Wu M., Liu Q., Gao Y., et al., Dynamic regulation of estrogen receptor- beta expression by DNA methylation during prostate cancer development and metastasis, The American journal of pathology, 2004, 164, 2003-2012</p>
+<p>[22] Bozovic A., Markicevic M., Dimitrijevic B., Jovanovic Cupic S., Krajnovic M., Lukic S., et al., Potential clinical significance of ERbeta ON promoter methylation in sporadic breast cancer, Med Oncol, 2013, 30, 642</p>
+<p>[23] Zysman M. C., WB. , Bapat B., Considerations When Analyzing the Methylation Status of PTEN Tumor Suppressor Gene, American Journal of Pathology, 2002, 60, 795-800</p>
+<p>[24] Hesson L. B., Packham D., Pontzer E., Funchain P., Eng C., Ward R. L., A reinvestigation of somatic hypermethylation at the PTEN CpG island in cancer cell lines, Biol Proced Online, 2012, 14, 5</p>
+<p>[25] Cho Y. G., Chang X., Park I. S., Yamashita K., Shao C., Ha P. K., et al., Promoter methylation of leukemia inhibitory factor receptor gene in colorectal carcinoma, International journal of oncology, 2011, 39, 337-344</p>
+<p>[26] Fasan A., Alpermann T., Haferlach C., Grossmann V., Roller A., Kohlmann A., et al., Frequency and prognostic impact of CEBPA proximal, distal and core promoter methylation in normal karyotype AML: a study on 623 cases, PloS one, 2013, 8, e54365</p>
+<p>[27] Tada Y., Brena R. M., Hackanson B., Morrison C., Otterson G. A., Plass C., Epigenetic modulation of tumor suppressor CCAAT/enhancer binding protein alpha activity in lung cancer, Journal of the National Cancer Institute, 2006, 98, 396-406</p>
+<p>[28] Lin T. C., Hou H. A., Chou W. C., Ou D. L., Yu S. L., Tien H. F., et al., CEBPA methylation as a prognostic biomarker in patients with de novo acute myeloid leukemia, Leukemia, 2011, 25, 32-40</p>
+<p>[29] Dong S., Kojima T., Shiraiwa M., Mechin M. C., Chavanas S., Serre G., et al., Regulation of the expression of peptidylarginine deiminase type II gene (PADI2) in human keratinocytes involves Sp1 and Sp3 transcription factors, The Journal of investigative dermatology, 2005, 124, 1026-1033</p>
+<p>[30] Hernandez H. G., Tse M. Y., Pang S. C., Arboleda H., Forero D. A., Optimizing methodologies for PCR-based DNA methylation analysis, Biotechniques, 2013, 55, 181-197</p>
+<p>[31] Dieffenbach C. W., Lowe T. M., Dveksler G. S., General concepts for PCR primer design, PCR Methods Appl, 1993, 3, 30-37</p>
+<p>[32] Chuang L. Y., Cheng Y. H., Yang C. H., Specific primer design for the polymerase chain reaction, Biotechnol Lett, 2013,10.1007/ s10529-013-1249-8,</p>
+<p>[33] Li L. C., Dahiya, R. , MethPrimer designing primers for methylation PCRs, Bioinformatics, 2002, 18, 1427-1431</p>
+<p>[34] Borer P. N., Dengler B., Tinoco I., Jr., Uhlenbeck O. C., Stability of ribonucleic acid double-stranded helices, J Mol Biol, 1974, 86, 843-853</p>
+<p>[35] SantaLucia J., Jr., A unified view of polymer, dumbbell, and oligonucleotide DNA nearestneighbor thermodynamics, Proc Natl Acad Sci U S A, 1998, 95, 1460-1465</p>
+<p>[36] Panjkovich A., Melo F., Comparison of different melting temperature calculation methods for short DNA sequences, Bioinformatics, 2005, 21, 711-722</p>
+<p>[37] Marmur J., Doty P., Determination of the base composition of deoxyribonucleic acid from its thermal denaturation temperature, J Mol Biol, 1962, 5, 109-118</p>
+<p>[38] Wallace R. B., Shaffer J., Murphy R. F., Bonner J., Hirose T., Itakura K., Hybridization of synthetic oligodeoxyribonucleotides to phi chi 174 DNA: the effect of single base pair mismatch, Nucleic acids research, 1979, 6, 3543-3557</p>
+<p>[39] Brandes J. C., Carraway H., Herman J. G., Optimal primer design using the novel primer design program: MSPprimer provides accurate methylation analysis of the ATM promoter, Oncogene, 2007, 26, 6229-6237</p>
+<p>[40] Tusnady G. E., Simon I., Varadi A., Aranyi T., BiSearch: primer-design and search tool for PCR on bisulfite-treated genomes, Nucleic acids research, 2005, 33, 9</p>
+<p>[41] Aranyi T., Varadi A., Simon I., Tusnady G. E., The BiSearch web server, BMC Bioinformatics, 2006, 7, 431</p>
+<p>[42] Kristensen L. S., Raynor M. P., Candiloro I., Dobrovic A., Methylation profiling of normal individuals reveals mosaic promoter methylation of cancer-associated genes, Oncotarget, 2012, 3, 450-461</p>
+<p>[43] Rand K., Qu W., Ho T., Clark S. J., Molloy P., Conversion-specific detection of DNA methylation using real-time polymerase chain reaction (ConLight-MSP) to avoid false positives, Methods, 2002, 27, 114-120</p>
+<p>[44] Singh V. K., Govindarajan, R., Naik, S., Kumar, A., The Effect of Hairpin Structure on PCR Amplification Efficiency, Molecular Biology Today, 2000, 1, 67-69</p>
+<p>[45] Rychlik W., Selection of primers for polymerase chain reaction, Mol Biotechnol, 1995, 3, 129-134</p>
+<p>[46] Innis M. A., Gelfand, D. H., Optimization of PCRs, in PCR Protocols (Innis, M A, Gelfand, D H, Sninsky, J J, and White, T J, eds), Academic, New York, 3-12, 1990,</p>
+<p>[47] Simsek M., Adnan H., Effect of single mismatches at 3’-end of primers on polymerase chain reaction, Journal for scientific research Medical sciences / Sultan Qaboos University, 2000, 2, 11-14</p>
+<p>[48] Kwok S., Kellogg D. E., McKinney N., Spasic D., Goda L., Levenson C., et al., Effects of primertemplate mismatches on the polymerase chain reaction: human immunodeficiency virus type 1 model studies, Nucleic acids research, 1990, 18, 999-1005</p>
+<p>[49] Huang M. M., Arnheim N., Goodman M. F., Extension of base mispairs by Taq DNA polymerase: implications for single nucleotide discrimination in PCR, Nucleic acids research, 1992, 20, 4567-4573</p>
+<p>[50] Miura F., Uematsu C., Sakaki Y., Ito T., A novel strategy to design highly specific PCR primers based on the stability and uniqueness of 3’-end subsequences,</p>
+<p><a href="/assert/MSP_primer_design_four_steps.pdf"><strong>原文下载</strong></a></p>
+]]></content>
+      <categories>
+        <category>lab</category>
+      </categories>
+      <tags>
+        <tag>MSP</tag>
+        <tag>PCR</tag>
+        <tag>Primer</tag>
+        <tag>引物设计</tag>
+        <tag>文献翻译</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【持续更新】Zotero 插件合集</title>
+    <url>/lab/Zotero-plugins/</url>
+    <content><![CDATA[<p>从过年到现在返校，时隔半年，终于重新打开我尘封放在学校自习室的电脑😂。开机之前我就已经做好了心理准备，由于半年未更新，估计有一大票的软件落后n个版本。为了一次性解决这些问题，我做出“重大决定”————重装系统，并且直接装成 Ubuntu+Windows 双系统。</p>
+<p>正是由于这次此重装，我一口气就在月初干掉了我40G的流量。同时我也发现由于没有整理，每次下好的安装包都随风而逝，重新寻找重新下载过于痛苦，并且我 Zotero 的插件俺的也不少，重新找劳神费力，所以我决定将他们收集在这里，方便以后查找。（当然并不希望是下一次系统重装）</p>
+<a id="more"></a>
+<ul>
+<li><a href="http://www.github.com/fei0810/markdownhere4zotero" target="_blank" rel="noopener">markdown for zotero</a></li>
+<li><a href="http://www.github.com/retorquere/zotero-better-bibtex" target="_blank" rel="noopener">better bibtex</a></li>
+<li><a href="http://www.github.com/ethanwillis/zotero-scihub" target="_blank" rel="noopener">scihub</a></li>
+<li><a href="http://www.github.com/bwiernik/zotero-shortdoi" target="_blank" rel="noopener">shortdoi</a></li>
+<li><a href="http://www.github.com/jlegewie/zotfile" target="_blank" rel="noopener">zotfile</a></li>
+</ul>
+<!-- * [](http://www.github.com/) -->
+]]></content>
+      <categories>
+        <category>lab</category>
+      </categories>
+      <tags>
+        <tag>zotero</tag>
+        <tag>RIS manager</tag>
+        <tag>collection</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【持续更新】Git 使用中的问题</title>
+    <url>/programming/git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1>Problem</h1>
+<img src="/programming/git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/image-20200525105854145.png" class="" title="problem1">
+<h1>Solution</h1>
+<p>我以为是我用的代理软件<code>clash</code>规则文件有问题（以前出过这事），但是连接<code>github</code>正常。</p>
+<p>几番查找，最终还是使用最为暴力的方法解决了。干脆就把验证关了，</p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify false</span><br><span class="line">git config --global https.sslVerify false</span><br></pre></td></tr></table></figure>
+<p>OK, problem solved!</p>
+<h1>Problem</h1>
+<img src="/programming/git%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/image-20200531103451068.png" class="" title="problem2">
+<h1>Solution</h1>
+<p>最初以为自己乱改代理端口整坏了，后来发现是<code>~/.ssh</code>下没有<code>known_hosts</code>文件。</p>
+<p>为确认，通过命令<code>ssh -T git@github.com</code>，进行验证。</p>
+<p>通过添加<code>config</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br></pre></td></tr></table></figure>
+<p>问题解决。</p>
+<h1>Problem</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br></pre></td></tr></table></figure>
+<p><code>https</code>开头的链接克隆不报错，一旦换成<code>ssh</code>就出问题</p>
+<h1>Solution</h1>
+<p>给<code>ssh</code>加代理</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># windows</span><br><span class="line">ProxyCommand connect -S 127.0.0.1:1080 -a none %h %p</span><br><span class="line"># linux</span><br><span class="line">Host *</span><br><span class="line">  ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p</span><br></pre></td></tr></table></figure>
+<h1>Problem</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git submodule add https://github.com/repo.git</span><br><span class="line"><span class="meta">#</span><span class="bash"> fatal: unable to access <span class="string">'https://github.com/repo.git/'</span>: gnutls_handshake() failed: Error <span class="keyword">in</span> the pull <span class="keyword">function</span>.</span></span><br></pre></td></tr></table></figure>
+<p>正常克隆仓库都可以使用，但是就在这没法用。</p>
+<h1>Solution</h1>
+<p>自己粗心大意，把<code>.gitconfig</code>的代理设置出错了，<code>http/https</code>都走<code>socks5</code>了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:1080</span><br><span class="line">git config --global https.proxy http:&#x2F;&#x2F;127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<p>problem solved</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Insulin-Like Growth Factor I (Igf-1) in Older Adults: A Review</title>
+    <url>/research/%E6%88%90%E5%B9%B4%E4%BA%BA%E8%A1%80%E6%B8%85IGF-1/</url>
+    <content><![CDATA[<p><strong>DOI:</strong> 10.15406/mojgg.2017.01.00034</p>
+<h1>原文翻译摘录</h1>
+<p>衰老是一个动态并进展的过程，其间包括形态学、功能、生化以及心理学的改变。<br>
+这些改变意味着对环境逐渐失去适应性，导致脆性增加，并有更高的患病风险。<br>
+在衰老过程中的内在变化，主要发生在身体组成的平衡、活动性、肌肉力量、柔韧性方面出现缺陷，也包括肌肉质量和骨量减少和内分泌异常，例如：<strong>IGF-1 血清水平降低</strong>。</p>
+<a id="more"></a>
+<p>IGF-1 水平主要由肝在应答 GH 的增加的过程中产生，在骨和肌肉中也可以产生。<br>
+IGF-1 可以增加细胞增殖，用以估计骨密质合成。</p>
+<p>IGF-1 影响骨骼肌合成代谢，于瘦体重相关。<br>
+此外，年龄相关 IGF-1 降低蛋白质合成，增加脂肪和肌肉生长抑制素。<br>
+因此高水平的 IGF-1 与提升身体健康和瘦体重10相关，并可以降低心脏病发生率和死亡率。</p>
+<p>体育锻炼可以影响老年人激素分泌。<br>
+体育锻炼可用以验证计划性训练对 IGF-1 水平维持和提高，以及不同类型的体育训练对激素的潜在效应。<br>
+但是，训练计划的制定方法不同，如：训练的类型，训练量，训练强度。</p>
+<p>在影响老年人血清 IGF-1 水平的不同运动类型中，力量训练、有氧训练、水上运动和跑步、柔韧训练、舞蹈和运动疗法都会增加这种激素。<br>
+平均每周锻炼2<sub>3次，持续3</sub>6月。</p>
+<p>在老年人中，肌肉力量训练相较于耐力训练对 IGF-1 水平的提升更大。</p>
+<h1>总结</h1>
+<ul>
+<li>老年人群，血清 IGF-1 水平降低。</li>
+<li>血清 IGF-1 水平升高有利于对抗衰老。</li>
+<li>有氧体育锻炼可以升高血清 IGF-1 水平。</li>
+<li>IGF-1 主要由肝脏合成。</li>
+<li>IGF-1 可以促进细胞增殖。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>research</category>
+      </categories>
+      <tags>
+        <tag>文献阅读</tag>
+        <tag>Review</tag>
+        <tag>IGF-1</tag>
+        <tag>衰老</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【未完待续】Git使用汇总</title>
+    <url>/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<h1>什么是 Git</h1>
+<p>git 是一个用于版本控制的软件，或者说</p>
+<blockquote>
+<p>是一个开源的分布式版本控制系统。</p>
+</blockquote>
+<p>它是 Linus Torvalds 为了管理 Linux 的内核代码开发而开发的软件。</p>
+<h1>Git 的原理</h1>
+<p>我认为，只有知道原理，才能更好的使用一个工具。所以我又了解了一下 git 的原理。</p>
+<p>在使用 git 进行版本控制时，可以将需要进行版本控制的文件分类为三个阶段，如下图。</p>
+<a id="more"></a>
+<!-- ![git 命令流程图](http://upload-images.jianshu.io/upload_images/3884693-b327d97357a30f8c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) -->
+<img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/1719120-a3db1c8caa1324e2.webp" class="" title="img">
+<ul>
+<li>未进行版本控制</li>
+<li>暂存</li>
+<li>存入仓库</li>
+</ul>
+<h1>Git 的安装</h1>
+<h2 id="Windows"><a class="header-anchor" href="#Windows">¶</a>Windows</h2>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">官网</a>下载</p>
+<img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200412232715087.png" class="" title="image-20200412232715087">
+<p>双击安装程序，一路下一步，直至安装结束。</p>
+<h2 id="Linux"><a class="header-anchor" href="#Linux">¶</a>Linux</h2>
+<p>在 ubuntu 下，直接使用命令行进行安装更为方便：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git</span><br></pre></td></tr></table></figure>
+<h1>基础配置</h1>
+<p>使用 git 的第一步，首先设置一下全局邮箱和用户名</p>
+<p>winsows 在桌面右键，可以看到 <code>Git Bash Here</code>，点击后打开这样一个界面</p>
+<img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200413104956115.png" class="" title="image-20200413104956115">
+<p>在界面内输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "yourName"</span><br><span class="line">git config --global user.email "yourEmail"</span><br></pre></td></tr></table></figure>
+<p>Linux 直接在终端输入上述命令，名字和邮箱按自己的内容填写在<code>yourName</code>和<code>yourEmail</code>的位置。</p>
+<p>完成后使用<code>git config --global --list</code>查看设置情况。</p>
+<h1>使用 Git 进行版本控制</h1>
+<p>进入计划使用 Git 进行版本控制的文件目录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add *</span><br></pre></td></tr></table></figure>
+<p>创建 git 仓库，并将当前目录下所有文件添加入当前库。</p>
+<p>git 是通过<code>.git</code>文件夹来存储目录下文件的变动历史，以及分支和提交信息。所以创建版本库后，在当前目录下会出现一个<code>.git</code>文件夹。如果想重新建立库，可以直接删除<code>.git</code>文件夹，重新开始上述步骤。</p>
+<h2 id="git-基本操作"><a class="header-anchor" href="#git-基本操作">¶</a>git 基本操作</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:left">相对引用，向过去移动一次提交</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>~num</code></td>
+<td style="text-align:left">相对引用，向过去移动<code>num</code>次提交</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git init</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"><img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200419101438349.png" class="" title="image-20200419101438349"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git config</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git add</code></td>
+<td style="text-align:left">添加文件进入版本控制中</td>
+<td style="text-align:left"><code>git add *</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git stage</code></td>
+<td style="text-align:left">暂存某文件</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git rm</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git remote</code></td>
+<td style="text-align:left">管理远程仓库</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git remote -v</code></td>
+<td style="text-align:left">查看已添加的远程仓库</td>
+<td style="text-align:left"><img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200419110204418.png" class="" title="image-20200419110204418"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git remote add</code></td>
+<td style="text-align:left">添加一个远程仓库连接</td>
+<td style="text-align:left"><code>git remote add github git@github.com:Direct-A/readed_articles.git</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git clone</code></td>
+<td style="text-align:left">克隆远程仓库</td>
+<td style="text-align:left"><img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200419102608234.png" class="" title="image-20200419102608234"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git commit</code></td>
+<td style="text-align:left">提交暂存文件修改</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git commit -m</code></td>
+<td style="text-align:left">提交暂存文件修改并添加注释</td>
+<td style="text-align:left"><img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200419101826781.png" class="" title="image-20200419101826781"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git push</code></td>
+<td style="text-align:left">向远程仓库提交修改</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git pull</code></td>
+<td style="text-align:left">拉取远程仓库的修改</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git fetch</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git branch</code></td>
+<td style="text-align:left">创建分支</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git branch -a</code></td>
+<td style="text-align:left">查看当前所有分支</td>
+<td style="text-align:left"><img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200419113528526.png" class="" title="image-20200419113528526"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git branch -f master hashCode</code></td>
+<td style="text-align:left">移动分支头至指定提交</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git merge</code></td>
+<td style="text-align:left">将指定分支合并入当前分支</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git merge --no-ff</code></td>
+<td style="text-align:left">合并同时提交一次，针对被合并分支后续无提交</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git rebase</code></td>
+<td style="text-align:left">变基，减少分支</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git rebase -i</code></td>
+<td style="text-align:left">交互式变基，需要指定变基起点</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git reset</code></td>
+<td style="text-align:left">撤回提交，撤回的提交处于未加入暂存区状态，对远程仓库<strong>无效</strong></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git revert</code></td>
+<td style="text-align:left">撤销提交更改，创建一次提交，用以保存更改，对远程仓库<strong>有效</strong></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git checkout</code></td>
+<td style="text-align:left">切换分支</td>
+<td style="text-align:left"><img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200419102323690.png" class="" title="image-20200419102323690"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git checkout -b</code></td>
+<td style="text-align:left">切换分支并自动创建分支</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git status</code></td>
+<td style="text-align:left">查看仓库状态，所在分支，文件变动，待提交和暂存情况</td>
+<td style="text-align:left"><img src="/programming/git%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/image-20200419101553362.png" class="" title="image-20200419101553362"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git diff</code></td>
+<td style="text-align:left">查看尚未缓存的改动</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git diff  --cash</code></td>
+<td style="text-align:left">查看已缓存改动</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git diff HEAD</code></td>
+<td style="text-align:left">查看所有改动</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git diff --stat</code></td>
+<td style="text-align:left">显示当前改变的摘要</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git cherry-pick hashCode </code></td>
+<td style="text-align:left">复制指定提交至当前分支</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h1>远程仓库（Repository）的使用</h1>
+<p>由于 git 的分布式特点，我们在使用 git 命令时都是在本地执行，如果你想通过 git 分享你的代码，与他人合作或者对代码进行云端存储及备份。 你就需要将代码放在一个相应的代码托管平台上，目前使用最多的基于 git 的代码托管平台是 GitHub，GitLab 和 国内的 Gitee。</p>
+<h1>推荐</h1>
+<p><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">Learn Git breaching</a> 可视化教学</p>
+<p><a href="https://github.com/jonas/tig" target="_blank" rel="noopener">tig</a> 命令行git commit tree</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>how to</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客搭建</title>
+    <url>/programming/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>之前的博客是基于 jekyll 搭建的，但是 jekyll 再本地的软件安装实在有些恼人，<s>我换电脑了，懒得再安了</s>，了解到 hexo 只需要安装 node.js ，并且之后的都是在 node.js 里添加 module ，我决定改使用 hexo。</p>
+<h1>Install hexo</h1>
+<p>在开始着手自己搭建 hexo 博客前，首先还是先看看官方的教程。这是搭建的第一步，同时也可以增加对 hexo 的了解。</p>
+<p><a href="https://hexo.io/docs/" target="_blank" rel="noopener">官方教程</a></p>
+<h1><code>_config.yml</code> 配置文件</h1>
+<p>对于 hexo 来说，配置文件主要存在于两个地方，</p>
+<ol>
+<li>主目录下的 <code>_config.yml</code>，后称<strong>站点配置文件</strong></li>
+<li>主目录/theme/主题名目录下的 <code>_config.yml</code>，后称<strong>主题配置文件</strong></li>
+</ol>
+<a id="more"></a>
+<p>由于存在两个配置文件，刚开始配置时会搞不清动手哪一个。在 NexT 的 <a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md" target="_blank" rel="noopener">Github</a> 文档里，由关于这方面的推荐方案。<br>
+我是用的是 <strong>选择1</strong> 来配置 <code>_config.yml</code>，也就是把主题配置文件中需要的配置复制进站点配置文件中进行修改。这样做对于后续的主题升级来说是一件轻松的事，但是对于最初修改配置并企图实时渲染查看是，就没法实现了。每次对站点配置文件进行修改后（post文件是可以实时的），需要在命令行 <code>ctrl+c</code> 结束进程，然后 <code>hexo clean &amp; hexo s -o</code> 来启动服务，实在折腾。<br>
+对于这个目前还不知道有什么好的解决方案。</p>
+<h1>首页内容显示控制</h1>
+<p>对于刚搭建好，而且也已经把以往的 post 已经放进 hexo 的 <code>source/_post</code> 中了。此时的 hexo 网站，会直接显示所有文章的全文。<br>
+这时候有两种选择：</p>
+<ol>
+<li>使用 <code>&lt;!-- more --&gt;</code> 在 markdown 中自己进行控制（官方推荐）</li>
+<li>使用插件 <a href="https://github.com/chekun/hexo-excerpt" target="_blank" rel="noopener">chekun/hexo-excerpt</a> 来解决问题<br>
+以上来自 <a href="https://github.com/theme-next/hexo-theme-next/issues/1217" target="_blank" rel="noopener">hexo Github issue page</a></li>
+</ol>
+<h1>页面添加</h1>
+<p>添加新页面，使用的是 hexo 的命令 <code>hexo new page name</code> ，但是对于部分页面内容特殊，需要根据后来的更改自动生成，这里对我设置时的查找进行收集整理</p>
+<h2 id="添加-tags-页面"><a class="header-anchor" href="#添加-tags-页面">¶</a>添加 tags 页面</h2>
+<ol>
+<li>新建页面</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new page tags</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容如下：（主目录/source/tags/index.md）</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-03-26 12:39:04</span><br><span class="line">type: "tags"</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>这里 <code>type: &quot;tags&quot;</code> <strong>是必须的</strong>不能遗漏，但是引号不一定要有</p>
+<ol start="3">
+<li>在菜单中添加链接。编辑主题配置文件（主目录/themes/next/_config.yml），添加 tags 到 menu 中，如下：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags</span></span><br></pre></td></tr></table></figure>
+<p>以上内容参考自<a href="https://www.zhihu.com/question/29017171" target="_blank" rel="noopener">知乎页面</a></p>
+<h1>hexo 网站的部署</h1>
+<h2 id="使用-hexo-deploy-进行部署"><a class="header-anchor" href="#使用-hexo-deploy-进行部署">¶</a>使用 <code>hexo deploy</code> 进行部署</h2>
+<p>部署的整个流程，以及其他平台上部署和其他部署方法，均参考<a href="https://hexo.io/zh-cn/docs/one-command-deployment" target="_blank" rel="noopener">hexo官方文档</a></p>
+<p>对于部署后覆盖 master 分支的问题我通过创建 resource 分支来存储博客源码，在 master 分支发布网站部署内容来解决。</p>
+<!-- 由于我是用公开 repo 创建的 gitpage ，使用 hexo deploy 如果用的是同一个项目，那就会出现覆盖 master 分支下的文件这种问题，有些头疼，所以最后我决定使用 Travis CI 。 -->
+<!-- ## 使用 Travis CI 进行 hexo 自动化部署
+
+使用 Travis CI 进行部署前的检测，以及进行自动部署
+
+### 创建 Travis CI 账户
+
+可以直接使用 github 账户登录，方便快捷。登陆后可以选择给指定 repo 安装，还是给全部 repo 安装。
+
+### 了解 Travis CI
+
+阅读[官方文档](https://docs.travis-ci.com/user/for-beginners/)，快速了解 Travis CI。
+其实 Travis CI ,就相当于一个机器人，在提交之后根据你提前已经进行设置的流程，对提交的代码进行检测并部署。
+减少工作量，只需要 git push 然后就可以先休息，等测试结果出来了再查看并解决，通过每次提交检测，来提升代码质量。
+
+### Travis CI 的几个专有名词的理解
+
+![专有名词](/images/word_in_specific_meaning.png)
+
+### Travis CI 的配置
+
+1. 首先主目录下建立文件 `.travis.yml`
+2. 按照[]() -->
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网页书签整理</title>
+    <url>/tips/%E7%BD%91%E9%A1%B5%E4%B9%A6%E7%AD%BE%E6%B8%85%E7%90%86/</url>
+    <content><![CDATA[<p>由于之前收藏页面的分类比较粗糙，并且还有收藏了就是看了的习惯。导致浏览器里堆积了众多的书签，收藏有大量的书签，虽然是个宝藏，但是缺乏整理，用起来也如同一坨 💩。大部分的书签在长久的收藏中，渐渐成为压箱底的 404 页面，而且也会在之后的使用中带来“惊喜”。</p>
+<p>今天我就要动手整理这将要成为垃圾的宝库。这里介绍我在这此整理中用到的一些工具。</p>
+<h1>Quick Bookmark Cleaner</h1>
+<p>chrome 浏览器插件。可以用来清理失效链接，空文件夹，此外还有很最重要的功能，<strong>重定向连接更新</strong>。</p>
+<p>对于很久没有打理的书签，有概率会出现链接原地址更改，重定向链接，这时候及时更新链接可以避免失去一个重要的书签。</p>
+<p>因此为了方便之后的操作，整理书签的第一步，可以进行链接重定向。<strong>不过在进行操作之前，首先备份当前的书签</strong>。</p>
+<a id="more"></a>
+<img src="/tips/%E7%BD%91%E9%A1%B5%E4%B9%A6%E7%AD%BE%E6%B8%85%E7%90%86/quick_bookmark_cleaner.png" class="" title="quick bookmark cleaner">
+<h1>Bookmarks clean up</h1>
+<p>chrome 浏览器插件。可以用来清理重复书签，空文件夹，以及合并重名文件夹，此外还有很最重要的功能，<strong>查找失效书签</strong>。</p>
+<p>这款插件可以作为整理的第二步，用来查找失效的书签，以及清理空文件夹，合并重名文件夹。</p>
+<p>第一次使用这款插件时，会提醒你备份你的书签文件，然后进行相关的清理。另外在检查失效链接时，最好先设置一下判断失效链接的条件。</p>
+
+<h1>Bookmarks Manager and Viewer</h1>
+<p>chrome 浏览器插件。可以方便的整理书签，删除、创建和移动文件夹，支持 fuzzy search 。</p>
+<p>在之前的两步操作之后，利用这款插件对书签进行分类整理。之所以选择这款插件，最重要的时它可以设置成显示在新页面，就像 chrome 自身的书签管理插件一样，但是它是树状显示，非常利于整理。</p>
+<img src="/tips/%E7%BD%91%E9%A1%B5%E4%B9%A6%E7%AD%BE%E6%B8%85%E7%90%86/bookmarks_manager_and_viwer.png" class="" title="bookmarks manager and viwer">
+<p>终于，整理结束。</p>
+]]></content>
+      <categories>
+        <category>tips</category>
+      </categories>
+      <tags>
+        <tag>书签整理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全能又开源的文献管理软件——Zotero</title>
+    <url>/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/</url>
+    <content><![CDATA[<h1>为什么迁移到 Zotero</h1>
+<p>其实最开始我是使用 Endnote 的，在刚开始使用 Endnote 的时候我就因为它古怪的逻辑，而使用困难。它的使用逻辑与以往使用软件不同，用起来就很别扭。<br>
+不过好在有重庆大学万震老师的<a href="https://github.com/wanzhenchn/EndNote_Tutorial_Hand_by_Hand" target="_blank" rel="noopener">《手把手教你使用EndNote X9》</a>，以及网络上中多的相关教程，学起来并不难。但是就算是学会了 Endnote 的使用，它在使用的过程中，很多操作仍然让人感觉受限制，用的并不自由。<br>
+最大的缺陷就是，Endnote 真的就只是收纳文献，并把文献分类归档，方便查看和引用。多个库的管理思维，使得查阅文献有时还需要少量的翻找。窗口套窗口的软件界面，在多个库同时打开时一不小心就给整的一两个窗口挪不动了，虽然可以用重新自动排列窗口来解决。不直接显示笔记区域，在真正对文献进行阅读和归纳时显得异常的麻烦，并不能快捷的把对文献的想法自由的记录下来，当然你可以用其他的软件配合使用，但是两个软件之间如何做到交互就成了问题。作为一个文献管理软件，在文献管理时不能够很好的在多平台多终端之间款快速便捷的切换，也是一大痛点。</p>
+<a id="more"></a>
+<p>因此我也尝试着去寻找一些其他的文献管理软件，但是并不理想，很多功能都不及 Endnote。当然国内的 NoteExpress 也并不差，但是它插入文献的功能不够完善。<br>
+另外，最近的美国封锁软件的事情（哈工大Matlab），也让我决定把工具链换成更加开源的会更可靠。<br>
+碰巧又一次看到 bilibili 上 Straggle with me 制作的关于 Zotero 的视频，还是一整套教程。仔细查看之后发现，完全击中了 Endnote 的许多使用痛点，并且团队协作这点简直棒。干脆迁移至 Zotero。</p>
+<img src="/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/Snipaste_2020-06-16_10-37-20.png" class="" title="Zotero">
+<h2 id="Zotero-的优点："><a class="header-anchor" href="#Zotero-的优点：">¶</a>Zotero 的优点：</h2>
+<ul>
+<li>更加高效，文献管理很多操作都是程序化的，几个脚本就可以自动解决的问题，Endnot 里却仍然需要手动操作</li>
+<li>信息展示较 Endnote 更加合理，不是窗口套窗口，更不是多个库的管理思想。</li>
+<li>文献信息云端同步，多终端，多平台支持</li>
+<li>软件开源，不需要授权，github可以提issue，软件功能更加亲近使用</li>
+<li>Endnote的功能它一个不缺</li>
+<li>有 tag 管理系统，自动生成 tag</li>
+<li>插件扩展，GitHub 方便找</li>
+<li>文档更加友好，官网就有，多语言支持（含中文！）<a href="https://www.zotero.org/support/zh/start" target="_blank" rel="noopener">官方文档</a></li>
+</ul>
+<h2 id="相较-Endnote-的不足："><a class="header-anchor" href="#相较-Endnote-的不足：">¶</a>相较 Endnote 的不足：</h2>
+<ul>
+<li>不能直接展示pdf，打开需要软件跳转，但并不是很繁琐，但有时候挺需要的，可以通过添加笔记弥补<br>
+不能添加星级，区分文献重要度，不过不是很必要</li>
+</ul>
+<h1>安装和使用</h1>
+<h2 id="安装"><a class="header-anchor" href="#安装">¶</a>安装</h2>
+<p>Zotero 是一个全平台的软件，可以在 Windows，Linux 和 Mac 上使用。</p>
+<p>Windows上可以通过 chocolatey 进行安装，在<a href="https://chocolatey.org/install" target="_blank" rel="noopener">安装chocolatey</a> 后，打 powershell 并输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">choco install zotero</span><br></pre></td></tr></table></figure>
+<p>即可安装</p>
+<p>在 Linux 和 Mac 上也有相应的安装方式，可以见<a href="https://www.zotero.org/support/installation" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="使用"><a class="header-anchor" href="#使用">¶</a>使用</h2>
+<p>安装完成后，开箱即用，但是为了达到更好的使用体验，仍需要根据自身的需要进行相关的设置。</p>
+<p>首先可以进行语言设置，在 <strong>Edit -&gt; Preferences -&gt; Advanced -&gt; Language</strong>，中可以更改软件语言，更改后会提示重启软件。<br>
+在 <strong>编辑 -&gt; 首选项 -&gt; 同步</strong>，可以登录在官网注册的 Zotero 账户，方便对导入的文件进行云同步。默认情况下 Zotero 官方提供 300M 的免费空间以供使用。</p>
+<p>在 工具 -&gt; 插件 中可以打开以添加的浏览器插件和写作引用插件。方便导入文献以及文献引用。</p>
+<h3 id="Zotero-ZotFile-OneDrive"><a class="header-anchor" href="#Zotero-ZotFile-OneDrive">¶</a>Zotero + ZotFile + OneDrive</h3>
+<p>由于 Zotero 是开源软件，更具包容性，他也支持你使用第三方的云盘来对自己的文献附件进行云同步（不过没有特殊需求的话，更推荐使用 Zotero 官方的云盘，毕竟官方的更加稳定，而且官方运行也是要恰饭的嘛）。</p>
+<ul>
+<li>在 PC 端
+<ul>
+<li>安装 Zotero + <a href="https://github.com/jlegewie/zotfile" target="_blank" rel="noopener">ZotFile</a> 插件</li>
+<li>ZotFile 把文件自动重命名并且放到文件夹里，然后同步到 OneDrive</li>
+</ul>
+</li>
+<li>在移动端
+<ul>
+<li>Android 可以使用 Zoo for Zotero，但是它只能访问 Zotero 官方网盘中的内容，因此只能通过 OneDrive 来查看文献。</li>
+<li>IOS 有 papership 可以使用</li>
+</ul>
+</li>
+</ul>
+<h4 id="Zotero-具体设置"><a class="header-anchor" href="#Zotero-具体设置">¶</a>Zotero 具体设置</h4>
+<p>打开 <strong>编辑 -&gt; 首选项 -&gt; 高级 -&gt; 文件和文件夹 -&gt; 链接附件的根目录</strong> 中选择 OneDrive 里的 Zotero 文件夹，这样当 Zotero 同步的时候，会同步一个相对地址，可以避免不同 PC 上 OneDrive 文件夹位置不同导致打不开 PDF</p>
+
+<h4 id="下载安装zotfile"><a class="header-anchor" href="#下载安装zotfile">¶</a>下载安装zotfile</h4>
+<p>zotfile 应该是安装率最高的插件了，利用同步盘同步附件的方法也必须使用这个插件。<br>
+<a href="http://zotfile.com/" target="_blank" rel="noopener">下载zotfile</a><br>
+打开zotero，打开 <strong>工具 -&gt; 插件</strong>，  将刚刚下载的zotfile-x.x.x-fx.xpi文件拖到这个界面里进行安装</p>
+<img src="/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/Snipaste_2020-06-16_11-28-04.png" class="" title="install add-ins">
+<h4 id="ZotFile-具体设置"><a class="header-anchor" href="#ZotFile-具体设置">¶</a>ZotFile 具体设置</h4>
+<p>在 工具 -&gt; ZotFile Preferences - Location of Files - Custom Location 选择 OneDrive 的 Zotero 文件夹</p>
+<img src="/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/Snipaste_2020-06-16_11-30-34.png" class="" title="settings in zotfile">
+<p>第一次设置好之后，选中所有条目，<strong>右键 - Manage Attachments - Rename Attachments</strong> 然后应该就会在自己的 Zotero 文件夹里看到所有的 paper 啦。</p>
+<img src="/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/Snipaste_2020-06-16_11-33-19.png" class="" title="icon changes">
+<img src="/lab/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E8%BF%81%E7%A7%BB%E8%87%B3Zotero/Snipaste_2020-06-16_11-34-26.png" class="" title="files in onedrive">
+<h3 id="Endnote-库导入-Zotero"><a class="header-anchor" href="#Endnote-库导入-Zotero">¶</a>Endnote 库导入 Zotero</h3>
+<p>关于这个有<a href="https://www.zotero.org/support/zh/kb/importing_records_from_endnote" target="_blank" rel="noopener">官方文档</a>我就不写了😁</p>
+]]></content>
+      <categories>
+        <category>lab</category>
+      </categories>
+      <tags>
+        <tag>zotero</tag>
+        <tag>RIS manager</tag>
+        <tag>how to</tag>
+      </tags>
+  </entry>
+</search>
