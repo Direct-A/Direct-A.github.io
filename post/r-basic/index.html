@@ -1,0 +1,360 @@
+<!doctype html><html lang=zh-CN data-theme=dark><head><meta charset=UTF-8><meta name=viewport content="width=device-width"><meta name=theme-color content="#222" media="(prefers-color-scheme: dark)"><meta name=generator content="Hugo 0.143.1"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon-16x16.ico><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon-32x32.ico><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple-touch-icon-57x57.png><meta itemprop=name content="【R语言】基础知识"><meta itemprop=description content="a blog as a log"><meta name=description content="a blog as a log"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="https://www.direct-a.cn/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="r,基础知识,编程笔记"><meta property="og:type" content="article"><meta property="og:title" content="【R语言】基础知识"><meta property="og:description" content="a blog as a log"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="https://www.direct-a.cn/post/r-basic/"><meta property="og:site_name" content="Direct-A日志输出"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="Direct-A"><meta property="article:published_time" content="2021-08-14 21:39:32 +0000 UTC"><meta property="article:modified_time" content="2021-08-14 21:39:32 +0000 UTC"><link type=text/css rel=stylesheet href=https://www.direct-a.cn/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=https://www.direct-a.cn/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://www.direct-a.cn/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1738988313"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>【R语言】基础知识 - Direct-A日志输出</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>Direct-A日志输出</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>a blog as a log</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-home hvr-icon"></i>首页</a></li><li class="menu-item menu-item-about"><a href=/about/ class=hvr-icon-pulse rel=section><i class="fa fa-user hvr-icon"></i>关于</a></li><li class="menu-item menu-item-flinks"><a href=/flinks.html class=hvr-icon-pulse rel=section><i class="fa fa-thumbs-up hvr-icon"></i>友情链接</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section><i class="fa fa-archive hvr-icon"></i>归档
+<span class=badge>29</span></a></li><li class="menu-item menu-item-commonweal"><a href=/404/ class=hvr-icon-pulse rel=section><i class="fa fa-heartbeat hvr-icon"></i>公益 404</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#1-数据类型>1. 数据类型</a><ul><li><a href=#11-基本类型>1.1. 基本类型</a></li><li><a href=#12-复合类型>1.2. 复合类型</a><ul><li><a href=#121-标量scalar>1.2.1. 标量(Scalar)</a></li><li><a href=#122-向量vector>1.2.2. 向量(vector)</a></li><li><a href=#123-列表list>1.2.3. 列表(list)</a></li><li><a href=#总结>总结</a></li></ul></li><li><a href=#13-特殊对象>1.3. 特殊对象</a></li></ul></li><li><a href=#2-其他常见属性>2. 其他常见属性</a></li><li><a href=#4-基本运算>4. 基本运算</a></li><li><a href=#5-操作符>5. 操作符</a></li><li><a href=#6-发现r包>6. 发现R包</a></li><li><a href=#参考资料>参考资料</a></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=Direct-A src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>Direct-A</p><div class=site-description itemprop=description>a blog as a log</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>29</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>6</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>55</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/Direct-A title="Github → https://github.com/Direct-A" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+Github
+</a></span><span class=links-of-social-item><a href=mailto:songyicheng0@gmail.com title="E-Mail → mailto:songyicheng0@gmail.com" rel=noopener class=hvr-icon-pulse target=_blank><i class="fa fa-envelope fa-fw hvr-icon"></i>
+E-Mail
+</a></span><span class=links-of-social-item><a href=https://twitter.com/01_days_ title="Twitter → https://twitter.com/01_days_" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-twitter fa-fw hvr-icon"></i>
+Twitter</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh class=cc-opacity rel=noopener target=_blank title=共享知识><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/small/by_nc_sa.svg alt=共享知识></a></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://gitee.com/hugo-next/hugo-theme-next title=https://gitee.com/hugo-next/hugo-theme-next target=_blank>Hugo-NexT</a></li></ul></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="2019-06-12 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=49475></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=114></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2022-05-01 20:57:44 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-comments class="button goto-comments" title=直达评论><i class="fas fa-comments"></i></div><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/r-basic/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="【R语言】基础知识"><meta itemprop=description content="R 语言是一门动态弱类型的语言，同时作为一种解释型程序语言，它具有面向对象编程和函数式编程两种编程范式。
+其中面向对象的部分中，将对象作为存储单位，用以存储变量值，存储函数内容，存储字符内容等。
+如果在命令行中进行交互时输入对象所相关的变量名，会返回对象内存储的内容。
+当调用函数时，需要使用 $lambda$ 表达式的方式。"></span><header class=post-header><h1 class=post-title itemprop="name headline">【R语言】基础知识</h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2021-08-14T21:39:32+00:00 itemprop="dateCreated datePublished" datetime="2021-08-14 21:39:32 +0000 UTC">2021-08-14
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/programming/ itemprop=url rel=index><span itemprop=name>programming</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>3968</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>8分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/r-basic/><i class="fa fa-sync fa-spin"></i>
+</span></span><span class=post-meta-item title><span class=post-meta-item-icon><i class="fas fa-solid fa-comments"></i>
+</span><span class=post-meta-item-text title=评论>评论：
+</span><span id=comments-count data-path=/post/r-basic/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><div class=post-expired-tip id=post-expired-tip><div class=post-expired-title><i class="fa-solid fa-hourglass-half"></i>
+<span>温馨提醒</span></div><div id=post-expired-content class=post-expired-content></div></div><p>R 语言是一门动态弱类型的语言，同时作为一种解释型程序语言，它具有面向对象编程和函数式编程两种编程范式。</p><p>其中面向对象的部分中，将对象作为存储单位，用以存储变量值，存储函数内容，存储字符内容等。
+如果在命令行中进行交互时输入对象所相关的变量名，会返回对象内存储的内容。
+当调用函数时，需要使用 $lambda$ 表达式的方式。</p><a id=more></a><p>面向对象编程的思想下，每个对象都有其相应的属性，大部分属性是普适的，也有特殊的属性值。</p><p>{% asset_img &ldquo;oop.png&rdquo; %}</p><p><strong>注意</strong>：</p><ol><li>R里最基础的数据元素不是标量，是向量，所有数据传入变量时均转换为向量组成。</li><li>在查看对象的类型时，对于单向量对象，返回每个元素的数据类型；对于向量之外的对象，返回数据结构。</li></ol><p>函数式编程的部分则将函数作为编程的主体，对将函数和环境作为编程考虑的因素。
+函数式编程中，函数是一等公民，或者说将函数看作一种对象，可以将函数作为参数传递给高阶函数，并且高阶函数可以将函数作为一个返回值。</p><h2 id=1-数据类型>1. 数据类型
+<a class=header-anchor href=#1-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b></a></h2><p><code>R</code> 中变量的声明通常为</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl>变量名 <span class=o>=</span> 对象
+</span></span><span class=line><span class=cl><span class=c1>#或</span>
+</span></span><span class=line><span class=cl>变量名 <span class=o>&lt;-</span> 对象</span></span></code></pre></td></tr></table></div></div><p>变量名命名有一些基本原则：</p><ul><li><strong>必须</strong>字母开头。</li><li>可包含字母、数字、<code>_</code>、<code>.</code>。</li><li>==区分大小写==。</li><li>不能使用关键字，最好不</li><li>不能以特殊字符开头，最好不</li><li>不能以数字开头，最好不
+之所以用<strong>最好不</strong>，是因为在是在迫不得已的时候，可以用 <code>"'</code> 和反引号来包裹变量名，从而把他们作为变量名，但是使用的时候也得这样用。</li></ul><p>常量或称字面量，即编程实践中的值。
+数据类型，即字面量类型。根据数据结构复杂程度可以分为，<strong>基本类型</strong>和<strong>复合类型</strong>。</p><h3 id=11-基本类型>1.1. 基本类型
+<a class=header-anchor href=#11-%e5%9f%ba%e6%9c%ac%e7%b1%bb%e5%9e%8b></a></h3><p>通过 <code>mode() typeof()</code> 获得</p><ul><li>字符型(character)：<code>"a", 'a'</code></li><li>数值型(numeric)<ul><li>整数(integer)：<code>1L</code></li><li>浮点数(double)：<code>3.14</code></li><li>复数型(complex)：<code> </code>，统计中基本不使用</li></ul></li><li>逻辑型(logical)：<code>TRUE</code></li><li>原生型(raw)：<code> </code>，仅在需要包含二进制数据时使用</li></ul><p>有些时候 R 会自动进行类型之间的转换，此时遵循类型转换优先级进行：</p><ol><li>字符型</li><li>浮点型</li><li>整型</li><li>逻辑型</li></ol><h3 id=12-复合类型>1.2. 复合类型
+<a class=header-anchor href=#12-%e5%a4%8d%e5%90%88%e7%b1%bb%e5%9e%8b></a></h3><h4 id=121-标量scalar>1.2.1. 标量(Scalar)
+<a class=header-anchor href=#121-%e6%a0%87%e9%87%8fscalar></a></h4><p>只储存仅有一个变量的对象，R中现实不存在</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2>2</a>
+</span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=n>x</span> <span class=o>&lt;-</span> <span class=m>1</span>
+</span></span><span class=line><span class=cl><span class=n>y</span> <span class=o>&lt;-</span> <span class=s>&#34;a&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>z</span> <span class=o>&lt;-</span> <span class=kc>TRUE</span></span></span></code></pre></td></tr></table></div></div><h4 id=122-向量vector>1.2.2. 向量(vector)
+<a class=header-anchor href=#122-%e5%90%91%e9%87%8fvector></a></h4><p>存储多个标量，但是类型统一，有一维和多维向量。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1> 1</a>
+</span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2> 2</a>
+</span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3> 3</a>
+</span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4> 4</a>
+</span><span class=lnt id=hl-2-5><a class=lnlinks href=#hl-2-5> 5</a>
+</span><span class=lnt id=hl-2-6><a class=lnlinks href=#hl-2-6> 6</a>
+</span><span class=lnt id=hl-2-7><a class=lnlinks href=#hl-2-7> 7</a>
+</span><span class=lnt id=hl-2-8><a class=lnlinks href=#hl-2-8> 8</a>
+</span><span class=lnt id=hl-2-9><a class=lnlinks href=#hl-2-9> 9</a>
+</span><span class=lnt id=hl-2-10><a class=lnlinks href=#hl-2-10>10</a>
+</span><span class=lnt id=hl-2-11><a class=lnlinks href=#hl-2-11>11</a>
+</span><span class=lnt id=hl-2-12><a class=lnlinks href=#hl-2-12>12</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=n>a</span><span class=o>&lt;-</span><span class=nf>seq</span><span class=p>(</span><span class=n>from</span><span class=o>=</span><span class=m>1</span><span class=p>,</span><span class=n>to</span><span class=o>=</span><span class=m>10</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; [1]  1  2  3  4  5  6  7  8  9 10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>a[</span><span class=o>-</span><span class=nf>c</span><span class=p>(</span><span class=m>1</span><span class=p>,</span><span class=m>2</span><span class=p>,</span><span class=m>3</span><span class=p>)</span><span class=n>]</span> <span class=c1>#负号表示不取这个位置的元素，可以用来删除数据</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; [1]  4  5  6  7  8  9 10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>a[1]</span> <span class=c1>#取得向量a里面的第一个元素</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; [1] 1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>a[1</span><span class=o>:</span><span class=m>3</span><span class=n>]</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; [1] 1 2 3</span></span></span></code></pre></td></tr></table></div></div><p><strong>注意</strong>：</p><ol><li>==索引不从0开始，而是从1开始==</li><li>索引0用以规避NA</li><li>除了用索引，向量每个元素也可以有 <code>names</code></li><li>对于拥有不同类型的向量合并时，会自动进行类型转换</li></ol><h5 id=矩阵matrix>矩阵(matrix)
+<a class=header-anchor href=#%e7%9f%a9%e9%98%b5matrix></a></h5><p>每个元素都拥有相同的数据类型（数值型、字符型或逻辑型），==是维度属性为 2 的向量==。在 R 中是一种相对原始的数据结构。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1> 1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2> 2</a>
+</span><span class=lnt id=hl-3-3><a class=lnlinks href=#hl-3-3> 3</a>
+</span><span class=lnt id=hl-3-4><a class=lnlinks href=#hl-3-4> 4</a>
+</span><span class=lnt id=hl-3-5><a class=lnlinks href=#hl-3-5> 5</a>
+</span><span class=lnt id=hl-3-6><a class=lnlinks href=#hl-3-6> 6</a>
+</span><span class=lnt id=hl-3-7><a class=lnlinks href=#hl-3-7> 7</a>
+</span><span class=lnt id=hl-3-8><a class=lnlinks href=#hl-3-8> 8</a>
+</span><span class=lnt id=hl-3-9><a class=lnlinks href=#hl-3-9> 9</a>
+</span><span class=lnt id=hl-3-10><a class=lnlinks href=#hl-3-10>10</a>
+</span><span class=lnt id=hl-3-11><a class=lnlinks href=#hl-3-11>11</a>
+</span><span class=lnt id=hl-3-12><a class=lnlinks href=#hl-3-12>12</a>
+</span><span class=lnt id=hl-3-13><a class=lnlinks href=#hl-3-13>13</a>
+</span><span class=lnt id=hl-3-14><a class=lnlinks href=#hl-3-14>14</a>
+</span><span class=lnt id=hl-3-15><a class=lnlinks href=#hl-3-15>15</a>
+</span><span class=lnt id=hl-3-16><a class=lnlinks href=#hl-3-16>16</a>
+</span><span class=lnt id=hl-3-17><a class=lnlinks href=#hl-3-17>17</a>
+</span><span class=lnt id=hl-3-18><a class=lnlinks href=#hl-3-18>18</a>
+</span><span class=lnt id=hl-3-19><a class=lnlinks href=#hl-3-19>19</a>
+</span><span class=lnt id=hl-3-20><a class=lnlinks href=#hl-3-20>20</a>
+</span><span class=lnt id=hl-3-21><a class=lnlinks href=#hl-3-21>21</a>
+</span><span class=lnt id=hl-3-22><a class=lnlinks href=#hl-3-22>22</a>
+</span><span class=lnt id=hl-3-23><a class=lnlinks href=#hl-3-23>23</a>
+</span><span class=lnt id=hl-3-24><a class=lnlinks href=#hl-3-24>24</a>
+</span><span class=lnt id=hl-3-25><a class=lnlinks href=#hl-3-25>25</a>
+</span><span class=lnt id=hl-3-26><a class=lnlinks href=#hl-3-26>26</a>
+</span><span class=lnt id=hl-3-27><a class=lnlinks href=#hl-3-27>27</a>
+</span><span class=lnt id=hl-3-28><a class=lnlinks href=#hl-3-28>28</a>
+</span><span class=lnt id=hl-3-29><a class=lnlinks href=#hl-3-29>29</a>
+</span><span class=lnt id=hl-3-30><a class=lnlinks href=#hl-3-30>30</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=c1># 其中，data是一个向量数据；</span>
+</span></span><span class=line><span class=cl><span class=c1># nrow是矩阵的行数；</span>
+</span></span><span class=line><span class=cl><span class=c1># ncol是矩阵的列数；</span>
+</span></span><span class=line><span class=cl><span class=c1># nrow与ncol的乘积需等于data向量的长度</span>
+</span></span><span class=line><span class=cl><span class=c1># 当byrow=TRUE时，生成矩阵的数据逐行放置，默认值byrow=FALSE，数据逐列放置；</span>
+</span></span><span class=line><span class=cl><span class=c1># dimnames是数组维的名字，默认值为空。可以输入包含行名、列名的一个list，对数值行名、列名进行命名</span>
+</span></span><span class=line><span class=cl><span class=nf>matrix</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>	<span class=n>data</span><span class=o>=</span><span class=kc>NA</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=n>nrow</span><span class=o>=</span><span class=m>1</span><span class=p>,</span> <span class=n>ncol</span><span class=o>=</span><span class=m>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=n>byrow</span><span class=o>=</span><span class=kc>FALSE</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=n>dimnames</span><span class=o>=</span><span class=kc>NULL</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#nrow行数，ncol列数，byrow按行排列，dimnames对行和列进行命名</span>
+</span></span><span class=line><span class=cl><span class=n>col_name</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;A&#34;</span><span class=p>,</span><span class=s>&#34;B&#34;</span><span class=p>,</span><span class=s>&#34;C&#34;</span><span class=p>)</span><span class=c1>#编辑列名</span>
+</span></span><span class=line><span class=cl><span class=n>row_name</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;M&#34;</span><span class=p>,</span><span class=s>&#34;N&#34;</span><span class=p>)</span><span class=c1>#行名</span>
+</span></span><span class=line><span class=cl><span class=n>y</span><span class=o>=</span><span class=nf>matrix</span><span class=p>(</span><span class=m>1</span><span class=o>:</span><span class=m>6</span><span class=p>,</span><span class=n>nrow</span><span class=o>=</span><span class=m>2</span><span class=p>,</span><span class=n>ncol</span><span class=o>=</span><span class=m>3</span><span class=p>,</span><span class=n>byrow</span><span class=o>=</span><span class=kc>TRUE</span><span class=p>,</span><span class=n>dimnames</span> <span class=o>=</span> <span class=nf>list</span><span class=p>(</span><span class=n>row_name</span><span class=p>,</span><span class=n>col_name</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>y</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt;   A B C</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; M 1 2 3</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; N 4 5 6</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#对y进行转置，好像列名和行名也发生了变化</span>
+</span></span><span class=line><span class=cl><span class=n>y1</span><span class=o>=</span><span class=nf>t</span><span class=p>(</span><span class=n>y</span><span class=p>)</span> 
+</span></span><span class=line><span class=cl><span class=n>y1</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt;  	 [,1] [,2]</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; [1,]    1    4</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; [2,]    2    5</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; [3,]    3    6</span></span></span></code></pre></td></tr></table></div></div><p><strong>注意</strong>：</p><ol><li>使用<code>matrix[1]</code>，取得是一个值（按照列进行逐列排序的）</li><li>行名和列名不在任意行和列中</li><li>不支持使用 <code>$</code> 取子集</li><li>如果使用 <code>names()</code> 来进行列名操作，结果会发现，这个列名与你所预期的列名不一致，它是每一个元素自左上逐列进行排序的命名</li></ol><h5 id=数组array>数组(array)
+<a class=header-anchor href=#%e6%95%b0%e7%bb%84array></a></h5><p>==维度属性>2的向量，每个元素(g)只能有一种数据类型，不同元素的类型可以不同==。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1> 1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2> 2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3> 3</a>
+</span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4> 4</a>
+</span><span class=lnt id=hl-4-5><a class=lnlinks href=#hl-4-5> 5</a>
+</span><span class=lnt id=hl-4-6><a class=lnlinks href=#hl-4-6> 6</a>
+</span><span class=lnt id=hl-4-7><a class=lnlinks href=#hl-4-7> 7</a>
+</span><span class=lnt id=hl-4-8><a class=lnlinks href=#hl-4-8> 8</a>
+</span><span class=lnt id=hl-4-9><a class=lnlinks href=#hl-4-9> 9</a>
+</span><span class=lnt id=hl-4-10><a class=lnlinks href=#hl-4-10>10</a>
+</span><span class=lnt id=hl-4-11><a class=lnlinks href=#hl-4-11>11</a>
+</span><span class=lnt id=hl-4-12><a class=lnlinks href=#hl-4-12>12</a>
+</span><span class=lnt id=hl-4-13><a class=lnlinks href=#hl-4-13>13</a>
+</span><span class=lnt id=hl-4-14><a class=lnlinks href=#hl-4-14>14</a>
+</span><span class=lnt id=hl-4-15><a class=lnlinks href=#hl-4-15>15</a>
+</span><span class=lnt id=hl-4-16><a class=lnlinks href=#hl-4-16>16</a>
+</span><span class=lnt id=hl-4-17><a class=lnlinks href=#hl-4-17>17</a>
+</span><span class=lnt id=hl-4-18><a class=lnlinks href=#hl-4-18>18</a>
+</span><span class=lnt id=hl-4-19><a class=lnlinks href=#hl-4-19>19</a>
+</span><span class=lnt id=hl-4-20><a class=lnlinks href=#hl-4-20>20</a>
+</span><span class=lnt id=hl-4-21><a class=lnlinks href=#hl-4-21>21</a>
+</span><span class=lnt id=hl-4-22><a class=lnlinks href=#hl-4-22>22</a>
+</span><span class=lnt id=hl-4-23><a class=lnlinks href=#hl-4-23>23</a>
+</span><span class=lnt id=hl-4-24><a class=lnlinks href=#hl-4-24>24</a>
+</span><span class=lnt id=hl-4-25><a class=lnlinks href=#hl-4-25>25</a>
+</span><span class=lnt id=hl-4-26><a class=lnlinks href=#hl-4-26>26</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=c1>#其中，data是一个向量数据；</span>
+</span></span><span class=line><span class=cl><span class=c1>#dim是数组各维的长度，默认值为原向量的长度；dimnames是数组维的名字，默认值为空。</span>
+</span></span><span class=line><span class=cl><span class=nf>array</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>	<span class=n>data</span><span class=o>=</span><span class=kc>NA</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=n>dim</span><span class=o>=</span><span class=nf>length</span><span class=p>(</span><span class=n>data</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>	<span class=n>dimnames</span><span class=o>=</span><span class=kc>NULL</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#创立一个三维的数组，dimnames对名字进行命名</span>
+</span></span><span class=line><span class=cl><span class=n>dim1</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;A1&#34;</span><span class=p>,</span><span class=s>&#34;A2&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>dim2</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;B1&#34;</span><span class=p>,</span><span class=s>&#34;B2&#34;</span><span class=p>,</span><span class=s>&#34;B3&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>dim3</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;C1&#34;</span><span class=p>,</span><span class=s>&#34;C2&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>z</span><span class=o>=</span><span class=nf>array</span><span class=p>(</span><span class=m>1</span><span class=o>:</span><span class=m>12</span><span class=p>,</span><span class=nf>c</span><span class=p>(</span><span class=m>2</span><span class=p>,</span><span class=m>3</span><span class=p>,</span><span class=m>2</span><span class=p>),</span><span class=n>dimnames</span> <span class=o>=</span> <span class=nf>list</span><span class=p>(</span><span class=n>dim1</span><span class=p>,</span><span class=n>dim2</span><span class=p>,</span><span class=n>dim3</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>z</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; , , C1</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; </span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt;    B1 B2 B3</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; A1  1  3  5</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; A2  2  4  6</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; </span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; , , C2</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; </span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt;    B1 B2 B3</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; A1  7  9 11</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; A2  8 10 12</span></span></span></code></pre></td></tr></table></div></div><p><strong>注意</strong>：</p><ol><li>行名和列名不在任意行和列中</li></ol><h5 id=因子factor>因子(factor)
+<a class=header-anchor href=#%e5%9b%a0%e5%ad%90factor></a></h5><p>用于对数据进行自动分组，自动上色，==分类变量==。</p><p>==因子是带有水平（level）属性的向量，是一类分类离散变量==。</p><p>由于拥有 <code>class</code> 属性，它也是 <code>S3</code> 对象。</p><p>{% asset_img &ldquo;facters.png&rdquo; %}</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1> 1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2> 2</a>
+</span><span class=lnt id=hl-5-3><a class=lnlinks href=#hl-5-3> 3</a>
+</span><span class=lnt id=hl-5-4><a class=lnlinks href=#hl-5-4> 4</a>
+</span><span class=lnt id=hl-5-5><a class=lnlinks href=#hl-5-5> 5</a>
+</span><span class=lnt id=hl-5-6><a class=lnlinks href=#hl-5-6> 6</a>
+</span><span class=lnt id=hl-5-7><a class=lnlinks href=#hl-5-7> 7</a>
+</span><span class=lnt id=hl-5-8><a class=lnlinks href=#hl-5-8> 8</a>
+</span><span class=lnt id=hl-5-9><a class=lnlinks href=#hl-5-9> 9</a>
+</span><span class=lnt id=hl-5-10><a class=lnlinks href=#hl-5-10>10</a>
+</span><span class=lnt id=hl-5-11><a class=lnlinks href=#hl-5-11>11</a>
+</span><span class=lnt id=hl-5-12><a class=lnlinks href=#hl-5-12>12</a>
+</span><span class=lnt id=hl-5-13><a class=lnlinks href=#hl-5-13>13</a>
+</span><span class=lnt id=hl-5-14><a class=lnlinks href=#hl-5-14>14</a>
+</span><span class=lnt id=hl-5-15><a class=lnlinks href=#hl-5-15>15</a>
+</span><span class=lnt id=hl-5-16><a class=lnlinks href=#hl-5-16>16</a>
+</span><span class=lnt id=hl-5-17><a class=lnlinks href=#hl-5-17>17</a>
+</span><span class=lnt id=hl-5-18><a class=lnlinks href=#hl-5-18>18</a>
+</span><span class=lnt id=hl-5-19><a class=lnlinks href=#hl-5-19>19</a>
+</span><span class=lnt id=hl-5-20><a class=lnlinks href=#hl-5-20>20</a>
+</span><span class=lnt id=hl-5-21><a class=lnlinks href=#hl-5-21>21</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=c1># x是向量</span>
+</span></span><span class=line><span class=cl><span class=c1># levels是水平，可以自行制定各离散取值，默认取x的不同水平值；</span>
+</span></span><span class=line><span class=cl><span class=c1># labels用来指定各水平的标签，默认用各离散取值的对应字符串；</span>
+</span></span><span class=line><span class=cl><span class=c1># exclude参数用来指定要转化为缺失值（NA）的元素值集合，如果指定了levels，则当因子的第i个元素等于水平中的第j个元素时，元素值取”j”，如果它的值没有出现在levels中，则对应因子元素取NA；</span>
+</span></span><span class=line><span class=cl><span class=c1># ordered取值为真（TRUE）时，表示因子水平是有次序的（按编码次序），否则（默认值）是无次序的。</span>
+</span></span><span class=line><span class=cl><span class=nf>factor</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=n>levels</span><span class=o>=</span><span class=nf>sort</span><span class=p>(</span><span class=nf>unique</span><span class=p>(</span><span class=n>x</span><span class=p>),</span><span class=n>na.last</span><span class=o>=</span><span class=kc>TRUE</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>	<span class=n>labels</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=n>exclude</span><span class=o>=</span><span class=kc>NA</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=n>ordered</span><span class=o>=</span><span class=kc>FALSE</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 检验对象是否是因子</span>
+</span></span><span class=line><span class=cl><span class=nf>is.factor</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 把一个向量转化成一个因子</span>
+</span></span><span class=line><span class=cl><span class=nf>as.factor</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 作为 factor 的一类特殊子集 有序factor 将水平（level）划分出了高低顺序</span>
+</span></span><span class=line><span class=cl><span class=nf>ordered</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>levels</span><span class=o>=</span><span class=nf>c</span><span class=p>())</span></span></span></code></pre></td></tr></table></div></div><h5 id=时间序列ts>时间序列(ts)
+<a class=header-anchor href=#%e6%97%b6%e9%97%b4%e5%ba%8f%e5%88%97ts></a></h5><p>包含 <code>Date</code> <code>Date-times</code> 和 <code>Durations</code>，都是 <code>S3</code> 类</p><p>🧐还没研究。。。</p><h4 id=123-列表list>1.2.3. 列表(list)
+<a class=header-anchor href=#123-%e5%88%97%e8%a1%a8list></a></h4><p>可包含所有的数据结构，数据框的子集是以列表的方式呈现。</p><p>每一个元素都是一个指针，指向对应元素的内存地址。从某种意义上来讲，列表也是一种向量。</p><p>注意：</p><ol><li>列表并不会展平整个数据结构，这点与向量是不同的</li><li><code>unlist()</code> 虽然可以展平一个列表，但是结果并不一定会如你预期，所以尽可能的就用 <code>c()</code></li></ol><h5 id=数据框data-frame>数据框(data frame)
+<a class=header-anchor href=#%e6%95%b0%e6%8d%ae%e6%a1%86data-frame></a></h5><p>常见的二维数据表格，==由向量和或因子组成的一个列表，长度一致，数据类型可以<strong>不一致</strong>==
+<code>data.frame</code> 假定每列是一个变量，==且具有相同的长度==，每行是一个观测值。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1> 1</a>
+</span><span class=lnt id=hl-6-2><a class=lnlinks href=#hl-6-2> 2</a>
+</span><span class=lnt id=hl-6-3><a class=lnlinks href=#hl-6-3> 3</a>
+</span><span class=lnt id=hl-6-4><a class=lnlinks href=#hl-6-4> 4</a>
+</span><span class=lnt id=hl-6-5><a class=lnlinks href=#hl-6-5> 5</a>
+</span><span class=lnt id=hl-6-6><a class=lnlinks href=#hl-6-6> 6</a>
+</span><span class=lnt id=hl-6-7><a class=lnlinks href=#hl-6-7> 7</a>
+</span><span class=lnt id=hl-6-8><a class=lnlinks href=#hl-6-8> 8</a>
+</span><span class=lnt id=hl-6-9><a class=lnlinks href=#hl-6-9> 9</a>
+</span><span class=lnt id=hl-6-10><a class=lnlinks href=#hl-6-10>10</a>
+</span><span class=lnt id=hl-6-11><a class=lnlinks href=#hl-6-11>11</a>
+</span><span class=lnt id=hl-6-12><a class=lnlinks href=#hl-6-12>12</a>
+</span><span class=lnt id=hl-6-13><a class=lnlinks href=#hl-6-13>13</a>
+</span><span class=lnt id=hl-6-14><a class=lnlinks href=#hl-6-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=n>patientID</span><span class=o>&lt;-</span><span class=nf>c</span><span class=p>(</span><span class=m>1</span><span class=p>,</span><span class=m>2</span><span class=p>,</span><span class=m>3</span><span class=p>,</span><span class=m>4</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>age</span><span class=o>&lt;-</span><span class=nf>c</span><span class=p>(</span><span class=m>22</span><span class=p>,</span><span class=m>13</span><span class=p>,</span><span class=m>42</span><span class=p>,</span><span class=m>21</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>diabetes</span><span class=o>&lt;-</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;t1&#34;</span><span class=p>,</span><span class=s>&#34;t2&#34;</span><span class=p>,</span><span class=s>&#34;t3&#34;</span><span class=p>,</span><span class=s>&#34;t4&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>status</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;poor&#34;</span><span class=p>,</span><span class=s>&#34;improved&#34;</span><span class=p>,</span><span class=s>&#34;poor&#34;</span><span class=p>,</span><span class=s>&#34;excellent&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>status</span><span class=o>=</span><span class=nf>factor</span><span class=p>(</span><span class=n>status</span><span class=p>,</span><span class=n>order</span><span class=o>=</span><span class=kc>TRUE</span><span class=p>,</span><span class=n>levels</span><span class=o>=</span><span class=nf>c</span><span class=p>(</span><span class=s>&#34;poor&#34;</span><span class=p>,</span><span class=s>&#34;improved&#34;</span><span class=p>,</span><span class=s>&#34;excellent&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>patientData</span><span class=o>&lt;-</span><span class=nf>data.frame</span><span class=p>(</span><span class=n>patientID</span><span class=p>,</span><span class=n>age</span><span class=p>,</span><span class=n>diabetes</span><span class=p>,</span><span class=n>status</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>patientData</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt;   patientID age diabetes    status</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; 1         1  22       t1      poor</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; 2         2  13       t2  improve</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; 3         3  42       t3      poor</span>
+</span></span><span class=line><span class=cl><span class=c1>#&gt; 4         4  21       t4 excellent</span>
+</span></span><span class=line><span class=cl><span class=c1>#实例标识符可以通过数据框操作函数中的rowname选项指定</span></span></span></code></pre></td></tr></table></div></div><p><strong>注意</strong>：</p><ol><li>使用<code>dataframe[，1]</code>，返回当前列的==向量==</li><li>使用<code>dataframe[1]</code>，返回当前列的==数据框==</li><li>使用<code>dataframe[1，]</code>，返回当前行的==数据框==</li><li>行名和列名不在任意行和列中</li><li>如果想在数据框中嵌入一个列表需要使用 <code>I()</code> 对数据进行包裹</li></ol><h5 id=tibble>Tibble
+<a class=header-anchor href=#tibble></a></h5><p>由于现在数据分析中对于数据框的使用和以往的不同，导致现在使用数据框存在很多烦恼，因此诞生了 tibble 这个类型。</p><p>对比数据框 tibble 的不同有：</p><ol><li>与数据框的结构类似，但是相对与数据框拥有更多的返回信息，以及更多的懒加载机制</li><li>没有行名，所以 tibble 类型提供了行名转换的接口，<code>tibble(rownames="")</code> 以及 <code>rownames_to_colume()</code></li><li>取子集时保持行为的一致性，如 <code>tibbl[, var]</code> 和 <code>tibble[var]</code> 的结果保持一致，都是 tibble；<code>tibble$var</code> 时取得的都是一个向量</li><li>不会无端自发扩展，在进行 <code>tibble$x</code> 时，不会自动对 x 进行模糊匹配</li><li>当构建一个 <code>list-colume</code> 时不再需要 <code>I()</code> 进行包裹</li></ol><hr><h4 id=总结>总结
+<a class=header-anchor href=#%e6%80%bb%e7%bb%93></a></h4><p>{% asset_img &ldquo;summary02.png&rdquo; %}
+{% asset_img &ldquo;summary01.png&rdquo; %}
+{% asset_img &ldquo;R_Vector.png&rdquo; %}</p><table><thead><tr><th style=text-align:center>对象</th><th style=text-align:center>可包含类型</th><th style=text-align:center>同一对象能否有多种类型</th></tr></thead><tbody><tr><td style=text-align:center>向量</td><td style=text-align:center>ALL</td><td style=text-align:center>F</td></tr><tr><td style=text-align:center>因子</td><td style=text-align:center>数值、字符</td><td style=text-align:center>F</td></tr><tr><td style=text-align:center>数组</td><td style=text-align:center>ALL</td><td style=text-align:center>F</td></tr><tr><td style=text-align:center>矩阵</td><td style=text-align:center>ALL</td><td style=text-align:center>F</td></tr><tr><td style=text-align:center>数据框</td><td style=text-align:center>ALL</td><td style=text-align:center>T</td></tr><tr><td style=text-align:center>列表</td><td style=text-align:center>ALL、函数、表达式</td><td style=text-align:center>T</td></tr><tr><td style=text-align:center>时间序列</td><td style=text-align:center>ALL</td><td style=text-align:center>F</td></tr></tbody></table><h3 id=13-特殊对象>1.3. 特殊对象
+<a class=header-anchor href=#13-%e7%89%b9%e6%ae%8a%e5%af%b9%e8%b1%a1></a></h3><ul><li><code>NaN</code><br>Not A Number 非数字</li><li><code>NA</code><br>Not Allow 非法值，缺失数据</li><li><code>Inf</code><br>无穷大，可加正负</li></ul><h2 id=2-其他常见属性>2. 其他常见属性
+<a class=header-anchor href=#2-%e5%85%b6%e4%bb%96%e5%b8%b8%e8%a7%81%e5%b1%9e%e6%80%a7></a></h2><ul><li>长度：通过<code>length()</code>获得</li><li>类属：通过<code>class()</code>获得</li><li>名：通过<code>names()</code>获得</li><li>维度：通过<code>dim()</code>获得</li></ul><h2 id=4-基本运算>4. 基本运算
+<a class=header-anchor href=#4-%e5%9f%ba%e6%9c%ac%e8%bf%90%e7%ae%97></a></h2><ul><li><code>+</code>加 <code>-</code>减 <code>*</code>乘 <code>/</code>除 <code>%%</code>取余 <code>%/%</code>取整除</li><li><code>^</code>幂</li><li>声明和赋值<br><code>=</code> 和 <code>&lt;-</code> 同样赋值，但是作用不同<br>参数定义，赋值/传参：<code>=</code><br>变量定义，传参：<code>&lt;-</code></li><li><code>' "</code>作用一致<br>单引号内可以有双引号，双引号内可以有单引号</li></ul><table><thead><tr><th style=text-align:left>运算符</th><th>描述</th></tr></thead><tbody><tr><td style=text-align:left><code>&</code></td><td>元素逻辑与运算符，将第一个向量的每个元素与第二个向量的相对应元素进行组合，如果两个元素都为 TRUE，则结果为 TRUE，否则为 FALSE。</td></tr><tr><td style=text-align:left><code>｜</code></td><td>元素逻辑或运算符，将第一个向量的每个元素与第二个向量的相对应元素进行组合，如果两个元素中有一个为 TRUE，则结果为 TRUE，如果都为 FALSE，则返回 FALSE。</td></tr><tr><td style=text-align:left><code>!</code></td><td>逻辑非运算符，返回向量每个元素相反的逻辑值，如果元素为 TRUE 则返回 FALSE，如果元素为 FALSE 则返回 TRUE。</td></tr><tr><td style=text-align:left><code>&&</code></td><td>逻辑与运算符，只对两个向量对第一个元素进行判断，如果两个元素都为 TRUE，则结果为 TRUE，否则为 FALSE。</td></tr><tr><td style=text-align:left><code>｜｜</code></td><td>逻辑或运算符，只对两个向量对第一个元素进行判断，如果两个元素中有一个为 TRUE，则结果为 TRUE，如果都为 FALSE，则返回 FALSE。</td></tr></tbody></table><h2 id=5-操作符>5. 操作符
+<a class=header-anchor href=#5-%e6%93%8d%e4%bd%9c%e7%ac%a6></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1> 1</a>
+</span><span class=lnt id=hl-7-2><a class=lnlinks href=#hl-7-2> 2</a>
+</span><span class=lnt id=hl-7-3><a class=lnlinks href=#hl-7-3> 3</a>
+</span><span class=lnt id=hl-7-4><a class=lnlinks href=#hl-7-4> 4</a>
+</span><span class=lnt id=hl-7-5><a class=lnlinks href=#hl-7-5> 5</a>
+</span><span class=lnt id=hl-7-6><a class=lnlinks href=#hl-7-6> 6</a>
+</span><span class=lnt id=hl-7-7><a class=lnlinks href=#hl-7-7> 7</a>
+</span><span class=lnt id=hl-7-8><a class=lnlinks href=#hl-7-8> 8</a>
+</span><span class=lnt id=hl-7-9><a class=lnlinks href=#hl-7-9> 9</a>
+</span><span class=lnt id=hl-7-10><a class=lnlinks href=#hl-7-10>10</a>
+</span><span class=lnt id=hl-7-11><a class=lnlinks href=#hl-7-11>11</a>
+</span><span class=lnt id=hl-7-12><a class=lnlinks href=#hl-7-12>12</a>
+</span><span class=lnt id=hl-7-13><a class=lnlinks href=#hl-7-13>13</a>
+</span><span class=lnt id=hl-7-14><a class=lnlinks href=#hl-7-14>14</a>
+</span><span class=lnt id=hl-7-15><a class=lnlinks href=#hl-7-15>15</a>
+</span><span class=lnt id=hl-7-16><a class=lnlinks href=#hl-7-16>16</a>
+</span><span class=lnt id=hl-7-17><a class=lnlinks href=#hl-7-17>17</a>
+</span><span class=lnt id=hl-7-18><a class=lnlinks href=#hl-7-18>18</a>
+</span><span class=lnt id=hl-7-19><a class=lnlinks href=#hl-7-19>19</a>
+</span><span class=lnt id=hl-7-20><a class=lnlinks href=#hl-7-20>20</a>
+</span><span class=lnt id=hl-7-21><a class=lnlinks href=#hl-7-21>21</a>
+</span><span class=lnt id=hl-7-22><a class=lnlinks href=#hl-7-22>22</a>
+</span><span class=lnt id=hl-7-23><a class=lnlinks href=#hl-7-23>23</a>
+</span><span class=lnt id=hl-7-24><a class=lnlinks href=#hl-7-24>24</a>
+</span><span class=lnt id=hl-7-25><a class=lnlinks href=#hl-7-25>25</a>
+</span><span class=lnt id=hl-7-26><a class=lnlinks href=#hl-7-26>26</a>
+</span><span class=lnt id=hl-7-27><a class=lnlinks href=#hl-7-27>27</a>
+</span><span class=lnt id=hl-7-28><a class=lnlinks href=#hl-7-28>28</a>
+</span><span class=lnt id=hl-7-29><a class=lnlinks href=#hl-7-29>29</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=s>&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=s>&#39;&#39;</span>
+</span></span><span class=line><span class=cl><span class=p>;</span>           <span class=c1>#语句分割，相当于换行</span>
+</span></span><span class=line><span class=cl><span class=n>\</span>           <span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=o>$</span>           <span class=c1>#$对应的是S3类，$比较常用</span>
+</span></span><span class=line><span class=cl>            <span class=c1>#$表示从一个dataframe中取出某一列数据</span>
+</span></span><span class=line><span class=cl><span class=o>@</span>           <span class=c1>#@对应的是S4类，@比较少用</span>
+</span></span><span class=line><span class=cl>            <span class=c1>#@是从R的类实例里面读取数据</span>
+</span></span><span class=line><span class=cl>            <span class=c1># bg=x@colors$bg.col就是从对象实例x中取出colors，</span>
+</span></span><span class=line><span class=cl>            <span class=c1># 而这个colors本身又是个dataframe，所以需要进一步用$读取bg.col列。</span>
+</span></span><span class=line><span class=cl><span class=o>~</span>           <span class=c1>#分面时用以指定</span>
+</span></span><span class=line><span class=cl><span class=n>. </span>          <span class=c1>#tidyverse中可以代表管道的输出</span>
+</span></span><span class=line><span class=cl>            <span class=c1>#b &lt;- a %&gt;% .[5]</span>
+</span></span><span class=line><span class=cl><span class=o>%		    #百分号
+</span></span></span><span class=line><span class=cl><span class=o>%%		    #取余
+</span></span></span><span class=line><span class=cl><span class=o>%/%		    #取整除
+</span></span></span><span class=line><span class=cl><span class=o>%*%		    #向量内积
+</span></span></span><span class=line><span class=cl><span class=o>%</span><span class=n>o</span><span class=o>%		    #向量外积
+</span></span></span><span class=line><span class=cl><span class=o>%</span><span class=kr>in</span><span class=o>%	    #类似于in
+</span></span></span><span class=line><span class=cl><span class=o>            #向量运算时对每一个元素进行遍历
+</span></span></span><span class=line><span class=cl><span class=o>==          #判断
+</span></span></span><span class=line><span class=cl><span class=o>            #向量运算时进行循环补齐同时进行值的判断
+</span></span></span><span class=line><span class=cl><span class=o>%&gt;%		    #管道
+</span></span></span><span class=line><span class=cl><span class=o>%$%		    #??
+</span></span></span><span class=line><span class=cl><span class=o>%&lt;&gt;%	    #??
+</span></span></span><span class=line><span class=cl><span class=o>%</span><span class=bp>T</span><span class=o>&gt;</span>%	    <span class=c1>#??</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>!!</span>
+</span></span><span class=line><span class=cl><span class=o>:=</span></span></span></code></pre></td></tr></table></div></div><h2 id=6-发现r包>6. 发现R包
+<a class=header-anchor href=#6-%e5%8f%91%e7%8e%b0r%e5%8c%85></a></h2><p>RDocumentation 搜索引擎，发现和了解 R 包和函数。</p><h2 id=参考资料>参考资料
+<a class=header-anchor href=#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99></a></h2><p><a href title=小洁忘了怎么分身-生信技能树GEO分析课程>小洁忘了怎么分身-生信技能树GEO分析课程
+</a><a href=https://www.jianshu.com/p/47a15297a5f2 title=R语言数据对象类型-简书 rel="noopener external nofollow noreferrer" target=_blank class=exturl>R语言数据对象类型-简书
+<i class="fa fa-external-link-alt"></i>
+</a><a href=https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf title=R4beginner-cran rel="noopener external nofollow noreferrer" target=_blank class=exturl>R4beginner-cran
+<i class="fa fa-external-link-alt"></i>
+</a><a href=https://www.plob.org/article/3574.html title=R语言编程入门-PLoB rel="noopener external nofollow noreferrer" target=_blank class=exturl>R语言编程入门-PLoB
+<i class="fa fa-external-link-alt"></i>
+</a><a href=https://adv-r.hadley.nz/index.html title="Welcome | Advanced R" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Welcome | Advanced R
+<i class="fa fa-external-link-alt"></i></a></p></div><footer class=post-footer><div class=post-tags><a href=/tags/r/>r
+</a><a href=/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/>基础知识
+</a><a href=/tags/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/>编程笔记</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class=a2a_dd href=https://www.addtoany.com/share></a><a class=a2a_button_wechat></a><a class=a2a_button_qzone></a><a class=a2a_button_sina_weibo></a><a class=a2a_button_douban></a><a class=a2a_button_facebook></a><a class=a2a_button_x></a><a class=a2a_button_email></a><a class=a2a_button_printfriendly></a></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="Direct-A - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="Direct-A - 微信">
+<span>微信</span></div></div></div><div class=post-copyright><img src=/imgs/cc/cc.svg width=75 height=75 align=right alt=共享知识><ul><li class=post-copyright-title><strong>文章标题：</strong>
+【R语言】基础知识</li><li class=post-copyright-author><strong>原文作者： </strong>Direct-A</li><li class=post-copyright-link><strong>本文链接：</strong>
+<a id=post-cr-link href=https://www.direct-a.cn/post/r-basic/ title=【R语言】基础知识>https://www.direct-a.cn/post/r-basic/</a></li><li class=post-copyright-license><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <i class="fab fa-fw fa-creative-commons"></i><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/atom.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/r-ide-compare/ rel=next title="Vscode VS. Rstudio---R IDE对比"><i class="fa fa-chevron-left"></i> Vscode VS. Rstudio---R IDE对比</a></div><div class="post-nav-prev post-nav-item"><a href=/post/ventoy-useage/ rel=prev title="全能多系统启动 U 盘制作工具——Ventoy">全能多系统启动 U 盘制作工具——Ventoy
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div id=comments class=post-comments><div class=comment-head><div class=comment-headline><i class="fas fa-comments fa-fw"></i>
+<span>评论交流</span></div></div><div class=comment-wrap><div><div class=comment-loading><i class="fa fa-sync fa-spin"></i></div><div class=waline3-container></div></div></div></div></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/post/r-basic/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2019 - 2025
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>Direct-A</span></div><div class=powered-by>由 <a href=https://gohugo.io title=0.143.1 target=_blank>Hugo</a> & <a href=https://github.com/hugo-next/hugo-theme-next title=4.7.2 target=_blank>Hugo NexT.Gemini</a> 强力驱动</div><div class=beian><a href=https://beian.miit.gov.cn target=_blank>冀ICP备2022004242号-1</a>
+<img src=/imgs/gongan.png alt=冀公网安备>
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2022004242" target=_blank>冀公网安备 2022004242 号</a></div><div class=vendors-list><a target=_blank href=https://memos.direct-a.cn title=memos><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/memos.webp alt=memos>
+</a><a target=_blank href=https://gitea.direct-a.cn title=gitea><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/gitea.png alt=gitea>
+</a><span>其他云服务</span></div></div></footer><script class=next-config data-name=page type=application/json>{"clipboard":{"js":{"file":"dist/clipboard.min.js","name":"clipboard","version":"2.0.11"}},"comments":true,"expired":true,"expiredTips":{"info":"🕰️ 嗨，这篇文章已是#前的陈年佳酿，信息可能需要更新，阅读前请检查最佳赏味期限。","warn":"🚀 注意啦！这篇文章来自#以前，可能已跟不上时代的步伐。阅读时请自备时光机，小心穿越哦！"},"isHome":false,"isPage":true,"path":"r-basic","permalink":"https://www.direct-a.cn/post/r-basic/","title":"【R语言】基础知识","toc":true,"waline3":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"3.3.0"},"pagecnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/pageview.js","name":"pageview","version":"3.3.0"}}}</script><script type=text/javascript src=https://www.direct-a.cn/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=https://www.direct-a.cn/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":true,"giscus":{"cfg":{"category":"Comments","emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"https://www.direct-a.cn/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline3"},"views":{"enable":true,"plugin":"waline3"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"https://www.direct-a.cn/js/3rd"}},"version":"4.7.2","waline3":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o 可用快捷键选取表情符号：😀😄😁🥳👻👽👀🚄 (Window系统：Win+.，Mac系统：Control+Command+Space)","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"search":true,"serverurl":"https://walinejs.comment.lithub.cc","sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.min.css","name":"waline","version":"3.3.0"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"3.3.0"}}}</script><script type=text/javascript src="/js/main.min.js?=1738988313" defer></script><script type=text/javascript src="/js/clipboard.min.js?=1738988313" defer></script></body></html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Direct-A日志输出</title><link>https://www.direct-a.cn/tags/git/</link><description>Recent content in Git on Direct-A日志输出</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 16 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.direct-a.cn/tags/git/rss.xml" rel="self" type="application/rss+xml"/><item><title>【持续更新】git 使用中的问题</title><link>https://www.direct-a.cn/post/git-problems/</link><pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/git-problems/</guid><description>&lt;h2 id="problem">Problem
+&lt;a class="header-anchor" href="#problem">&lt;/a>
+&lt;/h2>&lt;p>{% asset_img &amp;ldquo;image-20200525105854145.png&amp;rdquo; &amp;ldquo;problem1&amp;rdquo; %}&lt;/p>
+&lt;h2 id="solution">Solution
+&lt;a class="header-anchor" href="#solution">&lt;/a>
+&lt;/h2>&lt;p>我以为是我用的代理软件&lt;code>clash&lt;/code>规则文件有问题（以前出过这事），但是连接&lt;code>github&lt;/code>正常。&lt;/p>
+&lt;p>几番查找，最终还是使用最为暴力的方法解决了。干脆就把验证关了，&lt;/p></description></item><item><title>【未完待续】git使用汇总</title><link>https://www.direct-a.cn/post/git-useage/</link><pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/git-useage/</guid><description>&lt;h1 id="什么是-git">什么是 Git
+&lt;a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-git">&lt;/a>
+&lt;/h1>&lt;p>git 是一个用于版本控制的软件，或者说&lt;/p>
+
+ &lt;blockquote>
+ &lt;p>是一个开源的分布式版本控制系统。&lt;/p>
+ &lt;/blockquote>
+&lt;p>它是 Linus Torvalds 为了管理 Linux 的内核代码开发而开发的软件。&lt;/p>
+&lt;h1 id="git-的原理">Git 的原理
+&lt;a class="header-anchor" href="#git-%e7%9a%84%e5%8e%9f%e7%90%86">&lt;/a>
+&lt;/h1>&lt;p>我认为，只有知道原理，才能更好的使用一个工具。所以我又了解了一下 git 的原理。&lt;/p></description></item></channel></rss>

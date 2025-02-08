@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>【一周生活细节】2022-05_01</title><url>/post/2022-05-01/</url><categories><category>blog</category></categories><tags><tag>一周生活细节</tag></tags><content type="html"><![CDATA[  TOC News Robyn 一个全新的 Python Web 框架 PyScript 在网页中运行 Python github项目和网站 现代命令行工具合集 Rust cheetsheet 学习 yay 命令行 flags 罗列 趣图 Robyn 一个全新的 Python Web 框架 Hello, Robyn! 用 Python 写 Web 同时也期望能拥有更高的性能，这可能是一个不错的选择。
+PyScript 在网页中运行 Python PyScript — unleash the power of Python in your browser | by Eryk Lewinson | May, 2022 | Towards Data Science GitHub - pyscript/pyscript Python 在很多方面都有涉足，但是唯独在网页脚本这一部分没有，现在 PyScript 补齐了这一短板。 虽然现在用起来还是比较别扭，由于缩进问题，在 &lt;script&gt; &lt;/script&gt; 里还是需要完全顶头写，这就很强迫症杀手。
+现代命令行工具合集 A list of new(ish) command line tools 常用命令行工具的全新替代版本。
+以前的命令行工具那么好为什么一定要用新的去替代呢？虽然旧的有他的好，但是毕竟现在控制台已经不再是在那个老旧的 CRT 里显示了，一个屏幕可以显示的内容也更多，色彩也更加丰富，这显然已不同于往日。除了显示上的变化，现在文件的格式和类型也已经发生了比较大的变换，现在已经发展出了更多的针对电子屏幕优化的文件格式，旧的工具在最初的设计商由于没有考虑到这点也已落后很多。
+就光从前面这两点上，我们就有充分的理由来替换他们，新的工具由于使用新的编程语言，在最初就已经规避了旧工具的很多 bug，而且当前 UI/UX 的发展带来的经验积累，也使得新工具在一开始就拥有更好的性能和交互体验，以及丰富的信息输出。
+文中的部分工具其中有一部分已经在我的日常中开始高频率的使用了，比如 bat exa tldr glances fd。他们都拥有良好的使用体验，都是我命令行使用中的好帮手。
+Rust cheetsheet Rust Cheat Sheet + PDF | Zero To Mastery {% asset_link &ldquo;Rust_Cheatsheet_Zero_To_Mastery_V1.01.pdf&rdquo; &ldquo;Rust cheetsheet&rdquo; %}
+一个 Rust 的 cheat sheet，相当不错的小抄。
+yay 命令行 flags 罗列 yay进阶 - 知乎 随着 Arch Linux 使用的时间不多增加，很多安装包过程中遇到的问题，最终都会回到“如何使用包管理器”这个问题上。尤其是在使用 aur helper 的时候，更是得熟悉这些 flags 的使用。（当然有时候还会有环境导致的包安装问题，不过大多数也都是我自己的粗心导致的😜）
+为了方便以后的使用，就专门着了这篇文档，通读一遍就已经有了收获：
+yay -Ps 查看当前系统中程序包的安装状态 yay -Pww 查看近期一些包变动相关的重大新闻，最好在每次更新前运行一下，避免滚炸 yay -Qu 查看有哪些包需要更新 yay --sudoloop 安装的过程中保持 sudo 状态 趣图 {% gp 10-2 %} {% asset_img IMG_20220522_162944_099.jpg %} {% asset_img IMG_20220518_114033_266.jpg %} {% asset_img IMG_20220518_190903_743.jpg %} {% asset_img IMG_20220515_180537_762.jpg %} {% asset_img IMG_20220515_180512_760.jpg %} {% asset_img IMG_20220512_165707_689.jpg %} {% asset_img IMG_20220513_173257_168.jpg %} {% asset_img IMG_20220515_203800_399.jpg %} {% asset_img IMG_20220519_160627_317.jpg %} {% asset_img IMG_20220522_091935_149.jpg %} {% endgp %}
+  ]]></content></entry><entry><title>【一周生活细节】2022-04_04</title><url>/post/2022-04-04/</url><categories><category>blog</category></categories><tags><tag>一周生活细节</tag></tags><content type="html">  TOC News 马斯克收购 Twitter Rust 在前端开发中的大显身手 Webassembly 2.0 规范发布 github项目和网站 you-get 面向视屏网站的命令行视频下载工具 logo generate 免费的图标定制网站 json hero json 可视化解析工具 学习 vscode snippests 使用 Linux 常用网络命令 趣图 马斯克收购 Twitter 马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文 马斯克居然收购了 Twitter！这确实让人疑惑，一个发射火箭和生产电车的科技公司居然收购了一个新媒体互联网公司，好吧这么看好像跨度还勉强，不是过于夸张。
+但是，有时为什么马斯克要收购 Twitter？按照现在的说法，他之所以收购就是看到
+{% cq %} Twitter 是一个“全球言论自由的平台”🤔，它现有形式无法履行这个“社会责任”，而“需要转变成一个私人公司”。 他对推特的兴趣主要是想要全面检讨推特内容的管理政策，想要让推特成为一个自由言论的平台。 {% endcq %}
+目前的资料，我们可以知道收购后的 Twitter 将会做出下面的改变：
+放松内容管制 消除广告 确认没有机器人和假帐号 增加发表后的编辑功能 这么看，貌似真的是为了言论自由。看看马斯克以往的成就，感觉有戏，不过道阻且长，让我们拭目以待。
+Rust 在前端开发中的大显身手 【骇客说】Rust，JavaScript 的未来？_哔哩哔哩_bilibili {% cq %} Any application that can bu written in JavaScrpt, will enventually be written in JavaScript.
+&amp;amp;ndash;Athwood&amp;amp;rsquo;s Law {% endcq %}
+目前，前端的生态完全就是 JavaScript 的天下，但是最近的 Webassembly 和 Rust 让它开始产生改变，可以看到越来越多的工具已将开始出现 Rust 写的版本，它们在性能上有了明显的提升，虽然有的在效果上还是不能平替 JavaScript 的版本，但是前途无限啊。
+看来 Rust 还是很有学习的必要啊。
+Webassembly 2.0 规范发布 WebAssembly 2.0 …  </content></entry><entry><title>【一周生活细节】2022-04_03</title><url>/post/2022-04-03/</url><categories><category>blog</category></categories><tags><tag>一周生活细节</tag></tags><content type="html">  很长时间里我都把这个博客当作一个技术文档的发布站点。但是前一段时间在检索问题的时候，看到其他博客，看他们有类似记录问题最佳解答或者最近发现这样类型的文章，我感到很新奇，仔细一想这种形式不也是一种分享，很多时候那些零零散散的琐碎问题，通过这种方式的分享不也可以组成一种技术或者经验的文档吗。
+所以我计划今后每周发布一篇近期遇到问题的最佳解决方案，关注到的重要的或者有趣的新闻，看到的有趣或厉害的项目，作为另外一种技术向的文档。或者说一种周更的技术向朋友圈
+折腾虚拟机：虚机和宿主机共享目录 最开始找到的解决方法是：
+通过Windows共享文件夹直接挂载到Linux中使用（实验操作）_一拳超人的技术博客_51CTO博客 虽然文章里用的是 Linux 作为虚拟机，Windows 作为宿主机，但是 Linux 宿主机这么整也没啥问题，就是不开虚拟机就不能访问数据。
+这种缺陷不能忍啊，后面有时间了又继续找了找，下面这个视频的方案就很合适：
+Arch Linux Samba Server [2021] - YouTube Linux 作为 samba 的服务器，Windows 创建个网络地址，就很合适，所以还是在宿主机上创建文件共享来让虚机访问最合适。 至于为什么选择 samba，还多亏它的跨平台能力。
+Hexo 实现萌娘百科黑幕 在萌娘百科和steam的评论区都可以见到的一种文本样式，很有趣，发现在 Next 主题中没有相关的实现，所以就动手找了找：
+如何实现黑幕 · 大专栏 不过我的实现方法和他描述的有一点不同，就是把更改主题目录里的文件，换成了修改 source/_data/styles.styl 并且打开主题配置文件中 custom_file_path: 下 style 一行的注释。
+Rust-Course Rust 语言圣经 - Rust语言圣经(Rust Course) 更新了！！布局和内容都更新了，要加紧进度学习了🥰
+几张有趣的图 {% gp 10-5 %} {% asset_img IMG_20220407_015720_773.jpg %} {% asset_img IMG_20220412_114021_367.jpg %} {% asset_img IMG_20220410_235850_951.jpg 老人与海 %} {% asset_img IMG_20220401_092554_843.jpg 镜中世界 %} {% asset_img IMG_20220407_014609_694.jpg 宇宙猫 %} {% asset_img IMG_20220402_011103_652.jpg 是灯鸭 %} {% asset_img IMG_20220410_194001_136.jpg 冲鸭 %} {% asset_img IMG_20220419_085516_700.jpg %} {% asset_img IMG_20220423_003329_124.jpg %} {% asset_img IMG_20220423_003337_705.jpg 有人点赞了 %} {% endgp %}
+  </content></entry><entry><title>编程范式的发展以及主流编程范式的特点和优缺点</title><url>/post/programming-paradigm/</url><categories><category>programming</category></categories><tags><tag>编程范式</tag><tag>基础知识</tag><tag>编程笔记</tag></tags><content type="html">   编程范式（Programming paradigm）是指某种编程语言典型的编程风格或编程方式。 编程范式是编程语言的一种分类方式，它并不针对某种编程语言。就编程语言而言，一种编程语言也可以适用多种编程范式。
+编程范式有很多种，常见的就几种，包括面向过程（结构化），函数式（声明式），面向对象。
+{% asset_img relationship.png 编程范式关系 %}
+但是为什么会有这么多种编程范式？
+通过将现实问题映射至数学问题，在利用图林机就可以使用程序解决现实生活中问题
+但是现实问题到图灵机中程序之间存在着映射为数学问题的过程，这一过程中的问题就有程序员来实现，但是在实现的方法上，也就是编程范式就会存在不同，因此诞生了多种编程范式。 这些编程范式作为编程的思维底座，程序员在其之上进行编程解决问题；思维底座越高，程序员需要进行的操作越少。
+但是不同编程范式都有优劣，同时对硬件的消耗也不同，应当更根据不同的需求进行选择。
+编程范式的发展 {% asset_img paradigm-history.png 发展历史 %}
+非结构化编程 从最底层的开始说就是机械语言，即 0 和 1。使用这种二进制的序列进行指令的表达和数据的存储。基本没有阅读性。 然后向上就是汇编，使用助记符号进行指令表示，虽然有了可读性，但是仍然很痛苦。
+这两种语言硬说编程范式，那就是非结构化编程。程序中充斥着 goto，难以维护，最终达成共识 goto 有害。
+{% asset_img none-struct.png 非结构化编程 %}
+结构化编程 结构化编程中最重要也是最主要的也就是 c 语言了，它对计算机进行了恰当的抽象，并且掩盖了诸多细节。
+当高级语言大行其道以后，人们开发的程序规模逐渐膨胀，这时如何组织程序变成了新的挑战。有一种语言搭着 C 语言的便车将面向对象的设计风格带入主流视野，这就是 C++，它完全兼容 C 语言。在很长一段时间内，C++ 风头十足，成为行业中最主流的编程语言。后来，计算机硬件的能力得到了大幅提升，Java 语言脱颖而出。Java 语言假设程序的代码空间是开放的，在 JVM 虚拟机上运行，一方面支持面向对象，另一方面支持 GC 功能。
+{% asset_img structed.png 结构化编程 %}
+函数式编程 前面的编程范式发展是程序语言发展的主要路径，但 …  </content></entry><entry><title>【翻译】MSH3 Homology and Potential Recombination Link to SARS-CoV-2 Furin Cleavage Site</title><url>/post/potential-recombination-link-to-sars-cov-2/</url><categories><category>blog</category></categories><tags><tag>sars-cov-2</tag></tags><content type="html">  SARS-CoV-2 和蝙蝠 RaTG13 冠状病毒的多个点突变中，仅有 12 个核苷酸长度的 弗林蛋白酶 裂解位点（FCS）有超过三个核苷酸的差异。通过 BLAST 检索发现 SARS.Cov2 基因组中包含标记裂解位点的 19 个核苷酸部分与密码子优化专有序列（人类 MSH3 的补充序列） 100% 互补。SARS-Cov-2 中出现的反向互补序列可能是随机出现的但也有必要考虑其他可能。中间宿主内发生重组不像可能的解释。SARS-Cov-2 这类单链 RNA 病毒利用感染细胞的 RNA 负链作为模板，这有可能导致 SARS-CoV-2 反义链 RNA 与细胞内 MSH3 负链（包含 FCS）发生复制选择重组入病毒基因组。无论如何，这段包含 FCS 19 个核苷酸，且与 MSH3 mRNA 100% 反向互补的 RNA 序列的出现都是高度反常的并需要进一步研究。
+关键词：SARS-CoV-2 刺突蛋白，弗林酶裂解位点，MSH3 基因，序列同源物，重组
+前言 基于近期发表的一篇描述SARS-CoV-2插入变异的文章，我们带来了我们近期在 SARS-CoV-2 刺突（S）蛋白中弗林酶裂解位点 （FCS）序列的研究。SARS-CoV-2 造成了 COVID-19 流感，与蝙蝠冠状病毒 SL-CoVZC45 存在 82.3% 的核苷酸相似，与 SARS-CoV 有 77.2% 的核苷酸相似，同时与蝙蝠冠状病毒 RaTG13 基因组序列相似性达 96.2% 。在 SARS-CoV-2 和 RaTG13 的多个点突变中，仅有一个插入和三个核苷酸的插入： 12 个核苷酸，其编码 SARS-CoV-2 S 蛋白中发现的 4 个氨基酸（aa 681-684, PRRA）。这种多元 FCS 将 SARS-CoV-2 与其他 b 系 β 冠状病毒或任何其他沙贝病毒区分开来。FCS 的插入增强了 SARS-CoV-2 在 2019 年的感染能力。而 FCS 缺失使SARS-CoV-2 减毒变体其可用于动物疫苗接种，这与人类感染相关。FCS 在人和雪豹间传播至关重要，其将病毒传播至人类细胞，并造成两种 SARS-CoV-2 动物模型的严重疾病。
+{% asset_img 20220325123356.png 图1 %}
+图1：SARS-CoV-2 中弗林蛋白酶的原始序列。 …  </content></entry><entry><title>Don't Starve Together 私有服务器搭建</title><url>/post/don-t-starve-together-server/</url><categories><category>blog</category></categories><tags><tag>game</tag><tag>饥荒</tag><tag>饥荒联机板</tag><tag>DST</tag></tags><content type="html"><![CDATA[  在 Linux 上玩饥荒联机版是通过 Proton 兼容层运行的，玩起来没什么么问题，但是联机使用自己本机建的公共服务器就会出现延迟过高，别人连进来没法一起开心的游戏。毕竟是兼容层里面的，也难怪。正好手里有服务器，所以就想顺手整个自建的私有饥荒服务器。
+下面就是我自己搭建饥荒私有服务器的过程以及踩坑实录。
+必备条件 云服务器一台 Klei用户ID：按下面图片的流程就可以拿到了 {% asset_img &amp;ldquo;Pasted image 20220324135501.png&amp;rdquo; &amp;ldquo;用户信息&amp;rdquo; %} {% asset_img &amp;ldquo;Pasted image 20220324135649.png&amp;rdquo; &amp;ldquo;KeliID&amp;rdquo; %} cluster_token {% asset_img &amp;ldquo;Pasted image 20220324135758.png&amp;rdquo; &amp;ldquo;游戏&amp;rdquo; %} {% asset_img &amp;ldquo;Pasted image 20220324135835.png&amp;rdquo; &amp;ldquo;服务器&amp;rdquo; %} {% asset_img &amp;ldquo;Pasted image 20220324135912.png&amp;rdquo; &amp;ldquo;创建服务器&amp;rdquo; %} 根据上面的连接就可以创建新的 cluster_token 了 存档文件 存档可以使用前面的网页里生成的 也可以使用自己本地游戏新建存档 Proton 6.3 可以适应 Linux 下的目录结构，直接在当前用户的 $HOME 目录下就可以见到 .klei ，里面就是每个存档的目录 Proton 7 以上的在 .steam/steam/steamapps/compatdata/322330/pfx/drive_c/users/steamuser/Documents/Klei/DoNotStarveTogether 下找到可以找到 部署流程 可以使用 饥荒联机版专用服务器搭建全流程Windows-Linux - 冰牛奶 的流程，包括了 Windows 和 Linux 的，不过我的有我自己的优化。
+也可以直接用 GitHub - cuukenn/dontstarveserver: …  ]]></content></entry><entry><title>tags</title><url>/tags/</url><categories/><tags/><content type="html">     </content></entry><entry><title>Hexo Next Theme 踩坑</title><url>/post/hexo-troubleshoot/</url><categories><category>blog</category></categories><tags><tag>next</tag><tag>hexo</tag><tag>node.js</tag><tag>博客建设</tag><tag>Throubleshooting</tag></tags><content type="html"><![CDATA[  报错 Accessing non-existent property {% asset_img &ldquo;Pasted image 20220311175317.png&rdquo;%}
+环境 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 ❯ hexo -v INFO Validating config INFO ================================== ███╗ ██╗███████╗██╗ ██╗████████╗ ████╗ ██║██╔════╝╚██╗██╔╝╚══██╔══╝ ██╔██╗ ██║█████╗ ╚███╔╝ ██║ ██║╚██╗██║██╔══╝ ██╔██╗ ██║ ██║ ╚████║███████╗██╔╝ ██╗ ██║ ╚═╝ ╚═══╝╚══════╝╚═╝ ╚═╝ ╚═╝ ======================================== NexT version 8.10.1 Documentation: https://theme-next.js.org ======================================== hexo: 5.4.1 hexo-cli: 4.3.0 os: linux 5.16.13-zen1-1-zen Arch Linux node: 17.3.0 v8: 9.6.180.15-node.12 uv: 1.42.0 zlib: 1.2.11 brotli: 1.0.9 ares: 1.18.1 modules: 102 nghttp2: 1.45.1 napi: 8 llhttp: 6.0.4 openssl: 3.0.1+quic cldr: 40.0 icu: 70.1 tz: 2021a3 unicode: 14.0 ngtcp2: 0.1.0-DEV nghttp3: 0.1.0-DEV 复现 每次 hexo s 部署后，访问页面均会有
+解决方案 Hexo 这里的 warning是由于 stylus 导致的，幸运的是stylus 在 0.54.8 版本修复了这个问题，所以对于 Hexo 用户来说，重新装一下hexo-renderer-stylus，就可正常使用。 但是我重装之后发现还是会报警告，继续追溯源头，发现是这其实是 ni b这个包里的 stylus 引起的问题，而这个包已经很久没更新了。 2.1 将hexo-renderer-stylus更新到2.0.1 2.2 将stylus 从0.54.5更新到0.54.8
+添加内容至根目录 package.json ：
+1 2 3 &#34;resolutions&#34;: { &#34;stylus&#34;: &#34;^0.54.8&#34; } 参考资料 解决 Hexo 使用 Node.js 14 Accessing non-existent property问题 - 掘金   ]]></content></entry><entry><title>Hexo个人博客私有云服务器部署</title><url>/post/hexo-blog-server-deploy/</url><categories><category>blog</category></categories><tags><tag>hexo</tag><tag>node.js</tag><tag>博客建设</tag></tags><content type="html"><![CDATA[  自打有自己的个人博客之后，就一直在用gitpage，感觉够用，也没有想着更换到个人服务器。 直到前一段时间，我更新了一篇博文，推上仓库，等 git action 自动部署成功后刷新博客地址，发现没有出现更新的那篇博文。 好好查了一下仓库部署用的分支，还有自己的配置，都没有问题，为什么没更新呢。 本着解决不了就搜索，谷歌搜了一下的问题，看到很多人都有这种问题，有两种说法：
+一种是要等几天 gitpage 才会进行部署，github 使用的就是这种策略。 还有一种认为没有刷新缓存，Ctrl + F5 之后才会刷新。 两个都试了试，还是没有更新，好吧，我等等吧😮‍💨。 第二天我再次刷新之后，还是没有更新，这。。第三天刷新才更新。
+emmmm，有点不太能接受了。 正好过年从腾讯云买了个三年的轻应用服务器，干脆迁移过去，给自己更大的控制权。
+2022-04-12 更新 现在想想，估计那是 github 给加了 cdn，cdn 没更新，如果能够操控 cdn 手动刷新估计就能直接见到了。
+准备工作 一台部署lnmp架构的服务器， LNMP一键安装包 - CentOS/RadHat/Debian/Ubuntu下自动编译安装Nginx,PHP,MySQL,PHPMyAdmin 一个域名 一个备案号（如果你服务器在国内，那么你还需要） node.js 环境 hexo 环境 有了以上的内容就可以按照下面的步骤进行部署了
+部署步骤 我使用的腾讯云的 Ubuntu 20.04，下面的步骤仅限于这个环境，其他的发行版请自行调整。
+搭建 git 仓库 添加用户，并更改权限
+1 2 sudo adduser git sudo EDITOR=nvim visudo /etc/sudoers 给 git 用户以下权限
+1 git ALL=(ALL) ALL 保存并退出
+切换到 git 用户并上传自己的公钥，让 git 你能够使用 git 访问服务器
+1 2 3 4 sudo su -ls /bin/bash git mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys cat git.pub &amp;gt;&amp;gt; …  ]]></content></entry><entry><title>使用 adb 操作安卓系统</title><url>/post/adb-control-android-phone/</url><categories><category>折腾</category></categories><tags><tag>安卓</tag><tag>adb</tag><tag>数据备份</tag></tags><content type="html"><![CDATA[  使用 adb 操作安卓系统 adb 全称 Android Debug Bridge，看名字就知道，它设计之初的目的就是用于安卓设备的调试，既然是参与调试，那么它对安卓系统的操作能力也就不一般了，像常用的文件操作，包管理都是基本操作。 所以在电脑上操作安卓手机也就首选 adb 了。
+之所以突然想要在电脑上用这种方式来操作手机，也是因为我手机用了大概有四年左右了，最近开始出现各种卡顿，程序无响应，很多时候直接就开始干扰使用了。 所以决心今天进行一次大清扫，同时备份一下数据，方便以后使用。
+那么我大概的想法就是：
+adb 把所有重要的程序安装包备份出来 用 adb 把数据复制出来 手机出厂设置 adb 把整理好的数据复制回去 那么第一步就是获取 adb
+获取 adb archlinux 就很方便，一行命令（感谢 pacman 感谢 AUR）
+1 sudo pacman -S android-tools windows 就请参考 使用adb免root迁移应用数据 | BDの小窝 【转载】使用adb免root迁移应用数据 - 凌维三度 使用 既然是调试工具，那首要前提就是手机得开启开发者模式，怎么开启我就不详述了毕竟不同品牌不同操作。 最后开启USB调试，把手机连接到电脑，并且完成手机上USB调试的确认。
+完成上面的操作，并安装完adb，在终端就可以使用adb命令了。 不知道怎么用就先看看adb help。 但既然是备份，也就没必要知道太多别的了。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 # 目前版本已准备弃用buckup了，而且安卓9也不知道为什么不是很好用这条命令 # 同样restore也是 adb backup [-system-nosystem] -all [-apk-noapk] [-shared-noshared] -f &amp;lt;ab包储存位置&amp;gt; &amp;lt;应用包名&amp;gt; # [-system-nosystem] 是否包含系统应用，默认为-system，一般备份全部应用时才用到 # -all 带有此参数会备份所有应用 # [-apk-noapk] 备份数据的同时是否备份apk，默认为-noapk # [-shared-noshared] 是否备份设备内置存储或SD卡的内容，比如音 …  ]]></content></entry><entry><title>初识网络药理学</title><url>/post/network-pharm/</url><categories><category>lab</category></categories><tags><tag>生物信息学</tag><tag>bioinfo</tag><tag>网络药理学</tag></tags><content type="html"><![CDATA[  通过数据库获取药物的一系列化合物，并对每一个化合物进行靶点预测，再对预测的靶点注释，进入下游分析，进行生物学功能，进而获取 药物-化合物-靶点 之间相互调控的关系。
+药效团模型：基于药效特征元素（氢键受体、氢键供体、正负电荷中心、芳香环中心、疏水基团、亲水基团和几何构象），建立的模型
+网络药理学入门-bilibili 网络药理学大致分析流程 基于药效团分析 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 flowchart TB classDef key fill:#f5704c,stroke:#000000,stroke-width:2px; subgraph 药物 获取药物化合物结构图 --&gt; 构建药效团模型 --&gt; a[预测活性成分作用靶点] end subgraph 疾病 疾病作用靶点 --&gt; b[获取疾病相关基因] end a --&gt; c b --&gt; f &amp; g subgraph 基因-蛋白 c[靶点注释至蛋白] --&gt; d[蛋白注释至基因] &amp; e[PPI 网络构建] d --&gt; g[GO/KEGG 富集分析] f[网络分析] end e &amp; f &amp; g --&gt; 解析作用机制 class e,f,g key; 可用数据库 网站名字 网站地址 备注 有效成分获取 BATMAN-TCM http://bionet.ncpsb.org/batman-tcm/ TCM Database@Taiwan http://tcm.cmu.edu.tw/ TCM-MESH http://mesh.tcm.microbioinformatics.org/ TCM-PTD http://tcm.zju.edu.cn/ptd/ TCMGeneDIT http://tcm.lifescience.ntu.edu.tw/ TCMID http://www.megabionet.org/tcmid/ 偶尔打不开 TCMSP http://lsp.nwu.edu.cn/tcmsp.php 网站名字 网站地址 备注 有效成分作用靶点分析 ALOGPS2.1 http://www.vcclab.org/lab/alogps/ 化学性质预测 Binding DB http://www.bindingdb.org/bind/index.jsp 小分子化合物蛋白互作亲和力 BioGRID https://thebiogrid.org/ ppi 化合物相互作用和翻译后修饰 CMAP https://portals.broadinstitute.org/cmap/ 小分子化合物为主)处理的细胞系进行转录组层面的测序 PharmMapper http://lilab.ecust.edu.cn/pharmmapper/index.php 网站名字 网站地址 备注 疾病靶点获取 DisGeNET http://www.disgenet.org/web/DisGeNET/menu/home GEO https://www.ncbi.nlm.nih.gov/geo/ GeneCards &lt;&gt; IPA &lt;&gt; MalaCards &lt;&gt; NCBI-gene &lt;&gt; OMIM http://www.omim.org/ 网站名字 网站地址 备注 靶点互作分析 STRING https://string-db.org/ 网站名字 网站地址 备注 通路富集分析 KEGG http://www.kegg.jp/ 网站名字 网站地址 备注 作用机制解析 DAVID https://david.ncifcrf.gov/ 网站名字 网站地址 备注 可视化 Cytoscape http://www.cytoscape.org/ Venn diagram http://bioinformatics.psb.ugent.be/webtools/Venn/ 网站名字 网站地址 备注 其他 COXPRESdb http://coxpresdb.jp/ CardioGenBase http://www.CardioGenBase.com/ ChemBank http://chembank.broadinstitute.org/ ChemMapper http://lilab.ecust.edu.cn/chemmapper/ DAVID https://david.ncifcrf.gov/ DRAR-CPI http://cpi.bio-x.cn/drar/?page=home Drugbank https://www.drugbank.ca/ E Chart http://www.ehbio.com/ImageGP/ GAD https://geneticassociationdb.nih.gov/ GENEMANIA http://genemania.org/ HAGR http://genomics.senescence.info/ HIT http://lifecenter.sgst.cn/hit/ HPRD http://www.hprd.org/ IntAct https://www.ebi.ac.uk/intact/ Liverome http://liverome.kobic.re.kr/index.php MetaboAnalyst http://www.metaboanalyst.ca/ Metascape http://metascape.org/ OncoDB.HCC http://oncodb.hcc.ibms.sinica.edu.tw/index.htm PASS http://www.pharmaexpert.ru/PASSOnline/ PharmGkb https://www.pharmgkb.org/ PubChem https://pubchem.ncbi.nlm.nih.gov/ SEA http://sea.bkslab.org/ STITCH http://stitch.embl.de/ SuperPred http://prediction.charite.de/ SwissTargetPrediction http://www.swisstargetprediction.ch/ T-HOD http://bws.iis.sinica.edu.tw/THOD TTD https://db.idrblab.org/ttd/ Uniprot http://www.uniprot.org/ Venny2.1 http://bioinfogp.cnb.csic.es/tools/venny/index.html affymetrix https://www.affymetrix.com/analysis/netaffx/batch_query.affx?netaffx=netaffx4_annot arrhythmia database http://www.fsm.it/cardmoc/ 参考资料 网络药理学网站大全-个人图书馆   ]]></content></entry><entry><title>你来描述，让程序自动绘制流程图——mermaid</title><url>/post/mermaid-useage/</url><categories><category>programming</category></categories><tags><tag>mermaid</tag><tag>流程图</tag><tag>markdown</tag><tag>programming</tag></tags><content type="html"><![CDATA[  最开始做流程图都是在 draw.io 里，拖拖拉拉，牵线搭桥，最后导出，然后由需要修改了就回到源文件重新改导出，源文件丢了就得自己重新描，虽然现成模块也挺快的，但是拖拖拽拽，一会儿就把之前脑内构思好的点子给忘了，简直恼人。
+最近写 markdown 看有人可以直接在里面生成流程图，可给我高兴坏了，赶紧搜了一下，是 mermaid ，真有可以实现的方法，而且 obsidian typora 都兼容，不错！很棒！
+基本语法 在代码块内第一行需要声明图片类型
+之后的绘图内容可缩进输入
+可以使用注释 %% 开头即可
+字符使用 “” 进行包裹
+#quot #9829 转义字符
+使用 style 可以对节点样式进行定义
+1 style id2 fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5; 使用 click 可以为节点添加点击行为
+1 click nodeId callback 使用 classDef 可以定义一个回调函数
+1 classDef default fill:#f9f,stroke:#333,stroke-width:4px; 使用 class 可以定义节点样式
+1 class sq,e green mermaid 实现绘图需要指定绘制的图片类型：
+{% mermaid graph %} %% 我是注释 A[&amp;ldquo;A double quote:#quot;&amp;rdquo;] &amp;ndash;&amp;gt;B[&amp;ldquo;A dec char:#9829;&amp;rdquo;] C &amp;ndash;&amp;quot;(^v^)&amp;quot;&amp;ndash;&amp;gt; D {% endmermaid %}
+pie 饼状图
+title 图片标题，可选 “ ”: 分类名称，分隔符，后接数字，支持小数，占比会自动计算 graph 流程图
+TB/BT/LR/RL 图片方向 top bottom left right
+元素形状
+{% mermaid graph LR %} 矩形 &amp;ndash;&amp;gt; id1[正方形] &amp;ndash;&amp;gt; id2(圆角矩形) &amp;ndash;&amp;gt; id3([体育场]) &amp;ndash;&amp;gt; id4[[子程序]] &amp;ndash;&amp;gt; id5[(圆柱)] &amp;ndash;&amp;gt; …  ]]></content></entry><entry><title>【Rust】基础知识</title><url>/post/rust-basic/</url><categories><category>programming</category></categories><tags><tag>rust</tag><tag>基础知识</tag><tag>编程笔记</tag></tags><content type="html">  为什么需要 Rust ？ C、C++ 高效快速，但是内存操作存在安全问题。 python 等使用 GC 进行内存管理的语言，虽然没有操作内存的安全问题，但是运行速度始终上不去
+rust 的诞生就是为了在保证内存安全的状态下，保证程序的运行效率；并不是百分百的消除内存安全问题，而主要在于非法访问导致的内存安全隐患，主要包含：
+对空指针和垂悬指针进行解引用 读取为初始化的内存 缓存溢出 非法访问已释放或未分配的指针 内存泄露并不能够通过 Rust 的设计进行防范
+Rust特性 Rust 是一种 预编译静态类型(ahead-of-time compiled)语言 Rust 是强类型语言，但具有自动判断变量类型的能力（相对于静态弱类型的 C 以及动态强类型的 python） Rust 是一种混合范式的面向过程的编程语言 包含面向对象、函数式编程、泛型和面向过程 面向对象和函数式是一种语言特性，并非抽象方式 使用过程中整体感觉和使用C类似，主要按照面向过程的方式进行编程，更加关注问题本身 本质上是一门面向表达式的语言，即整个计算过程都是通过表达式进行求值，而非通过语句进行状态修改 Rust 适用于追求编程语言的速度与稳定性的开发者 Rust 的编译器检查确保了增加功能和重构代码时的稳定性 Rust 语言为了高并发安全而做的设计：在语言层面尽量少的让变量的值可以改变 相对其他语言的优点：
+类型安全：编译器可确保不会将任何操作应用于错误类型的变量。 内存安全：Rust 指针（称为“引用”）始终引用有效的内存。 无数据争用：Rust 的 borrow 检查器通过确保程序的多个部分不能同时更改同一值来保证线程安全。 零成本抽象：Rust 允许使用高级别概念，例如迭代、接口和函数编程，将性能成本控制在最低，甚至不会产生成本。 这些抽象的性能与手工编写的底层代码一样出色。 最小运行时：Rust 具有非常小的可选运行时。 为了有效地管理内存，此语言也不具有垃圾回收器。 在这一点上，Rust 非常类似于 C 和 C++ 之类的语言。 面向裸机：Rust 可以用于嵌入式和“裸机”编程，因此适合用于编写操作系统内核或设备驱动程序。 Rust 在整体上可以分为两部分：
+safe rust 全部代码均需要经过编译器的检查 unsafe rust，主要面向其他编程语言、系统和底层硬件 仅在下面5种情况 …  </content></entry><entry><title>Vscode 用户代码片段创建的规则</title><url>/post/vscode-snipeast/</url><categories><category>programming</category></categories><tags><tag>vscode</tag><tag>ide</tag><tag>snippets</tag><tag>推荐</tag></tags><content type="html"><![CDATA[  在写代码的时候，很多片段都是重复的，有些部分是固定不变的，也有些部分是仅需要修改一部分的。像这样的片段也没必要记住。这时候代码片段（snippest）就是一个很好的工具。
+基本结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 &#34;display in hin list&#34;: { &#34;scope&#34;: &#34;use &lt;C&gt; + K M to search file type, empty is global&#34;, &#34;prefix&#34;: &#34;code-to-trigger-hint, can-be-multiple&#34;, &#34;body&#34;: [ &#34;snippets to output, can be multi line&#34;, &#34;character needs to convert \n \t \&#34; $$ \\$ \\{&#34;, &#34;curser placeholder, defaule is empty $1&#34;, &#34;	can displayed in multiplace $1&#34;, &#34;curser predefinded placeholder ${2:one}&#34;, &#34;curser selecatable placeholder ${3|one,tow,three|}&#34;, &#34;	can be nested ${3|one,two,three| ${4:four}}&#34;, &#34;predefinded variable $CURRENT_MONTH $CURRENT_DATE $CURRENT_YEAR&#34;, &#34;predefinded variable $CURRENT_MONTH $CURRENT_DATE $CURRENT_YEAR&#34;, &#34;predefinded variable $CURRENT_MONTH $CURRENT_DATE $CURRENT_YEAR&#34;, &#34;curser end placeholder, unnecessary $0&#34; ], &#34;description&#34;: &#34;display in IntelliSense&#34; } **注意：**现在版本的 vscode（1.65.2）改变了 snippest 的管理方案，每一种编程语言分别使用该语言名称作为文件名的 json 文件，作为该语言使用的snippets。 所以不用加 scoop 这一部分了。但是以前的 code-snippets 后缀的文件仍然可以使用。
+变量 TM_SELECTED_TEXT 当前选择的文本或空字符串 TM_CURRENT_LINE 当前行的内容 TM_CURRENT_WORD 光标下的单词内容或空字符串 TM_LINE_INDEX 基于零索引的行号 TM_LINE_NUMBER 基于一索引的行号 TM_FILENAME 当前文档的文件名 TM_FILENAME_BASE 当前文档的文件名，不带扩展名 TM_DIRECTORY 当前文件的目录 TM_FILEPATH 当前文档的完整文件路径 CLIPBOARD 剪贴板中的内容 WORKSPACE_NAME 打开的工作空间或文件夹的名称 以上用于替换，当前行指插入脚本。
+当前日期和时间：
+CURRENT_YEAR 本年度 CURRENT_YEAR_SHORT 本年度的最后两位数字 CURRENT_MONTH 以两位数表示的月份（例如“ 02”） CURRENT_MONTH_NAME 月的全名（例如“july”） CURRENT_MONTH_NAME_SHORT 该月的简称（例如“ Jul”） CURRENT_DATE 一个月中的某天 CURRENT_DAY_NAME 一天的名称（例如“周一”） CURRENT_DAY_NAME_SHORT 一天的简称（例如“ Mon”） CURRENT_HOUR 当前小时（24小时制） CURRENT_MINUTE 当前分钟 CURRENT_SECOND 当前秒 CURRENT_SECONDS_UNIX 自Unix时代以来的秒数 行或块注释，按照对应语言进行匹配：
+BLOCK_COMMENT_START 块注释 BLOCK_COMMENT_END 块注释 LINE_COMMENT 行注释 替换 大致的格式就是
+&quot;${&lt;STRING&gt;/&lt;MATCH_CASE&gt;/&lt;REPLACEMENT&gt;/i}&quot;
+如何添加 在 vscode 左下的设置中，点击 User snippets，然后按照界面UI提示就可以创建相应的 snippets 文件，并添加 snippets 了。
+但是有一点需要注意，snippets 有 project、global、language 3 种生效范围，设置的时候注意范围别整了不生效。
+参考资料 Vs code添加自定义snippet - 博客园 escaping - VS代码段-转义$ {file} - IT工具网   ]]></content></entry><entry><title>Vscode VS. Rstudio---R IDE对比</title><url>/post/r-ide-compare/</url><categories><category>programming</category></categories><tags><tag>r</tag><tag>vscode</tag><tag>rstudio</tag><tag>ide</tag><tag>测评</tag><tag>推荐</tag></tags><content type="html"><![CDATA[  Rstudio 作为一款官方的IDE，相较于其他IDE在很多地方都有着天然的优势，但是它自身作为一款半开源的软件，相较于更加开源的软件，比如Vscode，必然会存在很多使用起来反人类的设计，并失去更多选择性。
+不过对于Vscode这一类开源软件，Rstudio也具有其相对的稳定性，这一点上是开源软件所不能超越的。但奈何开源软件能github提issue啊，参与感很强😋。
+正是因为这些原因，逐步让我选择抛弃Rstudio，全面改用Vscode。 用Vscode，当然是用插件啦，这里除了推荐插件以外，更多的还是分享喜悦。
+不过开始之前还是需要说明，微软官网的Vscode是半开源软件，其中夹带着微软的私货，同时还会上传追踪数据，让微软白嫖测试（还有啥咱也不知道，也不敢问）。所以推荐使用开源版本的VSCodium或者完全自己从头编译的code-oss，我这里使用的就是VSCodium。
+插件推荐 R {% asset_img &ldquo;R.png&rdquo; %}
+作为宇宙万能编辑器的Vscode，能一个插件解决的事情坚决不使用两个。
+R 或者 vscode-R ，是Vscode里几乎解决写R的所有需求的终极插件，包含了:
+代码高亮 代码格式化（通过集合 languageserver 包实现） 语法检查（通过集合 languageserver 包实现） Rmd支持 a. 语法检查 b. 代码高亮 c. 实时预览（你没看错，是是实时的） d. bookdown，blogdown支持 代码调试（通过集合 VSCode-R-Debuger 实现） 支持 radian 终端 使用外部 R 主程序 同 Rstudio 一致的实现 a. 网页帮助 b. 逐行运行 c. Rmd 逐块运行，逐行运行以及运行先前 chunks d. 当前工作环境内变量查看 e. 数据框GUI查看器（通过安装 Excel Viewer 打开） f. GUI包管理 g. 绘制图片查看 Rstudio 插件支持 远程协作开发（相当于免费版的 Rsutdio Server） indent-rainbow 写代码，行缩进怎么能看不清楚。 indent-rainbow {% asset_img &ldquo;indent.png&rdquo; %}
+Bracket Pair Colorizer 2 写代码，括号匹配怎么能糊里糊涂。 Bracket Pair Colorizer 2 {% asset_img &ldquo;bracket.png&rdquo; %}
+**注意：**这个插件一定得注意，使用版本2，1已经弃用了但是插件库里貌似还存在。
+Git Graph 一款git辅助工具
+{% asset_img &ldquo;git.png&rdquo; %}
+GitHub Theme 写代码，编辑器不好看怎么能行。 GitHub Theme {% asset_img &ldquo;theme.png&rdquo; %}
+vscode-icons 写代码，文件图标怎么能没有区分度。 vscode-icons {% asset_img &ldquo;icon.png&rdquo; %}
+  ]]></content></entry><entry><title>【R语言】基础知识</title><url>/post/r-basic/</url><categories><category>programming</category></categories><tags><tag>r</tag><tag>基础知识</tag><tag>编程笔记</tag></tags><content type="html"><![CDATA[  R 语言是一门动态弱类型的语言，同时作为一种解释型程序语言，它具有面向对象编程和函数式编程两种编程范式。
+其中面向对象的部分中，将对象作为存储单位，用以存储变量值，存储函数内容，存储字符内容等。 如果在命令行中进行交互时输入对象所相关的变量名，会返回对象内存储的内容。 当调用函数时，需要使用 $lambda$ 表达式的方式。
+面向对象编程的思想下，每个对象都有其相应的属性，大部分属性是普适的，也有特殊的属性值。
+{% asset_img &amp;ldquo;oop.png&amp;rdquo; %}
+注意：
+R里最基础的数据元素不是标量，是向量，所有数据传入变量时均转换为向量组成。 在查看对象的类型时，对于单向量对象，返回每个元素的数据类型；对于向量之外的对象，返回数据结构。 函数式编程的部分则将函数作为编程的主体，对将函数和环境作为编程考虑的因素。 函数式编程中，函数是一等公民，或者说将函数看作一种对象，可以将函数作为参数传递给高阶函数，并且高阶函数可以将函数作为一个返回值。
+1. 数据类型 R 中变量的声明通常为
+1 2 3 变量名 = 对象 #或 变量名 &amp;lt;- 对象 变量名命名有一些基本原则：
+必须字母开头。 可包含字母、数字、_、.。 ==区分大小写==。 不能使用关键字，最好不 不能以特殊字符开头，最好不 不能以数字开头，最好不 之所以用最好不，是因为在是在迫不得已的时候，可以用 &amp;quot;&#39; 和反引号来包裹变量名，从而把他们作为变量名，但是使用的时候也得这样用。 常量或称字面量，即编程实践中的值。 数据类型，即字面量类型。根据数据结构复杂程度可以分为，基本类型和复合类型。
+1.1. 基本类型 通过 mode() typeof() 获得
+字符型(character)：&amp;quot;a&amp;quot;, &#39;a&#39; 数值型(numeric) 整数(integer)：1L 浮点数(double)：3.14 复数型(complex)： ，统计中基本不使用 逻辑型(logical)：TRUE 原生型(raw)： ，仅在需要包含二进制数据时使用 有些时候 R 会自动进行类型之间的转换，此时遵循类型转换优先级进行：
+字符型 浮点型 整型 逻辑型 1.2. 复合类型 1.2.1. 标量(Scalar) 只储存仅有一个变量的对象，R中现实不存在
+1 2 3 x &amp;lt;- 1 y …  ]]></content></entry><entry><title>404</title><url>/404/</url><categories/><tags/><content type="html">  &lt;!DOCTYPE HTML>   </content></entry><entry><title>全能多系统启动 U 盘制作工具——Ventoy</title><url>/post/ventoy-useage/</url><categories><category>折腾</category></categories><tags><tag>ventoy</tag><tag>how to</tag></tags><content type="html">  最近重装系统，需要安装双系统，因此需要制作两个启动盘。不巧的是我在装双系统过程中，卡住了，只能成功引导进一个系统，所以我只能重复制作系统盘😖，真是苦了我可怜的 32G U 盘了，来回格式化，做了系统盘还有大半的容量没有用上。
+正巧看到 kiteAB 的视频，讲了这个工具。就找来用用。
+安装 在 Windows 下可以通过 chocolately 和 scoop 进行安装
+1 2 3 scoop bucket add extras scoop install ventoy choco install ventoy Linux 下可以去 github页面 下载。
+使用 使用起来也是方便，第一次使用的 U 盘，会进行格式化，重新分区，需要注意数据迁移。 建议制作时更改一下分区类型，为了方便使用。（不知道为什么，windows下打开Ventoy居然不能正常使用截屏软件🤔） {% asset_img Snipaste_2020-07-14_18-34-19.png 分区类型 %}
+制作完成之后，把系统镜像直接复制进分区，就可以使用了。就是如此方便。 目前 官方网站 称已经测试了 300+ 的镜像文件，均可以成功启动。
+升级 在软件升级之后，可以对 U 盘内的ventoy进行升级，此时并不会重新格式化并分区，这很就很方便了。
+总结 Ventoy相对于现在各种pe系统盘来说最大的优势就在于：
+单盘多启动，并且仅需要复制相应的系统镜像即可。 启动盘升级方便，不需要重新格式化分区，延长 flash 寿命。 开源！！！用的放心。   </content></entry><entry><title>【持续更新】Zotero 插件合集</title><url>/post/zotero-plugins/</url><categories><category>lab</category></categories><tags><tag>zotero</tag><tag>RIS manager</tag><tag>collection</tag></tags><content type="html">  从过年到现在返校，时隔半年，终于重新打开我尘封放在学校自习室的电脑😂。开机之前我就已经做好了心理准备，由于半年未更新，估计有一大票的软件落后n个版本。为了一次性解决这些问题，我做出“重大决定”————重装系统，并且直接装成 Ubuntu+Windows 双系统。
+正是由于这次此重装，我一口气就在月初干掉了我40G的流量。同时我也发现由于没有整理，每次下好的安装包都随风而逝，重新寻找重新下载过于痛苦，并且我 Zotero 的插件俺的也不少，重新找劳神费力，所以我决定将他们收集在这里，方便以后查找。（当然并不希望是下一次系统重装）
+markdown for zotero better bibtex scihub shortdoi zotfile   </content></entry><entry><title>【持续更新】git 使用中的问题</title><url>/post/git-problems/</url><categories><category>programming</category></categories><tags><tag>git</tag><tag>troubleshooting</tag></tags><content type="html"><![CDATA[  Problem {% asset_img &ldquo;image-20200525105854145.png&rdquo; &ldquo;problem1&rdquo; %}
+Solution 我以为是我用的代理软件clash规则文件有问题（以前出过这事），但是连接github正常。
+几番查找，最终还是使用最为暴力的方法解决了。干脆就把验证关了，
+1 2 git config --global http.sslVerify false git config --global https.sslVerify false OK, problem solved!
+Problem {% asset_img &ldquo;image-20200531103451068.png&rdquo; &ldquo;problem2&rdquo; %}
+Solution 最初以为自己乱改代理端口整坏了，后来发现是~/.ssh下没有known_hosts文件。
+为确认，通过命令ssh -T git@github.com，进行验证。
+通过添加config文件
+1 2 3 Host github.com Hostname ssh.github.com Port 443 问题解决。
+Problem 1 2 ssh: connect to host github.com port 22: Connection timed out fatal: Could not read from remote repository. https开头的链接克隆不报错，一旦换成ssh就出问题
+Solution 给ssh加代理
+1 2 3 4 5 # windows ProxyCommand connect -S 127.0.0.1:1080 -a none %h %p # linux Host * ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p Problem 1 2 git submodule add https://github.com/repo.git ## fatal: unable to access &#39;https://github.com/repo.git/&#39;: gnutls_handshake() failed: Error in the pull function. 正常克隆仓库都可以使用，但是就在这没法用。
+Solution 自己粗心大意，把.gitconfig的代理设置出错了，http/https都走socks5了。
+1 2 git config --global http.proxy http://127.0.0.1:1080 git config --global https.proxy http://127.0.0.1:1080 problem solved
+  ]]></content></entry><entry><title>【未完待续】git使用汇总</title><url>/post/git-useage/</url><categories><category>programming</category></categories><tags><tag>git</tag><tag>how to</tag></tags><content type="html"><![CDATA[  什么是 Git git 是一个用于版本控制的软件，或者说
+是一个开源的分布式版本控制系统。
+它是 Linus Torvalds 为了管理 Linux 的内核代码开发而开发的软件。
+Git 的原理 我认为，只有知道原理，才能更好的使用一个工具。所以我又了解了一下 git 的原理。
+在使用 git 进行版本控制时，可以将需要进行版本控制的文件分类为三个阶段，如下图。
+{% asset_img &amp;ldquo;1719120-a3db1c8caa1324e2.webp&amp;rdquo; &amp;ldquo;img&amp;rdquo; %}
+未进行版本控制 暂存 存入仓库 Git 的安装 Windows 官网 下载
+{% asset_img &amp;ldquo;image-20200412232715087.png&amp;rdquo; &amp;ldquo;image-20200412232715087&amp;rdquo; %}
+双击安装程序，一路下一步，直至安装结束。
+Linux 在 ubuntu 下，直接使用命令行进行安装更为方便：
+1 sudo apt install -y git 基础配置 使用 git 的第一步，首先设置一下全局邮箱和用户名
+winsows 在桌面右键，可以看到 Git Bash Here，点击后打开这样一个界面
+{% asset_img &amp;ldquo;image-20200413104956115.png&amp;rdquo; &amp;ldquo;image-20200413104956115&amp;rdquo; %}
+在界面内输入
+1 2 git config --global user.name &amp;#34;yourName&amp;#34; git config --global user.email &amp;#34;yourEmail&amp;#34; Linux 直接在终端输入上述命令，名字和邮箱按自己的内容填写在yourName和yourEmail的位置。
+完成后使用git config --global --list查看设置情况。
+使用 Git 进行版本控制 进入计划使用 Git 进行版本控制的文件目录
+1 2 git init git add * 创建 git 仓库，并将当前目录下所有文件添加入当前库。
+git 是通过.git文件夹来存储目录下文件的变动历史，以及分支和提交信息。所以创建版本库后，在当前目录下会出现一 …  ]]></content></entry><entry><title>进一步配置Zotero</title><url>/post/zotero-settings-deeply/</url><categories><category>lab</category></categories><tags><tag>zotero</tag><tag>RIS manager</tag><tag>how to</tag></tags><content type="html"><![CDATA[  Zotero + Sci-Hub 说到将 Zotero 和 Sci-Hub 结合就首先得从Zotero PDF retrieval谈起。从Zotero 5.0.56版本开始，Zotero迎来了PDF retrieval功能。 该功能会在你用Zotero Connector保存文献时，自动检查Unpaywall上是否有可供下载的免费文献。
+Unpaywall能免费下载文献，但你不要以为它和Sci-Hub一样是非法的。其实Unpaywall是个非盈利性合法组织，它整合了数千个Open Access期刊或数据库，将免费文献集中之后开放API，从而供其他平台使用。
+假如你在网页端保存的文献是Open Access的，Zotero Connector就会将PDF同文献条目一起抓取。对于已经在Zotero中却还没有PDF附件的文献条目，点击右键菜单中的Find Available PDF，即可下载文献。
+但是，毕竟Unpaywall只支持OA文献，而OA文献又只是少数。也就是说，通过Unpaywall无法解决付费文献的下载问题。作为一款开源软件，Zotero的开发者为很多功能带来了可定制的能力，方便用户根据自己的喜好自定义。 PDF retrieval功能也不例外，Zotero允许用户自定义PDF解析器（custom PDF resolvers），也就是说你可以将其他网站作为PDF解析器，来替代Unpaywall。
+Zotero 官网对于 自定义 PDF 解析器 也有相关的文档
+设置Sci-Hub作为PDF解析器 打开 编辑 -&amp;gt; 首选项 -&amp;gt; 高级 -&amp;gt; 设置编辑器。 刚打开会有风险提示 {% asset_img &amp;ldquo;Snipaste_2020-06-16_18-45-58.png&amp;rdquo; &amp;ldquo;risk alarm&amp;rdquo; %}
+点击 accept 后，在搜索框，搜索 extensions.zotero.findPDFs.resolvers 。 {% asset_img &amp;ldquo;Snipaste_2020-06-16_18-48-30.png&amp;rdquo; &amp;ldquo;after search&amp;rdquo; %}
+双击 extensions.zotero.findPDFs.resolvers，默认情况下是只有一对[]。 …  ]]></content></entry><entry><title>全能又开源的文献管理软件——Zotero</title><url>/post/artical-manage-zotero/</url><categories><category>lab</category></categories><tags><tag>zotero</tag><tag>RIS manager</tag><tag>how to</tag></tags><content type="html">  为什么迁移到 Zotero 其实最开始我是使用 Endnote 的，在刚开始使用 Endnote 的时候我就因为它古怪的逻辑，而使用困难。它的使用逻辑与以往使用软件不同，用起来就很别扭。 不过好在有重庆大学万震老师的 《手把手教你使用EndNote X9》 ，以及网络上中多的相关教程，学起来并不难。但是就算是学会了 Endnote 的使用，它在使用的过程中，很多操作仍然让人感觉受限制，用的并不自由。 最大的缺陷就是，Endnote 真的就只是收纳文献，并把文献分类归档，方便查看和引用。多个库的管理思维，使得查阅文献有时还需要少量的翻找。窗口套窗口的软件界面，在多个库同时打开时一不小心就给整的一两个窗口挪不动了，虽然可以用重新自动排列窗口来解决。不直接显示笔记区域，在真正对文献进行阅读和归纳时显得异常的麻烦，并不能快捷的把对文献的想法自由的记录下来，当然你可以用其他的软件配合使用，但是两个软件之间如何做到交互就成了问题。作为一个文献管理软件，在文献管理时不能够很好的在多平台多终端之间款快速便捷的切换，也是一大痛点。
+因此我也尝试着去寻找一些其他的文献管理软件，但是并不理想，很多功能都不及 Endnote。当然国内的 NoteExpress 也并不差，但是它插入文献的功能不够完善。 另外，最近的美国封锁软件的事情（哈工大Matlab），也让我决定把工具链换成更加开源的会更可靠。 碰巧又一次看到 bilibili 上 Straggle with me 制作的关于 Zotero 的视频，还是一整套教程。仔细查看之后发现，完全击中了 Endnote 的许多使用痛点，并且团队协作这点简直棒。干脆迁移至 Zotero。
+{% asset_img &amp;amp;ldquo;Snipaste_2020-06-16_10-37-20.png&amp;amp;rdquo; Zotero %}
+Zotero 的优点： 更加高效，文献管理很多操作都是程序化的，几个脚本就可以自动解决的问题，Endnot 里却仍然需要手动操作 信息展示较 Endnote 更加合理，不是窗口套窗口，更不是多个库的管理思想。 文献信息云端同步，多终端，多平台支持 软件开源，不需要授权，github可以提issue，软件功能更加亲近使用 Endnote的功能它一个不缺 有 tag 管理系统，自动生成 tag 插件扩展，GitHub 方便找 文档 …  </content></entry><entry><title>Insulin-like growth factor i (igf-1) in older adults: a review</title><url>/post/adult-igf-1/</url><categories><category>lab</category></categories><tags><tag>文献阅读</tag><tag>Review</tag><tag>IGF-1</tag><tag>衰老</tag></tags><content type="html">  DOI: 10.15406/mojgg.2017.01.00034
+原文翻译摘录 衰老是一个动态并进展的过程，其间包括形态学、功能、生化以及心理学的改变。 这些改变意味着对环境逐渐失去适应性，导致脆性增加，并有更高的患病风险。 在衰老过程中的内在变化，主要发生在身体组成的平衡、活动性、肌肉力量、柔韧性方面出现缺陷，也包括肌肉质量和骨量减少和内分泌异常，例如：IGF-1 血清水平降低。
+IGF-1 水平主要由肝在应答 GH 的增加的过程中产生，在骨和肌肉中也可以产生。 IGF-1 可以增加细胞增殖，用以估计骨密质合成。
+IGF-1 影响骨骼肌合成代谢，于瘦体重相关。 此外，年龄相关 IGF-1 降低蛋白质合成，增加脂肪和肌肉生长抑制素。 因此高水平的 IGF-1 与提升身体健康和瘦体重10相关，并可以降低心脏病发生率和死亡率。
+体育锻炼可以影响老年人激素分泌。 体育锻炼可用以验证计划性训练对 IGF-1 水平维持和提高，以及不同类型的体育训练对激素的潜在效应。 但是，训练计划的制定方法不同，如：训练的类型，训练量，训练强度。
+在影响老年人血清 IGF-1 水平的不同运动类型中，力量训练、有氧训练、水上运动和跑步、柔韧训练、舞蹈和运动疗法都会增加这种激素。 平均每周锻炼23次，持续36月。
+在老年人中，肌肉力量训练相较于耐力训练对 IGF-1 水平的提升更大。
+总结 老年人群，血清 IGF-1 水平降低。 血清 IGF-1 水平升高有利于对抗衰老。 有氧体育锻炼可以升高血清 IGF-1 水平。 IGF-1 主要由肝脏合成。 IGF-1 可以促进细胞增殖。   </content></entry><entry><title>网页书签整理</title><url>/post/bookmark-cleaner/</url><categories><category>tips</category></categories><tags><tag>书签整理</tag></tags><content type="html"><![CDATA[  由于之前收藏页面的分类比较粗糙，并且还有收藏了就是看了的习惯。导致浏览器里堆积了众多的书签，收藏有大量的书签，虽然是个宝藏，但是缺乏整理，用起来也如同一坨 &#x1f4a9;。大部分的书签在长久的收藏中，渐渐成为压箱底的 404 页面，而且也会在之后的使用中带来“惊喜”。
+今天我就要动手整理这将要成为垃圾的宝库。这里介绍我在这此整理中用到的一些工具。
+Quick Bookmark Cleaner chrome 浏览器插件。可以用来清理失效链接，空文件夹，此外还有很最重要的功能，重定向连接更新。
+对于很久没有打理的书签，有概率会出现链接原地址更改，重定向链接，这时候及时更新链接可以避免失去一个重要的书签。
+因此为了方便之后的操作，整理书签的第一步，可以进行链接重定向。不过在进行操作之前，首先备份当前的书签。
+{% asset_img quick_bookmark_cleaner.png &ldquo;quick bookmark cleaner&rdquo; %}
+Bookmarks clean up chrome 浏览器插件。可以用来清理重复书签，空文件夹，以及合并重名文件夹，此外还有很最重要的功能，查找失效书签。
+这款插件可以作为整理的第二步，用来查找失效的书签，以及清理空文件夹，合并重名文件夹。
+第一次使用这款插件时，会提醒你备份你的书签文件，然后进行相关的清理。另外在检查失效链接时，最好先设置一下判断失效链接的条件。
+{% asset_img bookmarks_clean_up.png &ldquo;bookmarks clean up&rdquo; %}
+Bookmarks Manager and Viewer chrome 浏览器插件。可以方便的整理书签，删除、创建和移动文件夹，支持 fuzzy search 。
+在之前的两步操作之后，利用这款插件对书签进行分类整理。之所以选择这款插件，最重要的时它可以设置成显示在新页面，就像 chrome 自身的书签管理插件一样，但是它是树状显示，非常利于整理。
+{% asset_img bookmarks_manager_and_viwer.png &ldquo;bookmarks manager and viwer&rdquo; %}
+终于，整理结束。
+  ]]></content></entry><entry><title>hexo博客搭建</title><url>/post/hexo-blog-build/</url><categories><category>programming</category></categories><tags><tag>hexo</tag><tag>node.js</tag><tag>博客建设</tag></tags><content type="html">  之前的博客是基于 jekyll 搭建的，但是 jekyll 再本地的软件安装实在有些恼人，我换电脑了，懒得再安了，了解到 hexo 只需要安装 node.js ，并且之后的都是在 node.js 里添加 module ，我决定改使用 hexo。
+Install hexo 在开始着手自己搭建 hexo 博客前，首先还是先看看官方的教程。这是搭建的第一步，同时也可以增加对 hexo 的了解。
+官方教程 _config.yml 配置文件 对于 hexo 来说，配置文件主要存在于两个地方，
+主目录下的 _config.yml，后称站点配置文件 主目录/theme/主题名目录下的 _config.yml，后称主题配置文件 由于存在两个配置文件，刚开始配置时会搞不清动手哪一个。在 NexT 的 Github 文档里，由关于这方面的推荐方案。 我是用的是 选择1 来配置 _config.yml，也就是把主题配置文件中需要的配置复制进站点配置文件中进行修改。这样做对于后续的主题升级来说是一件轻松的事，但是对于最初修改配置并企图实时渲染查看是，就没法实现了。每次对站点配置文件进行修改后（post文件是可以实时的），需要在命令行 ctrl+c 结束进程，然后 hexo clean &amp;amp;amp; hexo s -o 来启动服务，实在折腾。 对于这个目前还不知道有什么好的解决方案。
+首页内容显示控制 对于刚搭建好，而且也已经把以往的 post 已经放进 hexo 的 source/_post 中了。此时的 hexo 网站，会直接显示所有文章的全文。 这时候有两种选择：
+使用 &amp;amp;lt;!-- more --&amp;amp;gt; 在 markdown 中自己进行控制（官方推荐） 使用插件 chekun/hexo-excerpt 来解决问题 以上来自 hexo Github issue page 页面添加 添加新页面，使用的是 hexo 的命令 hexo new page name ，但是对于部分页面内容特殊，需要根据后来的更改自动生成，这里对我设置时的查找进行收集整理
+添加 tags 页面 新建页面 1 hexo new page tags 编辑刚新建的页面，将页面的类型设置为 tags ，主题将自动为这个页面显示标签云。页面内容如下：（主目录/source/tags/index.md） 1 2 3 4 5 …  </content></entry><entry><title>categgories</title><url>/categories/</url><categories/><tags/><content type="html">     </content></entry><entry><title>about me</title><url>/about/</url><categories/><tags/><content type="html">   {% gp 8-2 %} {% endgp %}
+人是一种有这很多缺陷的生物，比如大量的记忆不能够持久，情绪会影响到行事的方式等等。 所以就需要使用工具来进行辅助，文字记录就是对记忆不持久的修补。这个博客就是对我的修补。
+  </content></entry><entry><title>【翻译】甲基化特异性PCR：引物设计的四步"</title><url>/post/msp/</url><categories><category>lab</category></categories><tags><tag>msp</tag><tag>pcr</tag><tag>Primer</tag><tag>引物设计</tag><tag>文献翻译</tag><tag>翻译</tag></tags><content type="html">  概述 甲基化特异性PCR方法仍是单一基因甲基化研究的选择之一。恰当的引物设计是获得可靠的PCR结果的先决条件。虽然有众多的文章阐述MSP引物设计的规则，但没有一个提供全面的解答。本文的目的在于阐述一个简洁明了，易于操作的引物设计流程。为了达到这一目标，我会提供丰富的启动序列检索工具、MSP引物设计软件，以及后续的计算机分析也会进行解析和呈现。一些优劣引物对比的例子也会展示出来作为指导。最后要说的是，本文引物设计是根据建议的流程来展现的。本文旨在为对单基因甲基化研究感兴趣的研究者在成功设计引物上给出建议。
+关键词：甲基化特异性PCR、引物设计、数据库、MSP引物设计软件、转录起始位点
+简介 基因表达的后天调控对于一个器官的发生发展有重要影响作用，调控可以在不同水平呈现[1,2]，关于这一现象，CpG二磷酸核苷是研究最多的一部分。预估在人类基因组内大约有20%的CpG位于一个称作CpG岛的区域内[3]。CpG岛是有着丰富CpG的一串DNA[4,5]，跨度超过200bp，至少有50%的G+C，并且检测到的CpG至少占统计预期CpG的60%[6]。大约60%的人类基因启动子包含CpG岛[5]，但在大多数组织中CpG岛是未甲基化的。这两个因素影响着CpG岛的调控功能。在CpG岛内甲基化的胞嘧啶对转录起到抑制效应[4,5,7]，就是说DNA甲基化的调控对器官内分泌有重要的意义。不出意外的话，通过更多的研究可以明确DNA甲基化模式的结构以及在病理和生理状态下的改变过程。 异常甲基化造成了像癌症和遗传疾病的众多疾病和病理过程的发生发展[8]。例如：抑癌基因启动子的过甲基化就是癌症的早期特征事件[9,10]；但是印记的缺失&amp;amp;ndash;在父母等位基因的一方甲基化的缺失，是某些综合症的病因[8]。前面这两个例子足以证明DNA甲基化研究的重要性。为了评估基因甲基化状态，有许多可行的方法。这些方法都依赖以下两个策略：
+用甲基化特异性酶裂解DNA 利用亚硫酸化修饰基因组DNA[11,12] 我们的关注后者。
+甲基化特异性PCR是研究特定基因甲基化状态最方便的方法[13]。虽然有些学者考虑弃用它，但是它高效，敏感性高并且使用频繁，让它成为单基因甲基化研究的最佳方法。MSP基于预先亚硫酸盐处理的DNA样本。在处理后未甲基化的胞嘧啶转化为尿嘧啶而5&amp;amp;rsquo;mC未转化；因而最后DNA序列不再互 …  </content></entry><entry><title>个人博客环境搭建：Ruby + jekyll 本地环境搭建</title><url>/post/ruby-jekyll-local-env-build/</url><categories><category>blog</category></categories><tags><tag>jekyll</tag><tag>ruby</tag></tags><content type="html"><![CDATA[  &#x1f605; 由于自己不熟悉 gitpage ，就直接配置的 github 上的库来创建的博客，所以在开始的时候调试都是靠提交后上 gitpage 上看，简直不要多麻烦。最近查找了一下可以搭建本地的调试环境，而且这还是创建新博客的开始 &#x1f605; 。下面正文。
+配置本地环境 配置本地环境，首先需要安装 Ruby 以及 Devkit ruby下载链接 我是安装的是 rubyinstaller-2.6.3-1-x64.exe 和 DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe
+注意：这里 rubyinstaller-2.6.3-1-x64.exe 安装完之后不要执行ridk install
+安装好 Devkit 和 Ruby 后，命令行cd切换至本地Ruby的安装目录 执行ruby dk.rb init，提示&quot;Initialization complete!&quot;表示安装成功。
+继续执行ruby dk.rb review和ruby dk.rb install
+更换 gem 源 1 2 3 4 5 6 # 查看源 gem sources -l # 删除原来的源，添加清华源 gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/ # 更新源 gem sources -u 运行 rubyinstaller 1 ridk install 这时会让我们做出选择，选3，过程中会下载很多安装包，耐心等待，一定要耐心，要完整装完才行，装好会让你再做一次123选择，这个时候不需要选了，直接enter退出就行了。
+安装jekyll和bundle 1 gem install jekyll bundle 运行本地已建立的博客文件 1 bundle install 安装缓慢，可能需要翻墙
+安装完成之后就可以运行
+1 bundle exec jekyll serve 将本地的博客跑起来
+报错处理 直接执行jekyll serve，报错 1 You have already activated public_suffix 3.1.1, but your Gemfile requires public_suffix 3.1.0. Prepending `bundle exec` to your command may solve this. (Gem::LoadError) 原因很明显，应当执行bundle exec jekyll serve
+执行bundle exec jekyll serve后仍报错 1 Dependency Error: Yikes! It looks like you don&#39;t have jekyll-paginate or one of its dependencies installed. In order to use Jekyll as currently configured, you&#39;ll need to install this gem. The full error message from Ruby is: &#39;cannot load such file -- jekyll-paginate&#39; If you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!jekyll 3.8.5 | Error: jekyll-paginate 此时需要在gemfile中添加gem &quot;jekyll-paginate&quot;
+参考 Ruby x Jekyll 本地调试环境搭建 命令行用法 全网最清晰的Jekyll+Github搭建个人博客 本地jekyll突然不能正常工作，遇到的问题全可以在这个文章中找到答案。   ]]></content></entry><entry><title>批处理set命令的使用--变量及变量延迟</title><url>/post/batchfile-set-usage/</url><categories><category>programming</category></categories><tags><tag>批处理文件</tag><tag>batch</tag></tags><content type="html"><![CDATA[  在批处理文件中，set命令用于设置变量，为变量赋值，
+1 2 3 set [variable=[&amp;#34;string&amp;#34;]] set /p [variable=[&amp;#34;string&amp;#34;]] set /a expression set /p [variable=[&amp;quot;string&amp;quot;]] 使用/p开关在命令行中创建交互，使输入的字符段对变量赋值
+1 set /p a=&amp;#34;请输入变量a&amp;#34; set /a expression 使用/a开关允许set在赋值的同时进行简单的运算
+在其中可使用的运算符包括
+运算符 运算符 优先级依次降低 ( ) 分组 0 ! ~ - 一元运算符 1 * / % 算数运算符 2 - 算术运算符 3 &amp;lt;&amp;lt; &amp;gt;&amp;gt; 二进制逻辑移位 4 &amp;amp; 与 5 ^ 非 6 ` ` 或 = *= /= %= += -= 算数赋值 8 `&amp;amp;= ^= = &amp;laquo;= &amp;raquo;=` 二进制运算赋值 , 分隔符 10 1 2 3 set a=1 set b=2 set /a c=%a%+%b% set字符串处理 字符串替换 1 2 3 4 %srting:str1=str2% rem 字符替换 %srting:str1=% rem 字符删除 字符串截取 1 2 3 %string:~[m,[n]]% %string:~[-9, 4]% rem 从倒数第九位开始截取四位 参数 作用 默认值 m 偏移量 默认为0 n 截取长度 默认为全部 扩展变量 与%i相关的变量 示例 c:\programfile\test.bat %0 &amp;quot;c:\programfile\test.bat&amp;quot; %cd% c:\programfile %~0 test.bat %~f0 c:\programfile\test.bat %~d0 c:\ %~p0 .\programfile\test.bat %~dp0 c:\programfile\ %~n0 test %~x0 .bat %~nx0 test.bat %~s0 路径缩写 %~a0 文件属性 %~t0 创建时间 %~z0 文件大小 命令行参数 %0表示执行文件.bat本身
+%1 %2 %3 ...表示传入参 …  ]]></content></entry><entry><title>批处理for命令的使用--创建post</title><url>/post/batchfile-for-usage/</url><categories><category>programming</category></categories><tags><tag>批处理文件</tag><tag>batch</tag></tags><content type="html"><![CDATA[  对于刚创建的博客，使用起来还不是很熟，_post里的MarkDown文件开头需要有 tag、title、categroies、layout 总是记不住格式和内容。今天就构思了个脚本，来解决这个苦恼。
+最近刚上手批处理文件，还是有很多不熟悉，最难懂也是最厉害的命令就是for命令，这次就记一下笔记。
+for命令 for命令适用于遍历文件、文本内容，可以截取文件、文本，使用范围很广。
+for命令的基本格式 1 2 3 for [/d /f /l /r] [&amp;#34;options&amp;#34;] %%i in (file) do (comminds) for [/d /f /l /r] [&amp;#34;options&amp;#34;] %%i in (&amp;#34;string&amp;#34;) do (comminds) for [/d /f /l /r] [&amp;#34;options&amp;#34;] %%i in (&amp;#39;comminds&amp;#39;) do (comminds) for 命令的作用是，将file、string或comminds中的内容按照[&amp;quot;options&amp;quot;]中的条件匹配并赋值给%%i然后执行comminds
+注意 for in和do是基本元素，一个都不能少 in之后和do之前的括号不能缺少 %%i是形式参数，在后面的do中作为参数的起点 in之后的部分用&amp;quot;&amp;quot;引用的部分作为字符串遍历其内容 in之后的部分用&#39;&#39;引用的部分作为命令遍历其执行结果 in之后的部分不引用的作为文件遍历其内容 FOR /D %%variable IN (set) DO command [command-parameters] 检索目录，不包括子目录，不包括文件
+1 for /d %%i in (c:\w*) do echo %%i 检索以w开头的目录
+FOR /R [[drive:]path] %%variable IN (set) DO command [command-parameters] 递归检索目录，检索目录下所有的子目录
+1 for /r c:\ %%i in (*.exe) do echo %%i 检索目录下所有.exe文件
+1 for /r c:\ %%i in (boot.ini) do echo %%i 将枚举目录下所有子目录，因此改写为
+1 …  ]]></content></entry><entry><title>个人博客创建！</title><url>/post/blog-init/</url><categories><category>todolist</category></categories><tags><tag>todolist</tag></tags><content type="html">  2019-06-12 个人博客创建 学习python 学习R 学习生物信息学   </content></entry><entry><title>站点示例</title><url>/flinks.html</url><categories/><tags/><content type="html">  如想交换本站友情链接，请在评论区留下你的站点信息，格式参考如下：
+1 2 3 4 - name: Hugo-NexT desc: Hugo NexT 官方预览网站。 avatar: https://hugo-next.eu.org/imgs/hugo_next_avatar.png link: https://hugo-next.eu.org   </content></entry></search>

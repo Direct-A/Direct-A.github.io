@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>一周生活细节 on Direct-A日志输出</title><link>https://www.direct-a.cn/tags/%E4%B8%80%E5%91%A8%E7%94%9F%E6%B4%BB%E7%BB%86%E8%8A%82/</link><description>Recent content in 一周生活细节 on Direct-A日志输出</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 01 May 2022 20:57:44 +0000</lastBuildDate><atom:link href="https://www.direct-a.cn/tags/%E4%B8%80%E5%91%A8%E7%94%9F%E6%B4%BB%E7%BB%86%E8%8A%82/rss.xml" rel="self" type="application/rss+xml"/><item><title>【一周生活细节】2022-05_01</title><link>https://www.direct-a.cn/post/2022-05-01/</link><pubDate>Sun, 01 May 2022 20:57:44 +0000</pubDate><guid>https://www.direct-a.cn/post/2022-05-01/</guid><description>&lt;h2 id="toc">TOC
+&lt;a class="header-anchor" href="#toc">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>News
+&lt;ul>
+&lt;li>
+&lt;a href="#ROBYN-%e4%b8%80%e4%b8%aa%e5%85%a8%e6%96%b0%e7%9a%84-PYTHON-WEB-%e6%a1%86%e6%9e%b6" title="Robyn 一个全新的 Python Web 框架" >
+ Robyn 一个全新的 Python Web 框架
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#PYSCRIPT-%e5%9c%a8%e7%bd%91%e9%a1%b5%e4%b8%ad%e8%bf%90%e8%a1%8c-PYTHON" title="PyScript 在网页中运行 Python" >
+ PyScript 在网页中运行 Python
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>github项目和网站
+&lt;ul>
+&lt;li>
+&lt;a href="#%e7%8e%b0%e4%bb%a3%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b7%a5%e5%85%b7%e5%90%88%e9%9b%86" title="现代命令行工具合集" >
+ 现代命令行工具合集
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#RUST-CHEETSHEET" title="Rust cheetsheet" >
+ Rust cheetsheet
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>学习
+&lt;ul>
+&lt;li>
+&lt;a href="#YAY-%e5%91%bd%e4%bb%a4%e8%a1%8c-FLAGS-%e7%bd%97%e5%88%97" title="yay 命令行 flags 罗列" >
+ yay 命令行 flags 罗列
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>趣图&lt;/li>
+&lt;/ul>
+&lt;!-- more -->
+&lt;h2 id="robyn-一个全新的-python-web-框架">Robyn 一个全新的 Python Web 框架
+&lt;a class="header-anchor" href="#robyn-%e4%b8%80%e4%b8%aa%e5%85%a8%e6%96%b0%e7%9a%84-python-web-%e6%a1%86%e6%9e%b6">&lt;/a>
+&lt;/h2>
+ &lt;blockquote>
+ &lt;p>
+&lt;a href="https://www.sanskar.me/hello_robyn.html" title="Hello, Robyn!" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Hello, Robyn!
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>【一周生活细节】2022-04_04</title><link>https://www.direct-a.cn/post/2022-04-04/</link><pubDate>Wed, 27 Apr 2022 15:06:13 +0000</pubDate><guid>https://www.direct-a.cn/post/2022-04-04/</guid><description>&lt;h2 id="toc">TOC
+&lt;a class="header-anchor" href="#toc">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>News
+&lt;ul>
+&lt;li>
+&lt;a href="#%e9%a9%ac%e6%96%af%e5%85%8b%e6%94%b6%e8%b4%ad-TWITTER" title="马斯克收购 Twitter" >
+ 马斯克收购 Twitter
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#RUST-%e5%9c%a8%e5%89%8d%e7%ab%af%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e5%a4%a7%e6%98%be%e8%ba%ab%e6%89%8b" title="Rust 在前端开发中的大显身手" >
+ Rust 在前端开发中的大显身手
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#WEBASSEMBLY-2-0-%e8%a7%84%e8%8c%83%e5%8f%91%e5%b8%83" title="Webassembly 2.0 规范发布" >
+ Webassembly 2.0 规范发布
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>github项目和网站
+&lt;ul>
+&lt;li>
+&lt;a href="#YOU-GET-%e9%9d%a2%e5%90%91%e8%a7%86%e5%b1%8f%e7%bd%91%e7%ab%99%e7%9a%84%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%a7%86%e9%a2%91%e4%b8%8b%e8%bd%bd%e5%b7%a5%e5%85%b7" title="you-get 面向视屏网站的命令行视频下载工具" >
+ you-get 面向视屏网站的命令行视频下载工具
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#LOGO-GENERATE-%e5%85%8d%e8%b4%b9%e7%9a%84%e5%9b%be%e6%a0%87%e5%ae%9a%e5%88%b6%e7%bd%91%e7%ab%99" title="logo generate 免费的图标定制网站" >
+ logo generate 免费的图标定制网站
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#JSON-HERO-JSON-%e5%8f%af%e8%a7%86%e5%8c%96%e8%a7%a3%e6%9e%90%e5%b7%a5%e5%85%b7" title="json hero json 可视化解析工具" >
+ json hero json 可视化解析工具
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>学习
+&lt;ul>
+&lt;li>
+&lt;a href="#VSCODE-SNIPPESTS-%e4%bd%bf%e7%94%a8" title="vscode snippests 使用" >
+ vscode snippests 使用
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#LINUX-%e5%b8%b8%e7%94%a8%e7%bd%91%e7%bb%9c%e5%91%bd%e4%bb%a4" title="Linux 常用网络命令" >
+ Linux 常用网络命令
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>趣图&lt;/li>
+&lt;/ul>
+&lt;!-- more -->
+&lt;h2 id="马斯克收购-twitter">马斯克收购 Twitter
+&lt;a class="header-anchor" href="#%e9%a9%ac%e6%96%af%e5%85%8b%e6%94%b6%e8%b4%ad-twitter">&lt;/a>
+&lt;/h2>
+ &lt;blockquote>
+ &lt;p>
+&lt;a href="https://www.bbc.com/zhongwen/simp/business-61189418" title="马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>【一周生活细节】2022-04_03</title><link>https://www.direct-a.cn/post/2022-04-03/</link><pubDate>Mon, 18 Apr 2022 21:26:47 +0000</pubDate><guid>https://www.direct-a.cn/post/2022-04-03/</guid><description>&lt;p>很长时间里我都把这个博客当作一个技术文档的发布站点。但是前一段时间在检索问题的时候，看到其他博客，看他们有类似记录问题最佳解答或者最近发现这样类型的文章，我感到很新奇，仔细一想这种形式不也是一种分享，很多时候那些零零散散的琐碎问题，通过这种方式的分享不也可以组成一种技术或者经验的文档吗。&lt;/p></description></item></channel></rss>

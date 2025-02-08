@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Direct-A日志输出</title><link>https://www.direct-a.cn/categories/blog/</link><description>Recent content in Blog on Direct-A日志输出</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 01 May 2022 20:57:44 +0000</lastBuildDate><atom:link href="https://www.direct-a.cn/categories/blog/rss.xml" rel="self" type="application/rss+xml"/><item><title>【一周生活细节】2022-05_01</title><link>https://www.direct-a.cn/post/2022-05-01/</link><pubDate>Sun, 01 May 2022 20:57:44 +0000</pubDate><guid>https://www.direct-a.cn/post/2022-05-01/</guid><description>&lt;h2 id="toc">TOC
+&lt;a class="header-anchor" href="#toc">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>News
+&lt;ul>
+&lt;li>
+&lt;a href="#ROBYN-%e4%b8%80%e4%b8%aa%e5%85%a8%e6%96%b0%e7%9a%84-PYTHON-WEB-%e6%a1%86%e6%9e%b6" title="Robyn 一个全新的 Python Web 框架" >
+ Robyn 一个全新的 Python Web 框架
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#PYSCRIPT-%e5%9c%a8%e7%bd%91%e9%a1%b5%e4%b8%ad%e8%bf%90%e8%a1%8c-PYTHON" title="PyScript 在网页中运行 Python" >
+ PyScript 在网页中运行 Python
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>github项目和网站
+&lt;ul>
+&lt;li>
+&lt;a href="#%e7%8e%b0%e4%bb%a3%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b7%a5%e5%85%b7%e5%90%88%e9%9b%86" title="现代命令行工具合集" >
+ 现代命令行工具合集
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#RUST-CHEETSHEET" title="Rust cheetsheet" >
+ Rust cheetsheet
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>学习
+&lt;ul>
+&lt;li>
+&lt;a href="#YAY-%e5%91%bd%e4%bb%a4%e8%a1%8c-FLAGS-%e7%bd%97%e5%88%97" title="yay 命令行 flags 罗列" >
+ yay 命令行 flags 罗列
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>趣图&lt;/li>
+&lt;/ul>
+&lt;!-- more -->
+&lt;h2 id="robyn-一个全新的-python-web-框架">Robyn 一个全新的 Python Web 框架
+&lt;a class="header-anchor" href="#robyn-%e4%b8%80%e4%b8%aa%e5%85%a8%e6%96%b0%e7%9a%84-python-web-%e6%a1%86%e6%9e%b6">&lt;/a>
+&lt;/h2>
+ &lt;blockquote>
+ &lt;p>
+&lt;a href="https://www.sanskar.me/hello_robyn.html" title="Hello, Robyn!" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Hello, Robyn!
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>【一周生活细节】2022-04_04</title><link>https://www.direct-a.cn/post/2022-04-04/</link><pubDate>Wed, 27 Apr 2022 15:06:13 +0000</pubDate><guid>https://www.direct-a.cn/post/2022-04-04/</guid><description>&lt;h2 id="toc">TOC
+&lt;a class="header-anchor" href="#toc">&lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>News
+&lt;ul>
+&lt;li>
+&lt;a href="#%e9%a9%ac%e6%96%af%e5%85%8b%e6%94%b6%e8%b4%ad-TWITTER" title="马斯克收购 Twitter" >
+ 马斯克收购 Twitter
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#RUST-%e5%9c%a8%e5%89%8d%e7%ab%af%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e5%a4%a7%e6%98%be%e8%ba%ab%e6%89%8b" title="Rust 在前端开发中的大显身手" >
+ Rust 在前端开发中的大显身手
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#WEBASSEMBLY-2-0-%e8%a7%84%e8%8c%83%e5%8f%91%e5%b8%83" title="Webassembly 2.0 规范发布" >
+ Webassembly 2.0 规范发布
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>github项目和网站
+&lt;ul>
+&lt;li>
+&lt;a href="#YOU-GET-%e9%9d%a2%e5%90%91%e8%a7%86%e5%b1%8f%e7%bd%91%e7%ab%99%e7%9a%84%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%a7%86%e9%a2%91%e4%b8%8b%e8%bd%bd%e5%b7%a5%e5%85%b7" title="you-get 面向视屏网站的命令行视频下载工具" >
+ you-get 面向视屏网站的命令行视频下载工具
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#LOGO-GENERATE-%e5%85%8d%e8%b4%b9%e7%9a%84%e5%9b%be%e6%a0%87%e5%ae%9a%e5%88%b6%e7%bd%91%e7%ab%99" title="logo generate 免费的图标定制网站" >
+ logo generate 免费的图标定制网站
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#JSON-HERO-JSON-%e5%8f%af%e8%a7%86%e5%8c%96%e8%a7%a3%e6%9e%90%e5%b7%a5%e5%85%b7" title="json hero json 可视化解析工具" >
+ json hero json 可视化解析工具
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>学习
+&lt;ul>
+&lt;li>
+&lt;a href="#VSCODE-SNIPPESTS-%e4%bd%bf%e7%94%a8" title="vscode snippests 使用" >
+ vscode snippests 使用
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#LINUX-%e5%b8%b8%e7%94%a8%e7%bd%91%e7%bb%9c%e5%91%bd%e4%bb%a4" title="Linux 常用网络命令" >
+ Linux 常用网络命令
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>趣图&lt;/li>
+&lt;/ul>
+&lt;!-- more -->
+&lt;h2 id="马斯克收购-twitter">马斯克收购 Twitter
+&lt;a class="header-anchor" href="#%e9%a9%ac%e6%96%af%e5%85%8b%e6%94%b6%e8%b4%ad-twitter">&lt;/a>
+&lt;/h2>
+ &lt;blockquote>
+ &lt;p>
+&lt;a href="https://www.bbc.com/zhongwen/simp/business-61189418" title="马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>【一周生活细节】2022-04_03</title><link>https://www.direct-a.cn/post/2022-04-03/</link><pubDate>Mon, 18 Apr 2022 21:26:47 +0000</pubDate><guid>https://www.direct-a.cn/post/2022-04-03/</guid><description>&lt;p>很长时间里我都把这个博客当作一个技术文档的发布站点。但是前一段时间在检索问题的时候，看到其他博客，看他们有类似记录问题最佳解答或者最近发现这样类型的文章，我感到很新奇，仔细一想这种形式不也是一种分享，很多时候那些零零散散的琐碎问题，通过这种方式的分享不也可以组成一种技术或者经验的文档吗。&lt;/p></description></item><item><title>【翻译】MSH3 Homology and Potential Recombination Link to SARS-CoV-2 Furin Cleavage Site</title><link>https://www.direct-a.cn/post/potential-recombination-link-to-sars-cov-2/</link><pubDate>Fri, 25 Mar 2022 09:45:22 +0000</pubDate><guid>https://www.direct-a.cn/post/potential-recombination-link-to-sars-cov-2/</guid><description>&lt;p>SARS-CoV-2 和蝙蝠 RaTG13 冠状病毒的多个点突变中，仅有 12 个核苷酸长度的
+&lt;a href="https://zh.wikipedia.org/zh-cn/%E5%BC%97%E6%9E%97%E8%9B%8B%E7%99%BD%E9%85%B6" title="弗林蛋白酶" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 弗林蛋白酶
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>裂解位点（FCS）有超过三个核苷酸的差异。&lt;strong>通过 BLAST 检索发现 SARS.Cov2 基因组中包含标记裂解位点的 19 个核苷酸部分与密码子优化专有序列（人类 
+&lt;a href="https://zh.wikipedia.org/zh-cn/DNA%E9%94%99%E9%85%8D%E4%BF%AE%E5%A4%8D" title="MSH3" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ MSH3
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a> 的补充序列） 100% 互补&lt;/strong>。SARS-Cov-2 中出现的反向互补序列可能是随机出现的但也有必要考虑其他可能。中间宿主内发生重组不像可能的解释。SARS-Cov-2 这类单链 RNA 病毒利用感染细胞的 RNA 负链作为模板，这有可能导致 SARS-CoV-2 反义链 RNA 与细胞内 MSH3 负链（包含 FCS）发生复制选择重组入病毒基因组。无论如何，这段包含 FCS 19 个核苷酸，且与 MSH3 mRNA 100% 反向互补的 RNA 序列的出现都是高度反常的并需要进一步研究。&lt;/p></description></item><item><title>Don't Starve Together 私有服务器搭建</title><link>https://www.direct-a.cn/post/don-t-starve-together-server/</link><pubDate>Thu, 24 Mar 2022 14:56:20 +0000</pubDate><guid>https://www.direct-a.cn/post/don-t-starve-together-server/</guid><description>&lt;p>在 Linux 上玩饥荒联机版是通过 Proton 兼容层运行的，玩起来没什么么问题，但是联机使用自己本机建的公共服务器就会出现延迟过高，别人连进来没法一起开心的游戏。毕竟是兼容层里面的，也难怪。正好手里有服务器，所以就想顺手整个自建的私有饥荒服务器。&lt;/p></description></item><item><title>Hexo Next Theme 踩坑</title><link>https://www.direct-a.cn/post/hexo-troubleshoot/</link><pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/hexo-troubleshoot/</guid><description>&lt;h2 id="报错-accessing-non-existent-property">报错 Accessing non-existent property
+&lt;a class="header-anchor" href="#%e6%8a%a5%e9%94%99-accessing-non-existent-property">&lt;/a>
+&lt;/h2>&lt;p>{% asset_img &amp;ldquo;Pasted image 20220311175317.png&amp;rdquo;%}&lt;/p>
+&lt;h3 id="环境">环境
+&lt;a class="header-anchor" href="#%e7%8e%af%e5%a2%83">&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-7">&lt;a class="lnlinks" href="#hl-0-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-8">&lt;a class="lnlinks" href="#hl-0-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-9">&lt;a class="lnlinks" href="#hl-0-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-10">&lt;a class="lnlinks" href="#hl-0-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-11">&lt;a class="lnlinks" href="#hl-0-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-15">&lt;a class="lnlinks" href="#hl-0-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-16">&lt;a class="lnlinks" href="#hl-0-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-17">&lt;a class="lnlinks" href="#hl-0-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-18">&lt;a class="lnlinks" href="#hl-0-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-19">&lt;a class="lnlinks" href="#hl-0-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-20">&lt;a class="lnlinks" href="#hl-0-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-21">&lt;a class="lnlinks" href="#hl-0-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-22">&lt;a class="lnlinks" href="#hl-0-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-23">&lt;a class="lnlinks" href="#hl-0-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-24">&lt;a class="lnlinks" href="#hl-0-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-25">&lt;a class="lnlinks" href="#hl-0-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-26">&lt;a class="lnlinks" href="#hl-0-26">26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-27">&lt;a class="lnlinks" href="#hl-0-27">27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-28">&lt;a class="lnlinks" href="#hl-0-28">28&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-29">&lt;a class="lnlinks" href="#hl-0-29">29&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-30">&lt;a class="lnlinks" href="#hl-0-30">30&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-31">&lt;a class="lnlinks" href="#hl-0-31">31&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-32">&lt;a class="lnlinks" href="#hl-0-32">32&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-33">&lt;a class="lnlinks" href="#hl-0-33">33&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">❯ hexo -v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INFO Validating config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">INFO&lt;/span> &lt;span class="o">==================================&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ███╗ ██╗███████╗██╗ ██╗████████╗
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ████╗ ██║██╔════╝╚██╗██╔╝╚══██╔══╝
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ██╔██╗ ██║█████╗ ╚███╔╝ ██║
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ██║╚██╗██║██╔══╝ ██╔██╗ ██║
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ██║ ╚████║███████╗██╔╝ ██╗ ██║
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ╚═╝ ╚═══╝╚══════╝╚═╝ ╚═╝ ╚═╝
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">========================================&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">NexT version 8.10.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Documentation: https://theme-next.js.org
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">========================================&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hexo: 5.4.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hexo-cli: 4.3.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">os: linux 5.16.13-zen1-1-zen Arch Linux
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">node: 17.3.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">v8: 9.6.180.15-node.12
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uv: 1.42.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">zlib: 1.2.11
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brotli: 1.0.9
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ares: 1.18.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">modules: &lt;span class="m">102&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nghttp2: 1.45.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">napi: &lt;span class="m">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">llhttp: 6.0.4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openssl: 3.0.1+quic
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cldr: 40.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">icu: 70.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tz: 2021a3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">unicode: 14.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ngtcp2: 0.1.0-DEV
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nghttp3: 0.1.0-DEV&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h3 id="复现">复现
+&lt;a class="header-anchor" href="#%e5%a4%8d%e7%8e%b0">&lt;/a>
+&lt;/h3>&lt;p>每次 &lt;code>hexo s&lt;/code> 部署后，访问页面均会有&lt;/p></description></item><item><title>Hexo个人博客私有云服务器部署</title><link>https://www.direct-a.cn/post/hexo-blog-server-deploy/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/hexo-blog-server-deploy/</guid><description>&lt;p>自打有自己的个人博客之后，就一直在用gitpage，感觉够用，也没有想着更换到个人服务器。
+直到前一段时间，我更新了一篇博文，推上仓库，等 git action 自动部署成功后刷新博客地址，发现没有出现更新的那篇博文。
+好好查了一下仓库部署用的分支，还有自己的配置，都没有问题，为什么没更新呢。
+本着解决不了就搜索，谷歌搜了一下的问题，看到很多人都有这种问题，有两种说法：&lt;/p></description></item><item><title>个人博客环境搭建：Ruby + jekyll 本地环境搭建</title><link>https://www.direct-a.cn/post/ruby-jekyll-local-env-build/</link><pubDate>Sat, 06 Jul 2019 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/ruby-jekyll-local-env-build/</guid><description>&lt;p>&amp;#x1f605; 由于自己不熟悉 gitpage ，就直接配置的 github 上的库来创建的博客，所以在开始的时候调试都是靠提交后上 gitpage 上看，简直不要多麻烦。最近查找了一下可以搭建本地的调试环境，而且这还是创建新博客的开始 &amp;#x1f605; 。下面正文。&lt;/p></description></item></channel></rss>

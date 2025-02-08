@@ -1,0 +1,331 @@
+<!doctype html><html lang=zh-CN data-theme=dark><head><meta charset=UTF-8><meta name=viewport content="width=device-width"><meta name=theme-color content="#222" media="(prefers-color-scheme: dark)"><meta name=generator content="Hugo 0.143.1"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon-16x16.ico><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon-32x32.ico><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple-touch-icon-57x57.png><meta itemprop=name content="Direct-A日志输出"><meta itemprop=description content="a blog as a log"><meta name=description content="a blog as a log"><meta itemprop=image content="https://www.direct-a.cn/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="Direct-A, 编程, 博客, 教程, 笔记"><meta property="og:type" content="website"><meta property="og:title" content="Direct-A日志输出"><meta property="og:description" content="a blog as a log"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="https://www.direct-a.cn/"><meta property="og:site_name" content="Direct-A日志输出"><meta property="og:locale" content="zh-CN"><link type=text/css rel=stylesheet href=https://www.direct-a.cn/js/3rd/font-awesome/6.7.2/css/all.min.css><link type=text/css rel=stylesheet href=https://www.direct-a.cn/js/3rd/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://www.direct-a.cn/js/3rd/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href="/css/main.min.css?=1738988313"><style type=text/css>.post-footer hr:after{content:"~ 我可是有底线的哟 ~"}.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>Direct-A日志输出</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>Direct-A日志输出</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>a blog as a log</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class="hvr-icon-pulse menu-item-active" rel=section><i class="fa fa-home hvr-icon"></i>首页</a></li><li class="menu-item menu-item-about"><a href=/about/ class=hvr-icon-pulse rel=section><i class="fa fa-user hvr-icon"></i>关于</a></li><li class="menu-item menu-item-flinks"><a href=/flinks.html class=hvr-icon-pulse rel=section><i class="fa fa-thumbs-up hvr-icon"></i>友情链接</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section><i class="fa fa-archive hvr-icon"></i>归档
+<span class=badge>29</span></a></li><li class="menu-item menu-item-commonweal"><a href=/404/ class=hvr-icon-pulse rel=section><i class="fa fa-heartbeat hvr-icon"></i>公益 404</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-overview-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=Direct-A src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>Direct-A</p><div class=site-description itemprop=description>a blog as a log</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>29</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>6</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>55</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/Direct-A title="Github → https://github.com/Direct-A" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+Github
+</a></span><span class=links-of-social-item><a href=mailto:songyicheng0@gmail.com title="E-Mail → mailto:songyicheng0@gmail.com" rel=noopener class=hvr-icon-pulse target=_blank><i class="fa fa-envelope fa-fw hvr-icon"></i>
+E-Mail
+</a></span><span class=links-of-social-item><a href=https://twitter.com/01_days_ title="Twitter → https://twitter.com/01_days_" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-twitter fa-fw hvr-icon"></i>
+Twitter</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh class=cc-opacity rel=noopener target=_blank title=共享知识><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/small/by_nc_sa.svg alt=共享知识></a></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://gitee.com/hugo-next/hugo-theme-next title=https://gitee.com/hugo-next/hugo-theme-next target=_blank>Hugo-NexT</a></li></ul></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate="2019-06-12 00:00:00 +0000 UTC"></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=49475></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=114></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate="2022-05-01 20:57:44 +0000 UTC"></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-comments class="button goto-comments" title=直达评论><i class="fas fa-comments"></i></div><div id=goto-i18n-translate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner index posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/2022-05-01/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="【一周生活细节】2022-05_01"><meta itemprop=description content="TOC
+
+
+News
+
+
+
+    Robyn 一个全新的 Python Web 框架
+    
+
+
+
+    PyScript 在网页中运行 Python
+    
+
+
+
+github项目和网站
+
+
+
+    现代命令行工具合集
+    
+
+
+
+    Rust cheetsheet
+    
+
+
+
+学习
+
+
+
+    yay 命令行 flags 罗列
+    
+
+
+
+趣图
+
+
+Robyn 一个全新的 Python Web 框架
+
+
+  
+    
+
+    Hello, Robyn!
+    
+    
+    
+"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/2022-05-01/ itemprop=url class=post-title-link>【一周生活细节】2022-05_01</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-05-01T20:57:44+00:00 itemprop="dateCreated datePublished" datetime="2022-05-01 20:57:44 +0000 UTC">2022-05-01
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/blog/ itemprop=url rel=index><span itemprop=name>blog</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/2022-05-01/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><h2 id=toc>TOC
+<a class=header-anchor href=#toc></a></h2><ul><li>News<ul><li><a href=#ROBYN-%e4%b8%80%e4%b8%aa%e5%85%a8%e6%96%b0%e7%9a%84-PYTHON-WEB-%e6%a1%86%e6%9e%b6 title="Robyn 一个全新的 Python Web 框架">Robyn 一个全新的 Python Web 框架</a></li><li><a href=#PYSCRIPT-%e5%9c%a8%e7%bd%91%e9%a1%b5%e4%b8%ad%e8%bf%90%e8%a1%8c-PYTHON title="PyScript 在网页中运行 Python">PyScript 在网页中运行 Python</a></li></ul></li><li>github项目和网站<ul><li><a href=#%e7%8e%b0%e4%bb%a3%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b7%a5%e5%85%b7%e5%90%88%e9%9b%86 title=现代命令行工具合集>现代命令行工具合集</a></li><li><a href=#RUST-CHEETSHEET title="Rust cheetsheet">Rust cheetsheet</a></li></ul></li><li>学习<ul><li><a href=#YAY-%e5%91%bd%e4%bb%a4%e8%a1%8c-FLAGS-%e7%bd%97%e5%88%97 title="yay 命令行 flags 罗列">yay 命令行 flags 罗列</a></li></ul></li><li>趣图</li></ul><h2 id=robyn-一个全新的-python-web-框架>Robyn 一个全新的 Python Web 框架
+<a class=header-anchor href=#robyn-%e4%b8%80%e4%b8%aa%e5%85%a8%e6%96%b0%e7%9a%84-python-web-%e6%a1%86%e6%9e%b6></a></h2><blockquote><p><a href=https://www.sanskar.me/hello_robyn.html title="Hello, Robyn!" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Hello, Robyn!
+<i class="fa fa-external-link-alt"></i></a></p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/2022-05-01/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/2022-04-04/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="【一周生活细节】2022-04_04"><meta itemprop=description content="TOC
+
+
+News
+
+
+
+    马斯克收购 Twitter
+    
+
+
+
+    Rust 在前端开发中的大显身手
+    
+
+
+
+    Webassembly 2.0 规范发布
+    
+
+
+
+github项目和网站
+
+
+
+    you-get 面向视屏网站的命令行视频下载工具
+    
+
+
+
+    logo generate 免费的图标定制网站
+    
+
+
+
+    json hero json 可视化解析工具
+    
+
+
+
+学习
+
+
+
+    vscode snippests 使用
+    
+
+
+
+    Linux 常用网络命令
+    
+
+
+
+趣图
+
+
+马斯克收购 Twitter
+
+
+  
+    
+
+    马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文
+    
+    
+    
+"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/2022-04-04/ itemprop=url class=post-title-link>【一周生活细节】2022-04_04</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-04-27T15:06:13+00:00 itemprop="dateCreated datePublished" datetime="2022-04-27 15:06:13 +0000 UTC">2022-04-27
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/blog/ itemprop=url rel=index><span itemprop=name>blog</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/2022-04-04/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><h2 id=toc>TOC
+<a class=header-anchor href=#toc></a></h2><ul><li>News<ul><li><a href=#%e9%a9%ac%e6%96%af%e5%85%8b%e6%94%b6%e8%b4%ad-TWITTER title="马斯克收购 Twitter">马斯克收购 Twitter</a></li><li><a href=#RUST-%e5%9c%a8%e5%89%8d%e7%ab%af%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e5%a4%a7%e6%98%be%e8%ba%ab%e6%89%8b title="Rust 在前端开发中的大显身手">Rust 在前端开发中的大显身手</a></li><li><a href=#WEBASSEMBLY-2-0-%e8%a7%84%e8%8c%83%e5%8f%91%e5%b8%83 title="Webassembly 2.0 规范发布">Webassembly 2.0 规范发布</a></li></ul></li><li>github项目和网站<ul><li><a href=#YOU-GET-%e9%9d%a2%e5%90%91%e8%a7%86%e5%b1%8f%e7%bd%91%e7%ab%99%e7%9a%84%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%a7%86%e9%a2%91%e4%b8%8b%e8%bd%bd%e5%b7%a5%e5%85%b7 title="you-get 面向视屏网站的命令行视频下载工具">you-get 面向视屏网站的命令行视频下载工具</a></li><li><a href=#LOGO-GENERATE-%e5%85%8d%e8%b4%b9%e7%9a%84%e5%9b%be%e6%a0%87%e5%ae%9a%e5%88%b6%e7%bd%91%e7%ab%99 title="logo generate 免费的图标定制网站">logo generate 免费的图标定制网站</a></li><li><a href=#JSON-HERO-JSON-%e5%8f%af%e8%a7%86%e5%8c%96%e8%a7%a3%e6%9e%90%e5%b7%a5%e5%85%b7 title="json hero json 可视化解析工具">json hero json 可视化解析工具</a></li></ul></li><li>学习<ul><li><a href=#VSCODE-SNIPPESTS-%e4%bd%bf%e7%94%a8 title="vscode snippests 使用">vscode snippests 使用</a></li><li><a href=#LINUX-%e5%b8%b8%e7%94%a8%e7%bd%91%e7%bb%9c%e5%91%bd%e4%bb%a4 title="Linux 常用网络命令">Linux 常用网络命令</a></li></ul></li><li>趣图</li></ul><h2 id=马斯克收购-twitter>马斯克收购 Twitter
+<a class=header-anchor href=#%e9%a9%ac%e6%96%af%e5%85%8b%e6%94%b6%e8%b4%ad-twitter></a></h2><blockquote><p><a href=https://www.bbc.com/zhongwen/simp/business-61189418 title="马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文" rel="noopener external nofollow noreferrer" target=_blank class=exturl>马斯克收购推特：他为什么要买推特？推特可能会有什么变化？ - BBC News 中文
+<i class="fa fa-external-link-alt"></i></a></p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/2022-04-04/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/2022-04-03/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="【一周生活细节】2022-04_03"><meta itemprop=description content="很长时间里我都把这个博客当作一个技术文档的发布站点。但是前一段时间在检索问题的时候，看到其他博客，看他们有类似记录问题最佳解答或者最近发现这样类型的文章，我感到很新奇，仔细一想这种形式不也是一种分享，很多时候那些零零散散的琐碎问题，通过这种方式的分享不也可以组成一种技术或者经验的文档吗。"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/2022-04-03/ itemprop=url class=post-title-link>【一周生活细节】2022-04_03</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-04-18T21:26:47+00:00 itemprop="dateCreated datePublished" datetime="2022-04-18 21:26:47 +0000 UTC">2022-04-18
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/blog/ itemprop=url rel=index><span itemprop=name>blog</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/2022-04-03/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><p>很长时间里我都把这个博客当作一个技术文档的发布站点。但是前一段时间在检索问题的时候，看到其他博客，看他们有类似记录问题最佳解答或者最近发现这样类型的文章，我感到很新奇，仔细一想这种形式不也是一种分享，很多时候那些零零散散的琐碎问题，通过这种方式的分享不也可以组成一种技术或者经验的文档吗。</p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/2022-04-03/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/programming-paradigm/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="编程范式的发展以及主流编程范式的特点和优缺点"><meta itemprop=description content="
+    编程范式（Programming paradigm）是指某种编程语言典型的编程风格或编程方式。 编程范式是编程语言的一种分类方式，它并不针对某种编程语言。就编程语言而言，一种编程语言也可以适用多种编程范式。"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/programming-paradigm/ itemprop=url class=post-title-link>编程范式的发展以及主流编程范式的特点和优缺点</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-04-15T00:01:06+00:00 itemprop="dateCreated datePublished" datetime="2022-04-15 00:01:06 +0000 UTC">2022-04-15
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/programming/ itemprop=url rel=index><span itemprop=name>programming</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/programming-paradigm/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><blockquote><p>编程范式（Programming paradigm）是指某种编程语言典型的编程风格或编程方式。 编程范式是编程语言的一种分类方式，它并不针对某种编程语言。就编程语言而言，一种编程语言也可以适用多种编程范式。</p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/programming-paradigm/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/potential-recombination-link-to-sars-cov-2/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="【翻译】MSH3 Homology and Potential Recombination Link to SARS-CoV-2 Furin Cleavage Site"><meta itemprop=description content="SARS-CoV-2 和蝙蝠 RaTG13 冠状病毒的多个点突变中，仅有 12 个核苷酸长度的
+
+    弗林蛋白酶
+    
+    
+    
+裂解位点（FCS）有超过三个核苷酸的差异。通过 BLAST 检索发现 SARS.Cov2 基因组中包含标记裂解位点的 19 个核苷酸部分与密码子优化专有序列（人类 
+
+    MSH3
+    
+    
+    
+ 的补充序列） 100% 互补。SARS-Cov-2 中出现的反向互补序列可能是随机出现的但也有必要考虑其他可能。中间宿主内发生重组不像可能的解释。SARS-Cov-2 这类单链 RNA 病毒利用感染细胞的 RNA 负链作为模板，这有可能导致 SARS-CoV-2 反义链 RNA 与细胞内 MSH3 负链（包含 FCS）发生复制选择重组入病毒基因组。无论如何，这段包含 FCS 19 个核苷酸，且与 MSH3 mRNA 100% 反向互补的 RNA 序列的出现都是高度反常的并需要进一步研究。"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/potential-recombination-link-to-sars-cov-2/ itemprop=url class=post-title-link>【翻译】MSH3 Homology and Potential Recombination Link to SARS-CoV-2 Furin Cleavage Site</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-03-25T09:45:22+00:00 itemprop="dateCreated datePublished" datetime="2022-03-25 09:45:22 +0000 UTC">2022-03-25
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/blog/ itemprop=url rel=index><span itemprop=name>blog</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/potential-recombination-link-to-sars-cov-2/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><p>SARS-CoV-2 和蝙蝠 RaTG13 冠状病毒的多个点突变中，仅有 12 个核苷酸长度的
+<a href=https://zh.wikipedia.org/zh-cn/%E5%BC%97%E6%9E%97%E8%9B%8B%E7%99%BD%E9%85%B6 title=弗林蛋白酶 rel="noopener external nofollow noreferrer" target=_blank class=exturl>弗林蛋白酶
+<i class="fa fa-external-link-alt"></i>
+</a>裂解位点（FCS）有超过三个核苷酸的差异。<strong>通过 BLAST 检索发现 SARS.Cov2 基因组中包含标记裂解位点的 19 个核苷酸部分与密码子优化专有序列（人类
+<a href=https://zh.wikipedia.org/zh-cn/DNA%E9%94%99%E9%85%8D%E4%BF%AE%E5%A4%8D title=MSH3 rel="noopener external nofollow noreferrer" target=_blank class=exturl>MSH3
+<i class="fa fa-external-link-alt"></i>
+</a>的补充序列） 100% 互补</strong>。SARS-Cov-2 中出现的反向互补序列可能是随机出现的但也有必要考虑其他可能。中间宿主内发生重组不像可能的解释。SARS-Cov-2 这类单链 RNA 病毒利用感染细胞的 RNA 负链作为模板，这有可能导致 SARS-CoV-2 反义链 RNA 与细胞内 MSH3 负链（包含 FCS）发生复制选择重组入病毒基因组。无论如何，这段包含 FCS 19 个核苷酸，且与 MSH3 mRNA 100% 反向互补的 RNA 序列的出现都是高度反常的并需要进一步研究。</p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/potential-recombination-link-to-sars-cov-2/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/don-t-starve-together-server/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="Don't Starve Together 私有服务器搭建"><meta itemprop=description content="在 Linux 上玩饥荒联机版是通过 Proton 兼容层运行的，玩起来没什么么问题，但是联机使用自己本机建的公共服务器就会出现延迟过高，别人连进来没法一起开心的游戏。毕竟是兼容层里面的，也难怪。正好手里有服务器，所以就想顺手整个自建的私有饥荒服务器。"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/don-t-starve-together-server/ itemprop=url class=post-title-link>Don't Starve Together 私有服务器搭建</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-03-24T14:56:20+00:00 itemprop="dateCreated datePublished" datetime="2022-03-24 14:56:20 +0000 UTC">2022-03-24
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/blog/ itemprop=url rel=index><span itemprop=name>blog</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/don-t-starve-together-server/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><p>在 Linux 上玩饥荒联机版是通过 Proton 兼容层运行的，玩起来没什么么问题，但是联机使用自己本机建的公共服务器就会出现延迟过高，别人连进来没法一起开心的游戏。毕竟是兼容层里面的，也难怪。正好手里有服务器，所以就想顺手整个自建的私有饥荒服务器。</p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/don-t-starve-together-server/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/hexo-troubleshoot/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="Hexo Next Theme 踩坑"><meta itemprop=description content="Hexo Next Theme 部署及美化过程中遇到的各种奇奇怪怪的问题及解决方案，不定期更新"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/hexo-troubleshoot/ itemprop=url class=post-title-link>Hexo Next Theme 踩坑</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-03-11T00:00:00+00:00 itemprop="dateCreated datePublished" datetime="2022-03-11 00:00:00 +0000 UTC">2022-03-11
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/blog/ itemprop=url rel=index><span itemprop=name>blog</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/hexo-troubleshoot/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><h2 id=报错-accessing-non-existent-property>报错 Accessing non-existent property
+<a class=header-anchor href=#%e6%8a%a5%e9%94%99-accessing-non-existent-property></a></h2><p>{% asset_img &ldquo;Pasted image 20220311175317.png&rdquo;%}</p><h3 id=环境>环境
+<a class=header-anchor href=#%e7%8e%af%e5%a2%83></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
+</span><span class=lnt id=hl-0-11><a class=lnlinks href=#hl-0-11>11</a>
+</span><span class=lnt id=hl-0-12><a class=lnlinks href=#hl-0-12>12</a>
+</span><span class=lnt id=hl-0-13><a class=lnlinks href=#hl-0-13>13</a>
+</span><span class=lnt id=hl-0-14><a class=lnlinks href=#hl-0-14>14</a>
+</span><span class=lnt id=hl-0-15><a class=lnlinks href=#hl-0-15>15</a>
+</span><span class=lnt id=hl-0-16><a class=lnlinks href=#hl-0-16>16</a>
+</span><span class=lnt id=hl-0-17><a class=lnlinks href=#hl-0-17>17</a>
+</span><span class=lnt id=hl-0-18><a class=lnlinks href=#hl-0-18>18</a>
+</span><span class=lnt id=hl-0-19><a class=lnlinks href=#hl-0-19>19</a>
+</span><span class=lnt id=hl-0-20><a class=lnlinks href=#hl-0-20>20</a>
+</span><span class=lnt id=hl-0-21><a class=lnlinks href=#hl-0-21>21</a>
+</span><span class=lnt id=hl-0-22><a class=lnlinks href=#hl-0-22>22</a>
+</span><span class=lnt id=hl-0-23><a class=lnlinks href=#hl-0-23>23</a>
+</span><span class=lnt id=hl-0-24><a class=lnlinks href=#hl-0-24>24</a>
+</span><span class=lnt id=hl-0-25><a class=lnlinks href=#hl-0-25>25</a>
+</span><span class=lnt id=hl-0-26><a class=lnlinks href=#hl-0-26>26</a>
+</span><span class=lnt id=hl-0-27><a class=lnlinks href=#hl-0-27>27</a>
+</span><span class=lnt id=hl-0-28><a class=lnlinks href=#hl-0-28>28</a>
+</span><span class=lnt id=hl-0-29><a class=lnlinks href=#hl-0-29>29</a>
+</span><span class=lnt id=hl-0-30><a class=lnlinks href=#hl-0-30>30</a>
+</span><span class=lnt id=hl-0-31><a class=lnlinks href=#hl-0-31>31</a>
+</span><span class=lnt id=hl-0-32><a class=lnlinks href=#hl-0-32>32</a>
+</span><span class=lnt id=hl-0-33><a class=lnlinks href=#hl-0-33>33</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>❯ hexo -v
+</span></span><span class=line><span class=cl>INFO  Validating config
+</span></span><span class=line><span class=cl><span class=nv>INFO</span>  <span class=o>==================================</span>
+</span></span><span class=line><span class=cl>  ███╗   ██╗███████╗██╗  ██╗████████╗
+</span></span><span class=line><span class=cl>  ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝
+</span></span><span class=line><span class=cl>  ██╔██╗ ██║█████╗   ╚███╔╝    ██║
+</span></span><span class=line><span class=cl>  ██║╚██╗██║██╔══╝   ██╔██╗    ██║
+</span></span><span class=line><span class=cl>  ██║ ╚████║███████╗██╔╝ ██╗   ██║
+</span></span><span class=line><span class=cl>  ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝
+</span></span><span class=line><span class=cl><span class=o>========================================</span>
+</span></span><span class=line><span class=cl>NexT version 8.10.1
+</span></span><span class=line><span class=cl>Documentation: https://theme-next.js.org
+</span></span><span class=line><span class=cl><span class=o>========================================</span>
+</span></span><span class=line><span class=cl>hexo: 5.4.1
+</span></span><span class=line><span class=cl>hexo-cli: 4.3.0
+</span></span><span class=line><span class=cl>os: linux 5.16.13-zen1-1-zen Arch Linux
+</span></span><span class=line><span class=cl>node: 17.3.0
+</span></span><span class=line><span class=cl>v8: 9.6.180.15-node.12
+</span></span><span class=line><span class=cl>uv: 1.42.0
+</span></span><span class=line><span class=cl>zlib: 1.2.11
+</span></span><span class=line><span class=cl>brotli: 1.0.9
+</span></span><span class=line><span class=cl>ares: 1.18.1
+</span></span><span class=line><span class=cl>modules: <span class=m>102</span>
+</span></span><span class=line><span class=cl>nghttp2: 1.45.1
+</span></span><span class=line><span class=cl>napi: <span class=m>8</span>
+</span></span><span class=line><span class=cl>llhttp: 6.0.4
+</span></span><span class=line><span class=cl>openssl: 3.0.1+quic
+</span></span><span class=line><span class=cl>cldr: 40.0
+</span></span><span class=line><span class=cl>icu: 70.1
+</span></span><span class=line><span class=cl>tz: 2021a3
+</span></span><span class=line><span class=cl>unicode: 14.0
+</span></span><span class=line><span class=cl>ngtcp2: 0.1.0-DEV
+</span></span><span class=line><span class=cl>nghttp3: 0.1.0-DEV</span></span></code></pre></td></tr></table></div></div><h3 id=复现>复现
+<a class=header-anchor href=#%e5%a4%8d%e7%8e%b0></a></h3><p>每次 <code>hexo s</code> 部署后，访问页面均会有</p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/hexo-troubleshoot/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/hexo-blog-server-deploy/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="Hexo个人博客私有云服务器部署"><meta itemprop=description content="自打有自己的个人博客之后，就一直在用gitpage，感觉够用，也没有想着更换到个人服务器。
+直到前一段时间，我更新了一篇博文，推上仓库，等 git action 自动部署成功后刷新博客地址，发现没有出现更新的那篇博文。
+好好查了一下仓库部署用的分支，还有自己的配置，都没有问题，为什么没更新呢。
+本着解决不了就搜索，谷歌搜了一下的问题，看到很多人都有这种问题，有两种说法："></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/hexo-blog-server-deploy/ itemprop=url class=post-title-link>Hexo个人博客私有云服务器部署</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-03-08T00:00:00+00:00 itemprop="dateCreated datePublished" datetime="2022-03-08 00:00:00 +0000 UTC">2022-03-08
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/blog/ itemprop=url rel=index><span itemprop=name>blog</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/hexo-blog-server-deploy/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><p>自打有自己的个人博客之后，就一直在用gitpage，感觉够用，也没有想着更换到个人服务器。
+直到前一段时间，我更新了一篇博文，推上仓库，等 git action 自动部署成功后刷新博客地址，发现没有出现更新的那篇博文。
+好好查了一下仓库部署用的分支，还有自己的配置，都没有问题，为什么没更新呢。
+本着解决不了就搜索，谷歌搜了一下的问题，看到很多人都有这种问题，有两种说法：</p></div><footer class=post-footer><div class=post-button><a class=btn href=/post/hexo-blog-server-deploy/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/adb-control-android-phone/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="使用 adb 操作安卓系统"><meta itemprop=description content="adb 操作安卓手机来备份还是优点多此一举，但是考虑到只有一台手机还是可以这么搞搞。"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/adb-control-android-phone/ itemprop=url class=post-title-link>使用 adb 操作安卓系统</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2022-03-01T00:00:00+00:00 itemprop="dateCreated datePublished" datetime="2022-03-01 00:00:00 +0000 UTC">2022-03-01
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/%E6%8A%98%E8%85%BE/ itemprop=url rel=index><span itemprop=name>折腾</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/adb-control-android-phone/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody>adb 操作安卓手机来备份还是优点多此一举，但是考虑到只有一台手机还是可以这么搞搞。</div><footer class=post-footer><div class=post-button><a class=btn href=/post/adb-control-android-phone/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://www.direct-a.cn/post/network-pharm/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Direct-A"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Direct-A"><meta itemprop=description content="a blog as a log"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="初识网络药理学"><meta itemprop=description content="头一回接触网络药理学，感觉和生物信息学很像"></span><header class=post-header><h2 class=post-title itemprop="name headline"><a href=/post/network-pharm/ itemprop=url class=post-title-link>初识网络药理学</a></h2><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title=创建时间：2021-12-04T00:00:00+00:00 itemprop="dateCreated datePublished" datetime="2021-12-04 00:00:00 +0000 UTC">2021-12-04
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/lab/ itemprop=url rel=index><span itemprop=name>lab</span>
+</a></span></span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/post/network-pharm/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody>头一回接触网络药理学，感觉和生物信息学很像</div><footer class=post-footer><div class=post-button><a class=btn href=/post/network-pharm/#more rel=contents>阅读全文 &#187;</a></div><div class=post-eof></div></footer></article></div><nav class=pagination><span class="page-number current">1</span>
+<a class=page-number href=/page/2/>2</a>
+<a class=page-number href=/page/3/>3</a>
+<a class="extend next" rel=next href=/page/2/><i class="fa fa-angle-right"></i></a></nav></div></main><footer class=footer><div class=footer-inner><div id=i18n-translate class=i18n-translate><i class="fa fa-language"></i><div id=lang-select class=lang-select><div id=lang-selected class=selected-option><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=selected-language>简体中文</span>
+<i class="fa fa-chevron-down"></i></div><div id=lang-options class=lang-options><div class=lang-option lang-code=zh-cn lang-name=简体中文 lang-url=/><span class="flag-icon flag-icon-zh-cn"></span>
+<span class=lang-name>简体中文</span></div><div class=lang-option lang-code=en-us lang-name=English lang-url=/en-us/><span class="flag-icon flag-icon-en-us"></span>
+<span class=lang-name>English</span></div></div></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2019 - 2025
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>Direct-A</span></div><div class=powered-by>由 <a href=https://gohugo.io title=0.143.1 target=_blank>Hugo</a> & <a href=https://github.com/hugo-next/hugo-theme-next title=4.7.2 target=_blank>Hugo NexT.Gemini</a> 强力驱动</div><div class=beian><a href=https://beian.miit.gov.cn target=_blank>冀ICP备2022004242号-1</a>
+<img src=/imgs/gongan.png alt=冀公网安备>
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2022004242" target=_blank>冀公网安备 2022004242 号</a></div><div class=vendors-list><a target=_blank href=https://memos.direct-a.cn title=memos><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/memos.webp alt=memos>
+</a><a target=_blank href=https://gitea.direct-a.cn title=gitea><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/gitea.png alt=gitea>
+</a><span>其他云服务</span></div></div></footer><script class=next-config data-name=page type=application/json>{"comments":true,"expired":true,"expiredTips":{"info":"🕰️ 嗨，这篇文章已是#前的陈年佳酿，信息可能需要更新，阅读前请检查最佳赏味期限。","warn":"🚀 注意啦！这篇文章来自#以前，可能已跟不上时代的步伐。阅读时请自备时光机，小心穿越哦！"},"isHome":true,"isPage":false,"path":"www.direct-a.cn","permalink":"https://www.direct-a.cn/","title":"Direct-A日志输出","toc":true,"waline3":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"3.3.0"},"pagecnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/pageview.js","name":"pageview","version":"3.3.0"}}}</script><script type=text/javascript src=https://www.direct-a.cn/js/3rd/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=https://www.direct-a.cn/js/3rd/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":true,"giscus":{"cfg":{"category":"Comments","emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"https://www.direct-a.cn/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"isMultiLang":true,"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline3"},"views":{"enable":true,"plugin":"waline3"}},"root":"/","scheme":"Gemini","share":{"addtoany":{"js":"https://static.addtoany.com/menu/page.js","locale":"zh-CN","num":8},"enable":true},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"local","router":{"name":"local","type":"modern","url":"https://www.direct-a.cn/js/3rd"}},"version":"4.7.2","waline3":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o 可用快捷键选取表情符号：😀😄😁🥳👻👽👀🚄 (Window系统：Win+.，Mac系统：Control+Command+Space)","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"search":true,"serverurl":"https://walinejs.comment.lithub.cc","sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.min.css","name":"waline","version":"3.3.0"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"3.3.0"}}}</script><script type=text/javascript src="/js/main.min.js?=1738988313" defer></script></body></html>

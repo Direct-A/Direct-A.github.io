@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客建设 on Direct-A日志输出</title><link>https://www.direct-a.cn/tags/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/</link><description>Recent content in 博客建设 on Direct-A日志输出</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 11 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.direct-a.cn/tags/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/rss.xml" rel="self" type="application/rss+xml"/><item><title>Hexo Next Theme 踩坑</title><link>https://www.direct-a.cn/post/hexo-troubleshoot/</link><pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/hexo-troubleshoot/</guid><description>&lt;h2 id="报错-accessing-non-existent-property">报错 Accessing non-existent property
+&lt;a class="header-anchor" href="#%e6%8a%a5%e9%94%99-accessing-non-existent-property">&lt;/a>
+&lt;/h2>&lt;p>{% asset_img &amp;ldquo;Pasted image 20220311175317.png&amp;rdquo;%}&lt;/p>
+&lt;h3 id="环境">环境
+&lt;a class="header-anchor" href="#%e7%8e%af%e5%a2%83">&lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-7">&lt;a class="lnlinks" href="#hl-0-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-8">&lt;a class="lnlinks" href="#hl-0-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-9">&lt;a class="lnlinks" href="#hl-0-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-10">&lt;a class="lnlinks" href="#hl-0-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-11">&lt;a class="lnlinks" href="#hl-0-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-15">&lt;a class="lnlinks" href="#hl-0-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-16">&lt;a class="lnlinks" href="#hl-0-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-17">&lt;a class="lnlinks" href="#hl-0-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-18">&lt;a class="lnlinks" href="#hl-0-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-19">&lt;a class="lnlinks" href="#hl-0-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-20">&lt;a class="lnlinks" href="#hl-0-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-21">&lt;a class="lnlinks" href="#hl-0-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-22">&lt;a class="lnlinks" href="#hl-0-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-23">&lt;a class="lnlinks" href="#hl-0-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-24">&lt;a class="lnlinks" href="#hl-0-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-25">&lt;a class="lnlinks" href="#hl-0-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-26">&lt;a class="lnlinks" href="#hl-0-26">26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-27">&lt;a class="lnlinks" href="#hl-0-27">27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-28">&lt;a class="lnlinks" href="#hl-0-28">28&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-29">&lt;a class="lnlinks" href="#hl-0-29">29&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-30">&lt;a class="lnlinks" href="#hl-0-30">30&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-31">&lt;a class="lnlinks" href="#hl-0-31">31&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-32">&lt;a class="lnlinks" href="#hl-0-32">32&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-33">&lt;a class="lnlinks" href="#hl-0-33">33&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">❯ hexo -v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INFO Validating config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">INFO&lt;/span> &lt;span class="o">==================================&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ███╗ ██╗███████╗██╗ ██╗████████╗
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ████╗ ██║██╔════╝╚██╗██╔╝╚══██╔══╝
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ██╔██╗ ██║█████╗ ╚███╔╝ ██║
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ██║╚██╗██║██╔══╝ ██╔██╗ ██║
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ██║ ╚████║███████╗██╔╝ ██╗ ██║
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ╚═╝ ╚═══╝╚══════╝╚═╝ ╚═╝ ╚═╝
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">========================================&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">NexT version 8.10.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Documentation: https://theme-next.js.org
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">========================================&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hexo: 5.4.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hexo-cli: 4.3.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">os: linux 5.16.13-zen1-1-zen Arch Linux
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">node: 17.3.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">v8: 9.6.180.15-node.12
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uv: 1.42.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">zlib: 1.2.11
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">brotli: 1.0.9
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ares: 1.18.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">modules: &lt;span class="m">102&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nghttp2: 1.45.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">napi: &lt;span class="m">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">llhttp: 6.0.4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">openssl: 3.0.1+quic
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cldr: 40.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">icu: 70.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tz: 2021a3
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">unicode: 14.0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ngtcp2: 0.1.0-DEV
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nghttp3: 0.1.0-DEV&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h3 id="复现">复现
+&lt;a class="header-anchor" href="#%e5%a4%8d%e7%8e%b0">&lt;/a>
+&lt;/h3>&lt;p>每次 &lt;code>hexo s&lt;/code> 部署后，访问页面均会有&lt;/p></description></item><item><title>Hexo个人博客私有云服务器部署</title><link>https://www.direct-a.cn/post/hexo-blog-server-deploy/</link><pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/hexo-blog-server-deploy/</guid><description>&lt;p>自打有自己的个人博客之后，就一直在用gitpage，感觉够用，也没有想着更换到个人服务器。
+直到前一段时间，我更新了一篇博文，推上仓库，等 git action 自动部署成功后刷新博客地址，发现没有出现更新的那篇博文。
+好好查了一下仓库部署用的分支，还有自己的配置，都没有问题，为什么没更新呢。
+本着解决不了就搜索，谷歌搜了一下的问题，看到很多人都有这种问题，有两种说法：&lt;/p></description></item><item><title>hexo博客搭建</title><link>https://www.direct-a.cn/post/hexo-blog-build/</link><pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/hexo-blog-build/</guid><description>hexo 个人博客建设</description></item></channel></rss>

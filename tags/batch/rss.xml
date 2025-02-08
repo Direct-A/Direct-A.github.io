@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Batch on Direct-A日志输出</title><link>https://www.direct-a.cn/tags/batch/</link><description>Recent content in Batch on Direct-A日志输出</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 21 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.direct-a.cn/tags/batch/rss.xml" rel="self" type="application/rss+xml"/><item><title>批处理set命令的使用--变量及变量延迟</title><link>https://www.direct-a.cn/post/batchfile-set-usage/</link><pubDate>Fri, 21 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/batchfile-set-usage/</guid><description>&lt;p>在批处理文件中，&lt;code>set&lt;/code>命令用于设置变量，为变量赋值，&lt;/p>
+
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bat" data-lang="bat">&lt;span class="line">&lt;span class="cl">&lt;span class="k">set&lt;/span> &lt;span class="nv">[variable&lt;/span>&lt;span class="p">=&lt;/span>[&lt;span class="s2">&amp;#34;string&amp;#34;&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">set&lt;/span> &lt;span class="k">/p&lt;/span> &lt;span class="nv">[variable&lt;/span>&lt;span class="p">=&lt;/span>[&lt;span class="s2">&amp;#34;string&amp;#34;&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">set&lt;/span> &lt;span class="k">/a&lt;/span> &lt;span class="nv">expression&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h1 id="set-p-variablestring">&lt;code>set /p [variable=[&amp;quot;string&amp;quot;]]&lt;/code>
+&lt;a class="header-anchor" href="#set-p-variablestring">&lt;/a>
+&lt;/h1>&lt;p>使用&lt;code>/p&lt;/code>开关在命令行中创建交互，使输入的字符段对变量赋值&lt;/p>
+
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1">1&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bat" data-lang="bat">&lt;span class="line">&lt;span class="cl">&lt;span class="k">set&lt;/span> &lt;span class="k">/p&lt;/span> &lt;span class="nv">a&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s2">&amp;#34;请输入变量a&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+
+&lt;h1 id="set-a-expression">&lt;code>set /a expression&lt;/code>
+&lt;a class="header-anchor" href="#set-a-expression">&lt;/a>
+&lt;/h1>&lt;p>使用&lt;code>/a&lt;/code>开关允许&lt;code>set&lt;/code>在赋值的同时进行简单的运算&lt;/p></description></item><item><title>批处理for命令的使用--创建post</title><link>https://www.direct-a.cn/post/batchfile-for-usage/</link><pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/post/batchfile-for-usage/</guid><description>&lt;p>对于刚创建的博客，使用起来还不是很熟，&lt;code>_post&lt;/code>里的&lt;code>MarkDown&lt;/code>文件开头需要有 &lt;code>tag、title、categroies、layout&lt;/code> 总是记不住格式和内容。今天就构思了个脚本，来解决这个苦恼。&lt;/p></description></item></channel></rss>

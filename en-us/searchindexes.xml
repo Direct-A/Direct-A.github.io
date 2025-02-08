@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>about me</title><url>/en-us/about/</url><categories/><tags/><content type="html">   {% gp 8-2 %} {% endgp %}
+人是一种有这很多缺陷的生物，比如大量的记忆不能够持久，情绪会影响到行事的方式等等。 所以就需要使用工具来进行辅助，文字记录就是对记忆不持久的修补。这个博客就是对我的修补。
+  </content></entry><entry><title>Demo Sites</title><url>/en-us/flinks.html</url><categories/><tags/><content type="html">  If you want to exchange friendly links on this site, please leave your site information in the comment section. The format reference is as follows:
+1 2 3 4 - name: Hugo-NexT desc: Hugo NexT Official Site. avatar: https://hugo-next.eu.org/imgs/hugo_next_avatar.png link: https://hugo-next.eu.org   </content></entry></search>
