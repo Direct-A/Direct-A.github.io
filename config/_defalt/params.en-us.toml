@@ -1,0 +1,23 @@
+#-----------------------------------------
+# Hugo NexT 主题参数配置
+#-----------------------------------------
+yearFormat = "2006"
+monthFormat = "01/02"
+dateFormat = "2006/01/02"
+timeFormat = "2006/01/02 15:04:05 -07:00"
+author = "Direct-A"
+subtitle = "a blog as a log"
+description = "a blog as a log"
+keywords = "Direct-A, Yishai Song, Programma, Coding, Blog, Note"
+
+[linksSets]
+title = "Links"
+
+[footer]
+beian.enable = false
+
+[postFooter]
+endLineTip = "~ End Line ~"
+
+[rewardSets]
+comment = '<i class="fa-solid fa-mug-hot"></i>  How about you buy me a coffee?ヾ(^▽^*)))'

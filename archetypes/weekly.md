@@ -1,0 +1,54 @@
+---
+layout:          post
+title:           "【一周生活细节】"{{ title }}
+subtitle:        某种程度上的技术向朋友圈
+author:          Direct-A
+date:            {{ date }}
+toc:             true
+top:             false
+cover:           false
+mathjax:         true
+categories:
+  - blog
+tags:
+  - 一周生活细节
+description:
+password:
+abstract: 有东西被加密了，请输入密码查看
+message: 请输入密码
+summary:
+---
+
+{% asset_path filenameWithExpand %}
+{% asset_link filenameWithExpand  title%}
+{% asset_img filenameWithExpand title %}
+
+<!-- more -->
+
+<!-- 网页预览 -->
+{% linkPreview url target rel %}
+
+<!-- pdf预览 -->
+{% pdf url [height] %}
+
+<!-- 黑幕 -->
+<span class='heimu' title='你知道的太多了'>黑幕测试</span>
+
+<!-- 按钮 -->
+{% btn url, text, icon [class], [title] %}
+
+<!-- 图片组 -->
+{% gp [number]-[layout] %}
+{% endgp %}
+
+<!-- 高亮标签 -->
+{% label [class]@text %}
+
+<!-- 链接组 -->
+{% lg [image] [delimiter] [comment] %}
+{% endlg %}
+
+<!-- 笔记 -->
+{% note [class] [no-icon] [summary] %}
+Any content (support inline tags too).
+{% endnote %}

@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------
+# Hugo 引擎的基础配置
+# ---------------------------------------------------------------
+
+baseURL = "https://www.direct-a.cn"
+title = "Direct-A日志输出"
+theme = "hugo-theme-next"
+defaultContentLanguage = "zh-cn"
+languageCode = "zh-CN"
+hasCJKLanguage = true
+pagination.pagerSize = 10
+enableEmoji = true
+enableRobotsTXT = true
+
+[sitemap]
+filename = "sitemap.xml"
+changefreq = "weekly"
+priority = 0.5
+
+[outputFormats.RSS]
+baseName = "rss"
+
+[outputFormats.LocalIndexes]
+mediaType = "application/xml"
+baseName = "searchindexes"
+isPlainText = true
+notAlternative = true
+
+[outputFormats.AlgoliaIndexes]
+mediaType = "application/json"
+baseName = "algolia"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = [ "HTML", "RSS", "LocalIndexes"]
+
+[minify]
+minifyOutput = true

@@ -1,0 +1,651 @@
+#-----------------------------------------
+# Hugo NexT 主题参数配置
+#-----------------------------------------
+
+mainSections = [ "post" ]
+yearFormat = "2006"
+monthFormat = "01-02"
+dateFormat = "2006-01-02"
+timeFormat = "2006-01-02T15:04:05-07:00"
+
+# 页面模式 Muse | Mist | Pisces
+scheme = "Gemini"
+darkmode = true
+
+author = "Direct-A"
+subtitle = "a blog as a log"
+description = "a blog as a log"
+keywords = "Direct-A, 编程, 博客, 教程, 笔记"
+# TODO
+# 将文章的描述内容用于首页展示（暂时未实现）
+excerptDesc = true
+readMoreBtn = true
+# 在手机端显示减少填充和边距
+mobileLayoutEconomy = true
+
+# 谷歌站点验证
+# Google Webmaster tools verification.
+# See = https://developers.google.com/search
+#googleSiteVerification = <verify_code>
+# 微软 Bing 站验证
+# Bing Webmaster tools verification.
+# See = https://www.bing.com/webmasters
+#bingSiteVerification = <verify_code>
+# Yandex 站点验证
+# Yandex Webmaster tools verification.
+# See = https://webmaster.yandex.ru
+#yandexSiteVerification = <verify_code>
+# 百度站点验证
+# Baidu Webmaster tools verification.
+# See = https://ziyuan.baidu.com/site
+#baiduSiteVerification = <verify_code>
+
+# 数学公式渲染支持，可选值： mathjax, katex
+#math = mathjax
+
+# TODO
+fancybox = false
+# TODO
+lazyload = false
+# TODO
+pangu = false
+
+# AddThis文章分享功能
+# 更多信息及配置请参考：https://www.addthis.com
+# AddThis Share.
+# See = https://www.addthis.com
+#addThisId = <Your addthis>
+
+# 自定义 Logo （目前只支持 Mist 页面模式）
+#customLogo = "/imgs/hugo_next_logo.png"
+
+# [customFilePath]
+#sidebar = custom_sidebar.html
+#footer = custom_footer.html
+#style = /css/custom_style.css
+
+[favicon]
+icon = "/imgs/icons/favicon.ico"
+small = "/imgs/icons/favicon-16x16.ico"
+medium = "/imgs/icons/favicon-32x32.ico"
+appleTouchIcon = "/imgs/icons/apple-touch-icon-57x57.png"
+
+# 知识共享国际许可 4.0
+# 更多信息： https://creativecommons.org/about/cclicenses/
+# Creative Commons 4.0 International License.
+# See = https://creativecommons.org/about/cclicenses/
+[creativeCommons]
+# 可选配置 by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
+license = "by-nc-sa"
+# 可选配置 big | small
+size = "small"
+sidebar = true
+post = true
+
+[openGraph]
+enable = true
+# googlePlus = "<g+:profile_link>"
+
+# [openGraph.twitter]
+# creator = "<twitter:creator>"
+# image = "<twitter:image>"
+# site = "<twitter:site>"
+
+# [openGraph.facebook]
+# admins = "<fb:admin_id>"
+# app_id = "<fb:app_id>"
+
+# ---------------------------------------------------------------
+# 站点顶部设置
+# ---------------------------------------------------------------
+
+[menuSets]
+icons = true
+transition = true
+badges = true
+
+[readingProgress]
+enable = true
+# 进度条开始位置 left | right
+start = "left"
+# 进度条显示位置 top | bottom
+position = "top"
+reversed = false
+color = "#37c6c0"
+height = "3px"
+
+[bookmark]
+enable = true
+color = "#222"
+# 支持方式 auto | manual
+save = "manual"
+
+[githubBanner]
+enable = false
+permalink = "https://github.com/hugo-next"
+title = "Follow me on GitHub"
+
+# ---------------------------------------------------------------
+# 页面主体设置
+# ---------------------------------------------------------------
+
+# TODO 暂时不支持
+[bodyScrollbar]
+overlay = false
+stable = true
+
+[textAlign]
+# 可选值 start | end | left | right | center | justify | justify-all | match-parent
+desktop = "justify"
+mobile = "justify"
+
+[themeColor]
+light = "#222"
+dark = "#222"
+
+# ---------------------------------------------------------------
+# 侧边栏设置
+# ---------------------------------------------------------------
+
+[sidebar]
+# 侧边栏与顶部菜单栏的偏移像素大小（仅作用于 Pisces | Gemini 页面模式）
+offset = 12
+padding = 18
+# 侧边栏位置，可选： left | right
+position = "left"
+# 自定义侧边栏的宽度，默认配置如下
+# Muse | Mist = 320
+# Pisces | Gemini = 240
+width = 256
+# 侧边栏的显示方式，可选值：
+#  - post    默认在文章页面展开显示
+#  - always  在所有页面展开显示
+#  - hide    点击侧边栏按钮才显示
+#  - remove  完全不显示侧边栏
+display = "post"
+
+[backTop]
+enable = true
+sidebar = false
+scrollpercent = true
+
+[avatar]
+url = "/imgs/hugo_next_avatar.png"
+rounded = true
+rotated = true
+
+[siteState]
+basic = true
+  [siteState.views]
+  enable = true
+  # 组件类型，可选值为： 51la, busuanzi
+  # 使用51la时需要注册账号：https://invite.51.la/1NUfGTS1?target=V6
+  plugin = "busuanzi"
+
+[socials]
+social0 = "Github || https://github.com/Direct-A || fab fa-github"
+social1 = "E-Mail || mailto:songyicheng0@gmail.com || fa fa-envelope"
+social2 = "Twitter || https://twitter.com/01_days_ || fab fa-twitter"
+# 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
+#Google || https://plus.google.com/yourname || fab fa-google
+#FB Page || https://www.facebook.com/yourname || fab fa-facebook
+#StackOverflow || https://stackoverflow.com/yourname || fab fa-stack-overflow
+#YouTube || https://youtube.com/yourname || fab fa-youtube
+#Instagram || https://instagram.com/yourname || fab fa-instagram
+#Skype || skype:yourname?call|chat || fab fa-skype
+
+[socialIcons]
+enable = true
+iconsOnly = false
+transition = true
+
+[linksSets]
+# See = https://fontawesome.com/
+icon = "fa fa-globe"
+title = "友情链接"
+# 可选值 block | inline
+layout = "inline"
+
+[links]
+link0 = "Hugo-NexT || https://gitee.com/hugo-next/hugo-theme-next"
+# link1 = "凡梦星尘空间站 || https://lisenhui.cn"
+
+[toc]
+enable = true
+number = true
+wrap = false
+expandAll = false
+maxDepth = 3
+
+
+# ---------------------------------------------------------------
+# 站点底部设置
+# ---------------------------------------------------------------
+
+[footer]
+since = 2_019
+powered = true
+translate = false
+# copyright =
+
+[footer.icon]
+name = "fa fa-heart"
+animated = true
+color = "#ff0000"
+
+# 国内 ICP 备案和公安网备信息
+# See = https://beian.miit.gov.cn, http://www.beian.gov.cn
+[footer.beian]
+enable = true
+icp = "冀ICP备2022004242号-1"
+provinceAbbr = "冀"
+gonganNum = 2_022_004_242
+
+[footer.vendors]
+enable = true
+title = "其他云服务"
+
+[[footer.vendors.list]]
+name = "memos"
+link = "https://memos.direct-a.cn"
+  [footer.vendors.list.image]
+  url = "/imgs/vendors/memos.webp"
+  width = 20
+
+[[footer.vendors.list]]
+name = "gitea"
+link = "https://gitea.direct-a.cn"
+  [footer.vendors.list.image]
+  url = "/imgs/vendors/gitea.png"
+  width = 20
+
+# ---------------------------------------------------------------
+# 文章参数设置
+# ---------------------------------------------------------------
+
+[postMeta]
+itemText = true
+created = true
+categories = true
+wordCount = true
+readTime = true
+expired = true
+summary = true
+
+[postMeta.updated]
+enable = true
+anotherDay = true
+
+[postMeta.comments]
+enable = true
+# 评论统计插件，暂只支持waline和waline3
+plugin = "waline3"
+
+[postMeta.views]
+enable = true
+# 页面访问统计插件，支持busuanzi, waline, waline3
+plugin = "waline3"
+
+[postAlerts.info]
+icon = "circle-info"
+color = "#4A90E2"
+
+[postAlerts.note]
+icon = "bell"
+color = "#17A2B8"
+
+[postAlerts.help]
+icon = "circle-question"
+color = "#967ADC"
+
+[postAlerts.error]
+icon = "circle-xmark"
+color = "#DC3545"
+
+[postAlerts.warning]
+icon = "triangle-exclamation"
+color = "#F39C12"
+
+[postAlerts.success]
+icon = "circle-check"
+color = "#32CD32"
+
+[postAlerts.important]
+icon = "circle-plus"
+color = "#007BFF"
+
+[postFooter]
+endLineTip = "~ 我可是有底线的哟 ~"
+tagIcon = true
+
+[rewardSets]
+enable = true
+animation = true
+comment = '<i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))'
+  [rewardSets.reward]
+  wechatpay = "/imgs/wechat-pay.png"
+  alipay = "/imgs/ali-pay.png"
+  #paypal = /images/paypal.png
+  #bitcoin = /images/bitcoin.png
+
+[followMe]
+#channel0 = Twitter || https://twitter.com/username || fab fa-twitter
+#channel1 = Telegram || https://t.me/channel_name || fab fa-telegram
+# channel2 = WeChat || /images/wechat_channel.jpg || fab fa-weixin
+channel3 = "RSS || /atom.xml || fa fa-rss"
+
+[postEdit]
+enable = false
+url = "https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/"
+
+[codeblock]
+copyBtn = true
+# 支持样式类型 default | flat | mac
+style = "mac"
+
+
+# ---------------------------------------------------------------
+# TODO
+# 字体设置（暂时未实现）
+# ---------------------------------------------------------------
+[font]
+enable = true
+# Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
+# host =
+
+[font.global]
+external = true
+family = "Lato"
+# size = 16
+
+[font.headings]
+external = true
+# family = "Lato"
+# size = 16
+
+[font.title]
+external = true
+# family = "Lato"
+# size = 16
+
+[font.posts]
+external = true
+# family = "Lato"
+
+[font.codes]
+external = true
+# family = "Lato"
+
+# ---------------------------------------------------------------
+# SEO 设置
+# ---------------------------------------------------------------
+
+[exturl]
+# Automatically add `target='_blank'` attribute in external URL.
+enable = true
+icon = true
+
+# ---------------------------------------------------------------
+# 第三方插件和服务设置
+# ---------------------------------------------------------------
+# TODO
+[quicklink]
+enable = false
+home = false
+archive = false
+delay = true
+timeout = 3_000
+priority = true
+
+# ---------------------------------------------------------------
+# 评论功能设置
+# ---------------------------------------------------------------
+
+# 评论组件设置，最多支持2个显示
+[comments]
+# 开启评论组件
+enable = true
+# 设置默认使用的评论插件
+# 可选值 livere | waline | waline3 | utterances | artalk | giscus
+active = "waline3"
+# 让用户自己选择使用评论插件留言
+# 如果设置为 false，将采用 active 参数的那个插件
+storage = false
+# TODO
+# lazyload = false
+
+# TODO
+# 设置你要显示的2个评论插件，`weight` 数字越小越靠前
+# `name` 参数名可选值 livere | waline | utterances | artalk | giscus
+[[comments.nav]]
+name = "waline3"
+title = "Waline"
+color = "#27ae60"
+weight = 2
+
+[[comments.nav]]
+name = "giscus"
+title = "Giscus"
+color = "#886ce4"
+weight = 1
+
+# Waline 评论插件
+# 更多配置信息请参考：https://waline.js.org/
+[waline3]
+placeholder = "请文明发言哟 ヾ(≧▽≦*)o 可用快捷键选取表情符号：😀😄😁🥳👻👽👀🚄 (Window系统：Win+.，Mac系统：Control+Command+Space)"
+sofa = "快来发表你的意见吧 (≧∀≦)ゞ"
+emoji = false
+search = true
+imgUploader = false
+wordLimit = 200
+requiredMeta = ['nick', 'mail']
+reaction = true
+reactionText = [ '点赞', '踩一下', '得意', '不屑', '尴尬', '睡觉']
+reactionTitle = "你认为这篇文章怎么样？"
+serverURL = "https://walinejs.comment.lithub.cc"
+
+# Artalk 评论插件
+# 更多配置信息请参考：https://artalk.js.org
+#[artalk]
+#site = "默认站点"
+#placeholder = "请文明发言，谢谢！"
+#server = #<your artalk server url>
+
+# LiveRe comments system
+# You can get your uid from https://livere.com/
+#[livere]
+#uid = <your_uid>
+
+# Utterances 评论插件
+# 更多配置信息请参考：https://utteranc.es
+#[utterances]
+# Github 仓库地址，格式：用户名/仓库名称
+#repo = "username/repo-name"
+# 问题标题的模式，可选值：pathname | url | title | og:title
+#issueTerm = "pathname"
+#label = "comments"
+# 主题可选值： github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
+#theme = "preferred-color-scheme"
+
+# Giscus 评论插件
+# 更多配置信息请参考：https://giscus.app
+[giscus]
+repo = "username/repo-name"
+#repoId = <repo-id>
+category = "Comments"
+#categoryId = <category-id>
+reactions = false
+emit = false
+# 评论输入框的位置，可选值： top | bottom
+# Aavilable value = top | bottom
+# 讨论区帖子标题，可选值： pathname | url | title | og:title | 自定义
+# Available values = pathname | url | title | og:title | custom
+mapping = "title"
+# 评论输入框的位置，可选值： top | bottom
+# Aavilable value = top | bottom
+inputPosition = "top"
+# 主题可选值： light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
+theme = "preferred_color_scheme"
+
+# ---------------------------------------------------------------
+# 文章小组件和分享服务设置
+# ---------------------------------------------------------------
+
+# TODO
+[rating]
+enable = false
+#id = <app_id>
+color = "#fc6423"
+
+[share]
+enable = true
+addtoany.locale = "zh-CN"
+addtoany.num_services = 8
+
+# ---------------------------------------------------------------
+# 站点统计功能
+# ---------------------------------------------------------------
+# [analytics]
+# 51La 站点统计
+# 更多信息请参考：https://invite.51.la/1NUfGTS1?target=V6
+#laId = <anaytics_id>
+# 百度统计
+#baidu = <anaytics_id>
+# 谷歌统计
+#google = <anaytics_id>
+
+# 不蒜子统计
+# For more information = http://ibruce.info/2015/04/04/busuanzi/
+[analytics.busuanzi]
+visitorsIcon = "fa fa-user"
+viewsIcon = "fa fa-eye"
+
+# ---------------------------------------------------------------
+# 内容搜索服务
+# ---------------------------------------------------------------
+
+# Algolia Search
+# For more information = https://www.algolia.com
+[algoliaSearch]
+enable = false
+#appId = <algolia app id>
+#apiKey = <algolia api key>
+#indexName = <algolia index name>
+hits.perPage = 10
+limit = 1_000
+
+[localSearch]
+enable = true
+path = "/searchindexes.xml"
+# 是立即搜索当输入关键字时，可选值 auto | manual
+trigger = "auto"
+topNPerArticle = -1
+unescape = false
+preload = false
+limit = 1_000
+
+# ---------------------------------------------------------------
+# 在线聊天服务
+# ---------------------------------------------------------------
+
+[chat]
+enable = false
+icon = "fa fa-comment"
+text = "Chat"
+
+# Gitter Support
+# For more information = https://gitter.im
+[gitter]
+enable = false
+room = "hugo-next/community"
+
+
+# ---------------------------------------------------------------
+# TODO
+# 标签设置（暂时未实现）
+# ---------------------------------------------------------------
+
+[note]
+# Note tag style values:
+#  - simple    bootstrap callout old alert style. Default.
+#  - modern    bootstrap callout new (v2-v3) alert style.
+#  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+#  - disabled  disable all CSS styles import of note tag.
+style = "simple"
+icons = true
+lightBgOffset = 0
+
+[tabs]
+sticky = false
+
+[tabs.transition]
+tabs = false
+labels = true
+
+# PDF tag
+# NexT will try to load pdf files natively, if failed, pdf.js will be used.
+# So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
+# Dependencies = https://github.com/next-theme/theme-next-pdf
+[pdf]
+enable = false
+height = "500px"
+
+# Mermaid tag
+[mermaid]
+enable = false
+
+# Available themes = default | dark | forest | neutral
+[mermaid.theme]
+light = "default"
+dark = "dark"
+
+# ---------------------------------------------------------------
+# 动画效果设置
+# ---------------------------------------------------------------
+
+# 通过 Animate.css 实现对整站的动画效果
+# For more information = https://animate.style
+[motion]
+enable = true
+async = true
+
+# All available transition variants = https://theme-next.js.org/animate/
+[motion.transition]
+postBlock = "fadeIn"
+postHeader = "fadeInDown"
+postBody = "fadeInDown"
+collHeader = "fadeInLeft"
+# 侧边样效果 只有在 Pisces | Gemini 模式下才支持
+sidebar = "fadeInUp"
+
+# TODO
+# Progress bar in the top during page loading.
+# For more information = https://github.com/CodeByZach/pace
+[pace]
+enable = false
+# All available colors: black | blue | green | orange | pink | purple | red | silver | white | yellow
+color = "blue"
+# All available themes: big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
+# corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
+theme = "minimal"
+
+# TODO
+# Canvas ribbon
+# For more information = https://github.com/hustcc/ribbon.js
+[canvasRibbon]
+enable = false
+size = 300
+alpha = 0.6
+zIndex = -1
+
+# ---------------------------------------------------------------
+# CDN 服务（暂时只支持 unpkg 和 cndjs）
+# ---------------------------------------------------------------
+
+[vendors]
+# The CDN provider of NexT internal scripts.
+# Available values: local | cdn
+internal = "local"
+# The default CDN provider of third-party plugins.
+# Available values: local | cdnjs | unpkg | jsdelivr | staticfile | bootcdn | 7ed | zstatic | zeyao | custom
+plugins = "local"
