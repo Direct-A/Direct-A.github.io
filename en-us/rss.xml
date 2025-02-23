@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Direct-A日志输出</title><link>http://localhost:1313/en-us/</link><description>Recent content on Direct-A日志输出</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 25 Mar 2020 20:20:24 +0000</lastBuildDate><atom:link href="http://localhost:1313/en-us/rss.xml" rel="self" type="application/rss+xml"/><item><title>about me</title><link>http://localhost:1313/en-us/about/</link><pubDate>Wed, 25 Mar 2020 20:20:24 +0000</pubDate><guid>http://localhost:1313/en-us/about/</guid><description>&lt;!-- TODO: 文字描述 -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Direct-A日志输出</title><link>https://www.direct-a.cn/en-us/</link><description>Recent content on Direct-A日志输出</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Wed, 25 Mar 2020 20:20:24 +0000</lastBuildDate><atom:link href="https://www.direct-a.cn/en-us/rss.xml" rel="self" type="application/rss+xml"/><item><title>about me</title><link>https://www.direct-a.cn/en-us/about/</link><pubDate>Wed, 25 Mar 2020 20:20:24 +0000</pubDate><guid>https://www.direct-a.cn/en-us/about/</guid><description>&lt;!-- TODO: 文字描述 -->
 &lt;p>{% gp 8-2 %}
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1606549223020.jpg" alt="休息" />
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1606549234689.jpg" alt="拍摄" />
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1606549239226.jpg" alt="疲惫" />
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625188852249.jpg" alt="观察" />
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625188857301.jpg" alt="操作" />
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625582830867.jpg" alt="操作" />
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625582836374.jpg" alt="操作" />
-&lt;img src="http://localhost:1313/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625582837996.jpg" alt="监控" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1606549223020.jpg" alt="休息" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1606549234689.jpg" alt="拍摄" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1606549239226.jpg" alt="疲惫" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625188852249.jpg" alt="观察" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625188857301.jpg" alt="操作" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625582830867.jpg" alt="操作" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625582836374.jpg" alt="操作" />
+&lt;img src="https://www.direct-a.cn/imgs/img-lazy-loading.gif" data-src="../images/mmexport1625582837996.jpg" alt="监控" />
 {% endgp %}&lt;/p>
 &lt;p>人是一种有这很多缺陷的生物，比如大量的记忆不能够持久，情绪会影响到行事的方式等等。
-所以就需要使用工具来进行辅助，文字记录就是对记忆不持久的修补。这个博客就是对我的修补。&lt;/p></description></item><item><title>Demo Sites</title><link>http://localhost:1313/en-us/flinks.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/en-us/flinks.html</guid><description>&lt;p>If you want to exchange friendly links on this site, please leave your site information in the comment section. The format reference is as follows:&lt;/p>
+所以就需要使用工具来进行辅助，文字记录就是对记忆不持久的修补。这个博客就是对我的修补。&lt;/p></description></item><item><title>Demo Sites</title><link>https://www.direct-a.cn/en-us/flinks.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.direct-a.cn/en-us/flinks.html</guid><description>&lt;p>If you want to exchange friendly links on this site, please leave your site information in the comment section. The format reference is as follows:&lt;/p>
 
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
