@@ -249,15 +249,15 @@ title = "其他云服务"
 name = "memos"
 link = "https://memos.direct-a.cn"
   [footer.vendors.list.image]
-  url = "/imgs/vendors/memos.webp"
-  width = 20
+  url = "/imgs/vendors/memos.png"
+  width = 16
 
 [[footer.vendors.list]]
-name = "gitea"
-link = "https://gitea.direct-a.cn"
+name = "file"
+link = "https://file.direct-a.cn"
   [footer.vendors.list.image]
-  url = "/imgs/vendors/gitea.png"
-  width = 20
+  url = "/imgs/vendors/alist.svg"
+  width = 16
 
 # ---------------------------------------------------------------
 # 文章参数设置
