@@ -13,13 +13,6 @@ pre = "user"
 weight = 2
 
 [[main]]
-identifier = "flinks"
-name = "Friend's Links"
-pageRef = "/flinks.html"
-pre = "thumbs-up"
-weight = 3
-
-[[main]]
 identifier = "archives"
 name = "Archives"
 pageRef = "/archives"

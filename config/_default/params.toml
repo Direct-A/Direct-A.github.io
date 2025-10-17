@@ -185,7 +185,7 @@ basic = true
 [socials]
 social0 = "Github || https://github.com/Direct-A || fab fa-github"
 social1 = "E-Mail || mailto:songyicheng0@gmail.com || fa fa-envelope"
-social2 = "Twitter || https://twitter.com/01_days_ || fab fa-twitter"
+# social2 = "Twitter || https://twitter.com/01_days_ || fab fa-twitter"
 # 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
 #Google || https://plus.google.com/yourname || fab fa-google
 #FB Page || https://www.facebook.com/yourname || fab fa-facebook

@@ -2,7 +2,7 @@
 # Hugo 引擎的基础配置
 # ---------------------------------------------------------------
 
-baseURL = "https://www.direct-a.cn"
+baseURL = "https://direct-a.cn/"
 title = "Direct-A日志输出"
 theme = "hugo-theme-next"
 defaultContentLanguage = "zh-cn"

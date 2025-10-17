@@ -23,5 +23,5 @@ def run_interactive_command(command):
     return rc
 
 if __name__ == '__main__':
-    COMMAND="rsync -avzuP /Users/yishai/Documents/direct-a.cn/public/ tencent-app:/var/www/hugo/"
+    COMMAND="rsync -avzuP --del --exclude='.*' /Users/yishai/Documents/direct-a.cn/public/ tencent-app:/var/www/hugo/"
     run_interactive_command(COMMAND)
