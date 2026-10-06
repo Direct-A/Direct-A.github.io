@@ -61,7 +61,7 @@ pangu = false
 
 [customFilePath]
 #sidebar = custom_sidebar.html
-#footer = custom_footer.html
+footer = "custom_footer.html"
 style = "/css/custom_style.css"
 
 [favicon]
