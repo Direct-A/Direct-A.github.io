@@ -16,6 +16,10 @@
   color: #252525 !important;
   text-shadow: none !important;
 }
+/* 压住主题链接下划线，避免泄漏链接位置与长度 */
+.heimu a {
+  border-bottom-color: transparent !important;
+}
 .heimu code, .heimu pre {
   background-color: #252525 !important;
 }
@@ -28,6 +32,10 @@
 }
 .heimu:hover *, .heimu.revealed * {
   color: #ffffff !important;
+}
+/* 展开态恢复链接下划线（黑条上用白色保证可读、可辨识） */
+.heimu:hover a, .heimu.revealed a {
+  border-bottom-color: #ffffff !important;
 }
 .heimu:hover img, .heimu.revealed img {
   visibility: visible;
@@ -48,6 +56,10 @@
   .heimu, .heimu * {
     background-color: transparent !important;
     color: inherit !important;
+  }
+  /* 遮盖态 code/pre 黑底优先级 (0,1,1) 更高，打印需显式覆盖 */
+  .heimu code, .heimu pre {
+    background-color: transparent !important;
   }
   .heimu img {
     visibility: visible;
