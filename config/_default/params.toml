@@ -59,10 +59,10 @@ pangu = false
 # 自定义 Logo （目前只支持 Mist 页面模式）
 #customLogo = "/imgs/hugo_next_logo.png"
 
-# [customFilePath]
+[customFilePath]
 #sidebar = custom_sidebar.html
 #footer = custom_footer.html
-#style = /css/custom_style.css
+style = "/css/custom_style.css"
 
 [favicon]
 icon = "/imgs/icons/favicon.ico"

@@ -1,0 +1,58 @@
+/* ============================================================
+ * 防剧透遮罩：黑幕 (.heimu) 与模糊 (.blur)
+ * 悬停显示；.revealed 为 JS 点击切换的展开态
+ * 参考: https://dev.fandom.com/wiki/Heimu / SpoilerBlur
+ * ============================================================ */
+
+/* ---------- 黑幕 ---------- */
+.heimu {
+  background-color: #252525;
+  border-radius: 2px;
+  cursor: help;
+  transition: color 0.3s ease;
+}
+/* 遮盖所有内链子元素（链接色、代码底色等） */
+.heimu, .heimu * {
+  color: #252525 !important;
+  text-shadow: none !important;
+}
+.heimu code, .heimu pre {
+  background-color: #252525 !important;
+}
+.heimu img {
+  visibility: hidden;
+}
+/* 悬停 / 点击展开：黑条保留，文字翻白 */
+.heimu:hover, .heimu.revealed {
+  color: #ffffff !important;
+}
+.heimu:hover *, .heimu.revealed * {
+  color: #ffffff !important;
+}
+.heimu:hover img, .heimu.revealed img {
+  visibility: visible;
+}
+
+/* ---------- 模糊 ---------- */
+.blur {
+  filter: blur(5px);
+  cursor: help;
+  transition: filter 0.5s ease;
+}
+.blur:hover, .blur.revealed {
+  filter: none;
+}
+
+/* ---------- 打印时强制显示 ---------- */
+@media print {
+  .heimu, .heimu * {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+  .heimu img {
+    visibility: visible;
+  }
+  .blur {
+    filter: none !important;
+  }
+}
