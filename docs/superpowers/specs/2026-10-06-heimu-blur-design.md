@@ -36,7 +36,7 @@ direct-a.cn 是 Hugo 站点，主题为 hugo-theme-next。需要在文章中支�
 `.heimu`：
 
 - 默认：`background-color: #252525; color: #252525; text-shadow: none;`（文字与底色同色形成黑条）
-- 内部链接 `a`、`<code>`、`<img>` 等子元素同样遮盖（链接色、code 背景都压成 #252525；图片用 `visibility` 或黑色覆盖处理）
+- 内部链接 `a`、`<code>` 等子元素同样遮盖（链接色、code 背景都压成 #252525）；内部图片用 `visibility: hidden` 隐藏，悬停 / `.revealed` 时恢复 `visible`
 - 悬停 / `.revealed` 态：背景保持 #252525，文字变白，带 0.3s 过渡
 - 鼠标指针：`cursor: help` 提示可交互
 - 悬停提示：shortcode 输出 `title` 属性（默认「你知道的太多了」）
@@ -58,7 +58,7 @@ direct-a.cn 是 Hugo 站点，主题为 hugo-theme-next。需要在文章中支�
 
 - 行内用法 `{{< heimu >}}文字{{< /heimu >}}` → `<span class="heimu" title="你知道的太多了">文字</span>`，`.Inner` 不套段落
 - 块级用法 `{{% heimu %}}整段 Markdown、图片{{% /heimu %}}` → `<div class="heimu" title="...">` + `.Inner` 经 Markdown 渲染（Hugo 中 `{{% %}}` 变体自动渲染内部 Markdown）
-- 可选位置参数 0 或命名参数 `tip` 自定义悬停提示文字
+- 悬停提示文字可自定义：位置参数 `{{< heimu "提示文字" >}}` 优先；未给位置参数时取命名参数 `tip`；两者都没有时用默认「你知道的太多了」
 
 ### 3. 点击切换 JS `layouts/_partials/custom_footer.html`
 
