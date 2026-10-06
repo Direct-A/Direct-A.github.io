@@ -178,7 +178,7 @@ rem 2
 
 上面的代码可以理解成这样
 
-{% asset_img "delayed-expansion.png" 未开启变量延迟 %}
+![未开启变量延迟](delayed-expansion.png)
 
 运用这个规律可以在不使用临时变量的情况下，进行变量间的数值交换
 

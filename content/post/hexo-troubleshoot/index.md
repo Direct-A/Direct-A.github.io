@@ -23,7 +23,7 @@ description: Hexo Next Theme 部署及美化过程中遇到的各种奇奇怪怪
 
 ## 报错 Accessing non-existent property
 
-{% asset_img "Pasted image 20220311175317.png"%}
+![](<Pasted image 20220311175317.png>)
 
 ### 环境
 

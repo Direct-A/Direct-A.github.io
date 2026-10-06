@@ -27,7 +27,7 @@ R 语言是一门动态弱类型的语言，同时作为一种解释型程序语
 
 面向对象编程的思想下，每个对象都有其相应的属性，大部分属性是普适的，也有特殊的属性值。
 
-{% asset_img "oop.png" %}
+![](oop.png)
 
 <!-- more -->
 
@@ -200,7 +200,7 @@ z
 
 由于拥有 `class` 属性，它也是 `S3` 对象。
 
-{% asset_img "facters.png" %}
+![](facters.png)
 
 ```r
 # x是向量
@@ -286,9 +286,9 @@ patientData
 
 #### 总结
 
-{% asset_img "summary02.png"  %}
-{% asset_img "summary01.png"  %}
-{% asset_img "R_Vector.png"  %}
+![](summary02.png)
+![](summary01.png)
+![](R_Vector.png)
 
 |   对象   |    可包含类型     | 同一对象能否有多种类型 |
 |:--------:|:-----------------:|:----------------------:|

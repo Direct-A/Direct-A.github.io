@@ -194,7 +194,7 @@ regex = "1.4.2"
 
 ## 编译过程
 
-{% asset_img "Pasted image 20220119235159.png" 编译过程示意 %}
+![编译过程示意](<Pasted image 20220119235159.png>)
 
 AST：抽象语法树
 HIR：高级中间语言，消除版次差异

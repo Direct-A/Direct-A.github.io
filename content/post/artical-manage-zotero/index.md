@@ -29,7 +29,7 @@ description:
 另外，最近的美国封锁软件的事情（哈工大Matlab），也让我决定把工具链换成更加开源的会更可靠。
 碰巧又一次看到 bilibili 上 Straggle with me 制作的关于 Zotero 的视频，还是一整套教程。仔细查看之后发现，完全击中了 Endnote 的许多使用痛点，并且团队协作这点简直棒。干脆迁移至 Zotero。
 
-{% asset_img "Snipaste_2020-06-16_10-37-20.png" Zotero %}
+![Zotero](Snipaste_2020-06-16_10-37-20.png)
 
 ## Zotero 的优点：
 * 更加高效，文献管理很多操作都是程序化的，几个脚本就可以自动解决的问题，Endnot 里却仍然需要手动操作
@@ -82,7 +82,7 @@ choco install zotero
 
 打开 **编辑 -> 首选项 -> 高级 -> 文件和文件夹 -> 链接附件的根目录** 中选择 OneDrive 里的 Zotero 文件夹，这样当 Zotero 同步的时候，会同步一个相对地址，可以避免不同 PC 上 OneDrive 文件夹位置不同导致打不开 PDF
 
-{% asset_img "Snipaste_2020-06-16_10-37-30.png" "settings in zotero" %}
+![settings in zotero](Snipaste_2020-06-16_10-37-30.png)
 
 #### 下载安装zotfile
 
@@ -90,18 +90,18 @@ choco install zotero
   [下载zotfile](http://zotfile.com/)
   打开zotero，打开 **工具 -> 插件**，  将刚刚下载的zotfile-x.x.x-fx.xpi文件拖到这个界面里进行安装
 
-{% asset_img Snipaste_2020-06-16_11-28-04.png "install add-ins" %}
+![install add-ins](Snipaste_2020-06-16_11-28-04.png)
 
 #### ZotFile 具体设置
 
 在 工具 -> ZotFile Preferences - Location of Files - Custom Location 选择 OneDrive 的 Zotero 文件夹
 
-{% asset_img Snipaste_2020-06-16_11-30-34.png "settings in zotfile" %}
+![settings in zotfile](Snipaste_2020-06-16_11-30-34.png)
 
 第一次设置好之后，选中所有条目，**右键 - Manage Attachments - Rename Attachments** 然后应该就会在自己的 Zotero 文件夹里看到所有的 paper 啦。
 
-{% asset_img Snipaste_2020-06-16_11-33-19.png "icon changes" %}
-{% asset_img Snipaste_2020-06-16_11-34-26.png "files in onedrive" %}
+![icon changes](Snipaste_2020-06-16_11-33-19.png)
+![files in onedrive](Snipaste_2020-06-16_11-34-26.png)
 
 ### Endnote 库导入 Zotero
 

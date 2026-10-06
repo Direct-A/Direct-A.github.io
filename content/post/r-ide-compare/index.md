@@ -37,7 +37,7 @@ Rstudio 作为一款官方的IDE，相较于其他IDE在很多地方都有着天
 
 ### R
 
-{% asset_img "R.png" %}
+![](R.png)
 
 作为宇宙万能编辑器的Vscode，能一个插件解决的事情坚决不使用两个。
 
@@ -69,13 +69,13 @@ Rstudio 作为一款官方的IDE，相较于其他IDE在很多地方都有着天
 
 写代码，行缩进怎么能看不清楚。[indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 
-{% asset_img "indent.png" %}
+![](indent.png)
 
 ### Bracket Pair Colorizer 2
 
 写代码，括号匹配怎么能糊里糊涂。[Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
 
-{% asset_img "bracket.png" %}
+![](bracket.png)
 
 **注意：**这个插件一定得注意，使用版本2，1已经弃用了但是插件库里貌似还存在。
 
@@ -83,16 +83,16 @@ Rstudio 作为一款官方的IDE，相较于其他IDE在很多地方都有着天
 
 一款git辅助工具
 
-{% asset_img "git.png" %}
+![](git.png)
 
 ### GitHub Theme
 
 写代码，编辑器不好看怎么能行。[GitHub Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 
-{% asset_img "theme.png" %}
+![](theme.png)
 
 ### vscode-icons
 
 写代码，文件图标怎么能没有区分度。[vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
-{% asset_img "icon.png" %}
+![](icon.png)

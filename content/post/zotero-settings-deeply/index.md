@@ -37,10 +37,10 @@ Zotero 官网对于[自定义 PDF 解析器](https://www.zotero.org/support/kb/c
 
 打开 **编辑 -> 首选项 -> 高级 -> 设置编辑器**。 
 刚打开会有风险提示
-{% asset_img "Snipaste_2020-06-16_18-45-58.png" "risk alarm" %}
+![risk alarm](Snipaste_2020-06-16_18-45-58.png)
 
 点击 accept 后，在搜索框，搜索 `extensions.zotero.findPDFs.resolvers` 。
-{% asset_img "Snipaste_2020-06-16_18-48-30.png" "after search" %}
+![after search](Snipaste_2020-06-16_18-48-30.png)
 
 双击 `extensions.zotero.findPDFs.resolvers`，默认情况下是只有一对`[]`。
 删除`[]`，并将以下代码粘贴进去。
@@ -61,7 +61,7 @@ Zotero 官网对于[自定义 PDF 解析器](https://www.zotero.org/support/kb/c
 到此就成功将Sci-Hub配置为PDF解析器了，也就是说替代了默认的Unpaywall。
 
 现在，无需重启Zotero，即可调用Sci-Hub免费下载文献了。
-{% asset_img "Snipaste_2020-06-16_18-55-53.png" "find pdf" %}
+![find pdf](Snipaste_2020-06-16_18-55-53.png)
 
 ## 注意：
 

@@ -38,7 +38,7 @@ Linux 下可以去[github页面](https://github.com/ventoy/Ventoy/releases)下�
 
 使用起来也是方便，第一次使用的 U 盘，会进行格式化，重新分区，需要注意数据迁移。
 建议制作时更改一下分区类型，为了方便使用。（不知道为什么，windows下打开`Ventoy`居然不能正常使用截屏软件🤔）
-{% asset_img Snipaste_2020-07-14_18-34-19.png 分区类型 %}
+![分区类型](Snipaste_2020-07-14_18-34-19.png)
 
 制作完成之后，把系统镜像直接复制进分区，就可以使用了。就是如此方便。
 目前[官方网站](https://www.ventoy.net/cn/index.html)称已经测试了 **300\+** 的镜像文件，均可以成功启动。
